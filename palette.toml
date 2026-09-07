@@ -1,0 +1,347 @@
+# palette.toml — single source of truth for the Grafana color scheme.
+#
+# The resolved hex values in this file are AUTHORITATIVE. The [*.derivation]
+# tables document how they were produced; nothing recomputes them at build
+# time, so a human can nudge one value without fighting an algorithm.
+#
+# Contrast ratios are deliberately NOT stored here. They are computed from
+# these values by `tools/generate.py --verify` and by README generation, so
+# they can never go stale.
+#
+# Colors come from the Grafana Labs brand guide. This is not an official
+# Grafana Labs project; see NOTICE.
+
+schema_version = 1
+
+[scheme]
+name           = "Grafana"
+slug           = "grafana"
+homepage       = "https://github.com/ymotongpoo/grafana-color-scheme"
+author         = "Yoshi Yamaguchi"
+license        = "Apache-2.0"
+variants       = ["dark", "light"]
+flavors        = ["dim", "vivid"]
+default_flavor = "dim"
+
+# ─── Layer 1: brand ──────────────────────────────────────────────────────────
+#
+# Grafana Labs brand guide values, verbatim. Never edit these to fix a
+# contrast failure — edit the variant accents instead.
+
+[brand.colors]
+"neutral-1"   = { hex = "#f4f4f4", group = "neutral" }
+"neutral-2"   = { hex = "#afafaf", group = "neutral" }
+"neutral-3"   = { hex = "#696969", group = "neutral" }
+"neutral-4"   = { hex = "#3a3a3a", group = "neutral" }
+"neutral-5"   = { hex = "#171717", group = "neutral" }
+"white"       = { hex = "#ffffff", group = "secondary" }
+"black"       = { hex = "#000000", group = "secondary" }
+"orange"      = { hex = "#ff671d", group = "primary", note = "the primary brand color" }
+"yellow"      = { hex = "#ffed23", group = "secondary" }
+"green"       = { hex = "#04bc4c", group = "secondary" }
+"blue"        = { hex = "#2970ff", group = "secondary" }
+"purple"      = { hex = "#d444f1", group = "secondary" }
+"amber"       = { hex = "#ffab29", group = "support" }
+"light-green" = { hex = "#91d441", group = "support" }
+"light-blue"  = { hex = "#3fc6eb", group = "support" }
+"indigo"      = { hex = "#7d64ff", group = "support" }
+"pink"        = { hex = "#f35998", group = "support" }
+
+# The brand has NO red. error / deleted map onto `pink` and warning onto
+# `amber`. See [roles.diagnostic] and docs/roles.md.
+
+# Tint and shade ladders from the brand guide. Note that the 100% step of a
+# ladder is NOT always identical to the secondary color of the same name --
+# the guide lists green as #04bc4c but its ladder centers on #18b16a. Both
+# are reproduced faithfully; the ladders are what the variants draw from.
+[brand.ladders]
+orange = { "20" = "#fee9d4", "40" = "#ffd0a7", "60" = "#ffad70", "80" = "#ff8137", "100" = "#ff671d", "120" = "#f04205", "140" = "#c72f07", "160" = "#9d250e", "180" = "#7f230f" }
+yellow = { "20" = "#fcffd2", "40" = "#fffea8", "60" = "#fff86b", "80" = "#feed55", "100" = "#fbe136", "120" = "#fdc809", "140" = "#cf9304", "160" = "#aa710e", "180" = "#915d14" }
+green  = { "20" = "#d7f9e3", "40" = "#aaf0c7", "60" = "#72e1a6", "80" = "#54d192", "100" = "#18b16a", "120" = "#0c9065", "140" = "#0b7347", "160" = "#0a5b39", "180" = "#084b31" }
+blue   = { "20" = "#d9e7ff", "40" = "#bbd8ff", "60" = "#8dc0ff", "80" = "#599bff", "100" = "#2870ff", "120" = "#1b55f5", "140" = "#1540e0", "160" = "#1734b6", "180" = "#1a308f" }
+purple = { "20" = "#f9e8fe", "40" = "#f3ceff", "60" = "#eeaafd", "80" = "#e477fb", "100" = "#d444f0", "120" = "#bb23d5", "140" = "#9d1ab1", "160" = "#831790", "180" = "#6e1976" }
+
+# ─── Layer 2: dark variant ───────────────────────────────────────────────────
+
+[variants.dark]
+id         = "grafana-dark"
+appearance = "dark"
+label      = "Grafana Dark"
+
+[variants.dark.derivation]
+background = "neutral-5 mixed 20% toward neutral-4"
+accents     = "brand hue mixed 5-30% toward the background, lowering luminance and saturation together"
+target_band = "4.5-7.5:1 against surfaces.base, so no single token shouts over the others"
+reference   = "docs/derivation.md"
+
+# Two ladders diverge from `base`; this is NOT one monotone chain.
+#   shadow    : base -> mantle -> crust
+#   elevation : base -> surface0 -> surface1 -> surface2
+[variants.dark.surfaces]
+crust    = "#141414"
+mantle   = "#191919"
+base     = "#1e1e1e"
+surface0 = "#252525"
+surface1 = "#303030"
+surface2 = "#3a3a3a"
+
+[variants.dark.text]
+bright  = "#f4f4f4"
+fg      = "#c9c9c9"
+subtext = "#9e9e9e"
+faint   = "#8c8c8c"
+
+[variants.dark.accents]
+orange        = "#e47534"   # orange-80  + 12% base
+amber         = "#d28f27"   # amber      + 20% base
+yellow        = "#bdaa2f"   # yellow-100 + 28% base
+green         = "#7ab03a"   # light-green+ 20% base
+"light-green" = "#48aa78"   # green-80   + 22% base
+"light-blue"  = "#38a4c2"   # light-blue + 20% base
+blue          = "#77a0d2"   # blue-60    + 20% base
+indigo        = "#9084d7"   # indigo, lifted toward white then + 18% base
+purple        = "#c48ed0"   # purple-60  + 20% base
+pink          = "#e2548e"   # pink       +  8% base
+
+# Terminal-only, and only in ANSI slots 9-14 (bright). The relaxed 3.0 floor
+# therefore applies to bright text only. These are the brand colors as-is.
+[variants.dark.accents_vivid]
+pink         = "#f35998"
+green        = "#91d441"
+amber        = "#ffab29"
+blue         = "#2970ff"
+purple       = "#d444f1"
+"light-blue" = "#3fc6eb"
+
+# ─── Layer 3: light variant ──────────────────────────────────────────────────
+
+[variants.light]
+id         = "grafana-light"
+appearance = "light"
+label      = "Grafana Light"
+
+[variants.light.derivation]
+background = "neutral-1 lifted slightly, #f7f7f7"
+accents     = "brand 140-180% shades, deepened toward neutral-5 only as far as needed"
+target_band = "5.0-7.5:1 against surfaces.base"
+note        = "yellow hues collapse toward brown on white. amber is drawn from the yellow-180 shade and yellow from the greener brand yellow so the two stay distinguishable (CIE76 dE 22.9)."
+reference   = "docs/derivation.md"
+
+[variants.light.surfaces]
+crust    = "#e4e4e4"
+mantle   = "#f0f0f0"
+base     = "#f7f7f7"
+surface0 = "#ececec"
+surface1 = "#dcdcdc"
+surface2 = "#c9c9c9"
+
+[variants.light.text]
+bright  = "#171717"
+fg      = "#3a3a3a"
+subtext = "#5e5e5e"
+faint   = "#6a6a6a"
+
+[variants.light.accents]
+orange        = "#c72f07"   # orange-140, as-is
+amber         = "#915d14"   # yellow-180, as-is
+yellow        = "#6f681c"   # brand yellow + 62% neutral-5, keeps an olive cast
+green         = "#0b7347"   # green-140, as-is
+"light-green" = "#084b31"   # green-180, as-is
+"light-blue"  = "#25708a"   # light-blue + 55% neutral-5
+blue          = "#1540e0"   # blue-140, as-is
+indigo        = "#5240b8"   # indigo + 40% neutral-5
+purple        = "#9d1ab1"   # purple-140, as-is
+pink          = "#a93c68"   # pink + 42% neutral-5
+
+[variants.light.accents_vivid]
+pink         = "#c72f5f"
+green        = "#0c9065"
+amber        = "#aa710e"
+blue         = "#1b55f5"
+purple       = "#bb23d5"
+"light-blue" = "#1b6e85"
+
+# ─── Layer 4: semantics ──────────────────────────────────────────────────────
+#
+# Roles reference TOKEN NAMES, resolved per variant against
+# accents u text u surfaces. Change a role here and all 11 targets follow.
+
+[roles]
+keyword       = { color = "orange" }
+keyword-ctrl  = { color = "orange" }
+keyword-op    = { color = "orange" }
+operator      = { color = "orange" }
+builtin       = { color = "amber" }
+decorator     = { color = "amber" }
+attribute     = { color = "amber" }
+string        = { color = "green" }
+string-doc    = { color = "green", style = "italic" }
+string-escape = { color = "amber" }
+regex         = { color = "pink" }
+number        = { color = "light-blue" }
+boolean       = { color = "light-blue" }
+constant      = { color = "light-blue" }
+type          = { color = "blue" }
+class         = { color = "blue" }
+namespace     = { color = "blue" }
+interface     = { color = "blue" }
+function      = { color = "purple" }
+method        = { color = "purple" }
+variable      = { color = "fg" }
+parameter     = { color = "fg" }
+property      = { color = "light-green" }
+tag           = { color = "orange" }
+label          = { color = "amber" }
+preprocessor  = { color = "indigo" }
+punctuation   = { color = "subtext" }
+comment       = { color = "subtext", style = "italic" }
+comment-doc   = { color = "subtext", style = "italic" }
+link          = { color = "light-blue", style = "underline" }
+heading       = { color = "orange", style = "bold" }
+deprecated    = { color = "faint", style = "strikethrough" }
+
+[roles.diagnostic]
+error   = { color = "pink", note = "the brand has no red, so pink carries the error role" }
+warning = { color = "amber" }
+info    = { color = "blue" }
+hint    = { color = "subtext" }
+ok      = { color = "green" }
+
+[roles.diff]
+added    = { color = "green" }
+removed  = { color = "pink" }
+changed  = { color = "yellow" }
+
+# ─── ANSI 16 ─────────────────────────────────────────────────────────────────
+#
+# Consumed by WezTerm, iTerm2, tmux, Zed's terminal.ansi.*, VS Code's
+# terminal.ansi*, Vim's g:terminal_ansi_colors, and Herdr's `terminal` mode.
+#
+# The vivid flavor differs from dim ONLY in slots 9-14, so it is a small,
+# testable delta rather than a parallel palette.
+#
+# Slot 0 and 15 are the extremes of the variant, which means the dark and
+# light mappings are structurally mirrored, not identical.
+
+[ansi.dark.dim]
+0  = "surfaces.surface1"
+1  = "accents.pink"
+2  = "accents.green"
+3  = "accents.amber"
+4  = "accents.blue"
+5  = "accents.purple"
+6  = "accents.light-blue"
+7  = "text.fg"
+8  = "text.faint"
+9  = "#e56c9d"
+10 = "#8cba56"
+11 = "#d79e46"
+12 = "#8aadd7"
+13 = "#cb9dd5"
+14 = "#54b0ca"
+15 = "text.bright"
+
+[ansi.light.dim]
+0  = "text.bright"
+1  = "accents.pink"
+2  = "accents.green"
+3  = "accents.amber"
+4  = "accents.blue"
+5  = "accents.purple"
+6  = "accents.light-blue"
+7  = "surfaces.surface1"
+8  = "text.subtext"
+9  = "#93365c"
+10 = "#0d6540"
+11 = "#7f5214"
+12 = "#153ac2"
+13 = "#891a9a"
+14 = "#236379"
+15 = "#ffffff"
+
+# Slots 0-8 and 15 are inherited from the matching dim table.
+[ansi.dark.vivid]
+9  = "accents_vivid.pink"
+10 = "accents_vivid.green"
+11 = "accents_vivid.amber"
+12 = "accents_vivid.blue"
+13 = "accents_vivid.purple"
+14 = "accents_vivid.light-blue"
+
+[ansi.light.vivid]
+9  = "accents_vivid.pink"
+10 = "accents_vivid.green"
+11 = "accents_vivid.amber"
+12 = "accents_vivid.blue"
+13 = "accents_vivid.purple"
+14 = "accents_vivid.light-blue"
+
+[terminal]
+cursor_bg    = "accents.orange"
+cursor_fg    = "surfaces.base"
+selection_bg = "surfaces.surface2"
+selection_fg = "text.bright"
+split        = "surfaces.surface1"
+
+# ─── Accessibility policy ────────────────────────────────────────────────────
+#
+# Data, not code. `--verify` reads these; tightening a threshold is a palette
+# edit. Accessibility is the whole point of this palette, so it self-polices.
+
+[[contrast.rules]]
+tokens  = "text.*"
+against = "surfaces.base"
+min     = 4.5
+why     = "body text, WCAG 2.1 AA normal"
+
+[[contrast.rules]]
+tokens  = "accents.*"
+against = "surfaces.base"
+min     = 4.5
+why     = "every syntax token must clear AA"
+
+[[contrast.rules]]
+tokens  = ["text.fg", "text.subtext"]
+against = "surfaces.surface1"
+min     = 4.5
+why     = "text must stay readable on a selected line"
+
+[[contrast.rules]]
+tokens  = "text.faint"
+against = "surfaces.surface0"
+min     = 4.5
+why     = "comments on the current-line highlight"
+
+[[contrast.rules]]
+tokens  = "accents_vivid.*"
+against = "surfaces.base"
+min     = 3.0
+why     = "bright ANSI slots only, so large/bold text per WCAG 1.4.3"
+
+[contrast.separation]
+accent_delta_e_min = 10.0
+why = "mixing toward the background can collapse two brand hues into the same color; CIE76 pairwise across accents catches it"
+
+[ansi.constraints]
+slot0_not_base   = true
+slot8_min_on_base = 3.0
+why = "slot 0 equal to the background makes `bg=black` invisible; a too-faint slot 8 erases dim comments in terminals"
+
+# ─── Target-specific pins ────────────────────────────────────────────────────
+
+[targets.zed]
+schema = "https://zed.dev/schema/themes/v0.2.0.json"
+
+[targets.chroma]
+module = "github.com/alecthomas/chroma/v2"
+note   = "v3 is alpha-only as of 2026-09; the XML format is identical on both"
+
+[targets.herdr]
+validated_against = "herdr 0.8"
+note = "Herdr has no external theme file mechanism; the deliverable is a config.toml fragment. Its token vocabulary is Catppuccin-flavored, so the mapping is lossy and documented in targets/herdr/README.md"
+
+[targets.vscode]
+engine = "^1.90.0"
+
+[targets.slack]
+note = "8 values are the stable documented form; a 10-value variant adding top-nav colors also parses. The file ships 8."
