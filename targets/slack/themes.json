@@ -1,0 +1,46 @@
+{
+  "scheme": "Grafana",
+  "note": "Paste `value` into Slack > Preferences > Themes > custom theme. Eight values are the documented form; value_with_top_nav adds the top navigation bar and also parses in current clients.",
+  "slots": [
+    "Column BG",
+    "Menu BG Hover",
+    "Active Item",
+    "Active Item Text",
+    "Hover Item",
+    "Text Color",
+    "Active Presence",
+    "Mention Badge"
+  ],
+  "themes": {
+    "grafana-dark": {
+      "label": "Grafana Dark",
+      "value": "#191919,#252525,#E47534,#1E1E1E,#303030,#C9C9C9,#7AB03A,#E2548E",
+      "value_with_top_nav": "#191919,#252525,#E47534,#1E1E1E,#303030,#C9C9C9,#7AB03A,#E2548E,#1E1E1E,#F4F4F4",
+      "colors": {
+        "Column BG": "#191919",
+        "Menu BG Hover": "#252525",
+        "Active Item": "#E47534",
+        "Active Item Text": "#1E1E1E",
+        "Hover Item": "#303030",
+        "Text Color": "#C9C9C9",
+        "Active Presence": "#7AB03A",
+        "Mention Badge": "#E2548E"
+      }
+    },
+    "grafana-light": {
+      "label": "Grafana Light",
+      "value": "#F0F0F0,#ECECEC,#C72F07,#F7F7F7,#DCDCDC,#3A3A3A,#0B7347,#A93C68",
+      "value_with_top_nav": "#F0F0F0,#ECECEC,#C72F07,#F7F7F7,#DCDCDC,#3A3A3A,#0B7347,#A93C68,#F7F7F7,#171717",
+      "colors": {
+        "Column BG": "#F0F0F0",
+        "Menu BG Hover": "#ECECEC",
+        "Active Item": "#C72F07",
+        "Active Item Text": "#F7F7F7",
+        "Hover Item": "#DCDCDC",
+        "Text Color": "#3A3A3A",
+        "Active Presence": "#0B7347",
+        "Mention Badge": "#A93C68"
+      }
+    }
+  }
+}
