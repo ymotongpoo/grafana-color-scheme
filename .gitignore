@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+# VS Code packaging output; the extension source in targets/vscode is committed.
+*.vsix
+
+.DS_Store

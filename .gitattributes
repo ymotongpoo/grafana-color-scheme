@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+# A palette change touches ~40 files at once. Collapsing them in diffs keeps
+# review focused on palette.toml, and stops GitHub's language bar from
+# claiming this is a Vim Script project.
+targets/** linguist-generated=true
+docs/*.svg linguist-generated=true
+
+# Except the hand-written install notes, which do want reviewing.
+targets/**/README.md -linguist-generated

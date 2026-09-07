@@ -1,0 +1,25 @@
+Grafana Color Scheme
+Copyright 2026 Yoshi Yamaguchi
+
+This product includes software developed by Yoshi Yamaguchi.
+
+Licensed under the Apache License, Version 2.0. See the LICENSE file.
+
+
+TRADEMARK NOTICE
+----------------
+
+"Grafana" and "Grafana Labs" are trademarks of Raintank, Inc. dba Grafana
+Labs.
+
+This project is NOT an official Grafana Labs project. It is not affiliated
+with, endorsed by, sponsored by, or supported by Grafana Labs. The name is
+used only to identify the color palette the scheme is derived from.
+
+The color values in this repository are derived from the publicly stated
+Grafana Labs brand palette. Individual color values are facts and are not
+themselves subject to copyright. No Grafana Labs logo, wordmark, icon, or
+other brand asset is included in or distributed with this repository, and
+none of the brand guide's text or imagery is reproduced here.
+
+If you are looking for Grafana itself, see https://grafana.com.
