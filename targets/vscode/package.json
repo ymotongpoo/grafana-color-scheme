@@ -1,0 +1,41 @@
+{
+  "name": "grafana-color-scheme",
+  "displayName": "Grafana Color Scheme",
+  "description": "Grafana, a dim color scheme derived from the Grafana Labs brand palette. Every syntax token clears WCAG AA.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "dark",
+    "light",
+    "accessibility",
+    "wcag"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ymotongpoo/grafana-color-scheme"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "id": "grafana-dark",
+        "label": "Grafana Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/grafana-dark-color-theme.json"
+      },
+      {
+        "id": "grafana-light",
+        "label": "Grafana Light",
+        "uiTheme": "vs",
+        "path": "./themes/grafana-light-color-theme.json"
+      }
+    ]
+  }
+}
