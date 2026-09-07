@@ -1,0 +1,7 @@
+id = "grafana"
+name = "Grafana"
+version = "1.0.0"
+schema_version = 1
+authors = ["Yoshi Yamaguchi"]
+description = "A dim color scheme derived from the Grafana Labs brand palette."
+repository = "https://github.com/ymotongpoo/grafana-color-scheme"
