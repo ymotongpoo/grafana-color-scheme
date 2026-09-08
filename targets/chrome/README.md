@@ -44,7 +44,13 @@ selected tab breaks away to `key_soft`:
 | variant | key (frame + unselected tabs) | key_soft (selected tab + toolbar) | ΔE |
 |---|---|---|---|
 | Light | `#ff671d` brand orange | `#fee9d4` orange 20% | 79 |
-| Dark | `#c72f07` orange 140% | `#32251e` warmed base | 77 |
+| Dark | `#ff671d` brand orange | `#33261f` warmed base | 90 |
+
+**The key color is the same in both variants.** The brand does not get
+duller because someone prefers a dark editor, so `key`, `on_key` and
+`key_accent` are identical and only the content surfaces below them flip.
+An earlier version used orange 140% for the dark frame and it read as a
+brownish orange rather than as Grafana's.
 
 Chrome merges the selected tab into the toolbar, so `key_soft` fills both.
 Giving the unselected tabs the key color makes the strip read as one branded
@@ -52,13 +58,16 @@ band with the selected tab standing out of it. Two adjacent steps of the same
 ramp — which is what this used to be — left the tabs hard to tell apart.
 
 Text flips per surface: `on_key` on the frame and unselected tabs,
-`on_key_soft` on the selected tab and toolbar. In the light variant both are
-near-black, because white on `#ff671d` is only 2.8:1 — well under AA. That is
-why these are stored tokens rather than something the emitter guesses.
+`on_key_soft` on the selected tab and toolbar. `on_key` is near-black in
+*both* variants, because white on `#ff671d` is only 2.8:1 — well under AA.
+That is why these are stored tokens rather than something the emitter
+guesses.
 
 The new tab page gets its own warm background (`ntp_bg`): `#fef3e7` on light,
-`#2c221e` on dark. Everything drawn on it is re-checked against that surface
-by `--verify` rather than against `surfaces.base`.
+`#251d19` on dark. It is deliberately kept one step away from the toolbar so
+the page reads as content rather than as more browser chrome. Everything
+drawn on it is re-checked against that surface by `--verify` rather than
+against `surfaces.base`.
 
 These live in `palette.toml` under `[variants.*.browser]` and are
 deliberately **not** the syntax accents. The accents are derived to sit

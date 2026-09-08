@@ -126,13 +126,19 @@ purple       = "#d444f1"
 # merely adjacent steps of the same ramp, the selected tab is hard to spot.
 # `key_soft` is that surface, and it also fills the toolbar, since Chrome
 # merges the selected tab into it.
+# The key color does not change between variants: it is the brand, and the
+# brand does not get darker because the user prefers a dark editor. So `key`,
+# `on_key` and `key_accent` are identical to the light variant, and only the
+# content surfaces below them flip. An earlier version used orange-140 here,
+# which read as a duller, browner orange rather than as Grafana's.
 [variants.dark.browser]
-key         = "#c72f07"   # orange-140, frame and UNSELECTED tabs
-on_key      = "#ffffff"   # text and icons on key
-key_soft    = "#32251e"   # SELECTED tab and toolbar; base warmed 9% toward brand orange
+key         = "#ff671d"   # brand orange, frame and UNSELECTED tabs -- same as light
+on_key      = "#171717"   # text and icons on key -- same as light
+key_soft    = "#33261f"   # SELECTED tab and toolbar; base warmed toward brand orange
 on_key_soft = "#c9c9c9"   # text and icons on key_soft
-key_accent  = "#7f230f"   # orange-180, button background
-ntp_bg      = "#2c221e"   # new tab page; base warmed 6% toward brand orange
+key_accent  = "#ff8137"   # orange-80, button background -- same as light
+ntp_bg      = "#251d19"   # new tab page, kept a step below the toolbar so the
+                          # page reads as content rather than as more chrome
 ntp_fg      = "#c9c9c9"
 ntp_link    = "#38a4c2"   # accents.light-blue, re-checked against ntp_bg
 ntp_header  = "#e47534"   # accents.orange, re-checked against ntp_bg
