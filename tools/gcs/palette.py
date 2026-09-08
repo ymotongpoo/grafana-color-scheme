@@ -54,6 +54,7 @@ class Variant:
     text: dict[str, str]
     accents: dict[str, str]
     accents_vivid: dict[str, str]
+    browser: dict[str, str]
     roles: dict[str, Role]
     diagnostic: dict[str, Role]
     diff: dict[str, Role]
@@ -125,7 +126,7 @@ class Palette:
         return self.targets.get(slug, {}).get(key, default)
 
 
-_GROUPS = ("accents", "accents_vivid", "surfaces", "text")
+_GROUPS = ("accents", "accents_vivid", "surfaces", "text", "browser")
 
 
 def _resolve(ref: str, v: Variant) -> str:
@@ -186,6 +187,7 @@ def load(path: Path | str = "palette.toml") -> Palette:
             text=dict(vraw["text"]),
             accents=dict(vraw["accents"]),
             accents_vivid=dict(vraw["accents_vivid"]),
+            browser=dict(vraw["browser"]),
             roles={},
             diagnostic={},
             diff={},
@@ -213,6 +215,7 @@ def load(path: Path | str = "palette.toml") -> Palette:
             text=stub.text,
             accents=stub.accents,
             accents_vivid=stub.accents_vivid,
+            browser=stub.browser,
             roles=roles,
             diagnostic=diagnostic,
             diff=diff,

@@ -252,6 +252,15 @@ conventionally want red are mapped onto colors the brand does have:
 The one place this leaks is Herdr, whose token vocabulary hard-codes the name
 `red`; that file sets `red` to our pink and says so in a comment.
 
+### Browser chrome
+
+The Chrome theme does not use the syntax accents. Browser chrome is a
+branding surface, so `[variants.*.browser]` carries a separate `key` /
+`key_alt` / `key_accent` / `on_key` set: the undimmed brand orange goes on
+the frame and toolbar, and `on_key` flips to whichever of near-black or
+white clears AA on top of it. See
+[targets/chrome/README.md](targets/chrome/README.md).
+
 ### Accessibility
 
 - Every entry in `text.*` and `accents.*` clears **4.5:1** (WCAG 2.1 AA for

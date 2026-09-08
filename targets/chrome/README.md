@@ -31,9 +31,39 @@ Not published to the Chrome Web Store — see the trademark note in the root
 - After editing the manifest you must hit **Reload** on the extension card,
   and often restart the browser before frame changes show.
 
+## The key color, not the accent
+
+Browser chrome is a branding surface, not a reading surface. An earlier
+version of this theme left the frame neutral and tinted only
+`toolbar_button_icon`, which produced a grey browser with orange icons —
+it read as a bug rather than as a theme.
+
+So `frame`, `toolbar` and the tab strip all carry the **key color**, and
+every piece of text and iconography on top flips to `on_key`:
+
+| variant | key (frame, toolbar) | inactive tabs | on_key | contrast |
+|---|---|---|---|---|
+| Light | `#ff671d` brand orange | `#f04205` | `#171717` | 6.16:1 |
+| Dark | `#c72f07` orange 140% | `#9d250e` | `#ffffff` | 5.47:1 |
+
+The light variant flips to near-black text because white on `#ff671d` is
+only 2.8:1 — well under AA. That is why `on_key` is a stored token rather
+than something the emitter guesses.
+
+These live in `palette.toml` under `[variants.*.browser]` and are
+deliberately **not** the syntax accents. The accents are derived to sit
+*quietly* against a code background, which is the opposite of what a browser
+frame needs.
+
+The new tab page is the exception: its background is `surfaces.base`, so
+what is drawn on it (`ntp_text`, `ntp_link`, `ntp_header`) uses the syntax
+accents, which are already contrast-checked against exactly that surface.
+
 ## Why no images
 
 A colors-only theme is completely valid. The `theme_frame` family of PNG
 bitmaps has fiddly size and tiling expectations and buys nothing for a
-palette port, so the `tints` are all set to the `[-1.0, -1.0, -1.0]` no-op
-that stops Chrome auto-tinting anything.
+palette port, so the frame `tints` are set to the `[-1.0, -1.0, -1.0]` no-op
+that stops Chrome auto-tinting anything. `tints.buttons` is driven to the
+same light or dark pole as `toolbar_button_icon`, so the two cannot disagree
+on platforms that still honour the tint.

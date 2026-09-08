@@ -1,162 +1,42 @@
 {
   "manifest_version": 3,
   "name": "Grafana Light",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Grafana Light, derived from the Grafana Labs brand palette. Not an official Grafana Labs project.",
   "theme": {
     "colors": {
-      "frame": [
-        228,
-        228,
-        228
-      ],
-      "frame_inactive": [
-        240,
-        240,
-        240
-      ],
-      "frame_incognito": [
-        228,
-        228,
-        228
-      ],
-      "frame_incognito_inactive": [
-        240,
-        240,
-        240
-      ],
-      "toolbar": [
-        240,
-        240,
-        240
-      ],
-      "tab_text": [
-        23,
-        23,
-        23
-      ],
-      "tab_background_text": [
-        106,
-        106,
-        106
-      ],
-      "tab_background_text_inactive": [
-        106,
-        106,
-        106
-      ],
-      "tab_background_text_incognito": [
-        106,
-        106,
-        106
-      ],
-      "tab_background_text_incognito_inactive": [
-        106,
-        106,
-        106
-      ],
-      "background_tab": [
-        228,
-        228,
-        228
-      ],
-      "background_tab_inactive": [
-        228,
-        228,
-        228
-      ],
-      "background_tab_incognito": [
-        228,
-        228,
-        228
-      ],
-      "background_tab_incognito_inactive": [
-        228,
-        228,
-        228
-      ],
-      "bookmark_text": [
-        58,
-        58,
-        58
-      ],
-      "toolbar_text": [
-        58,
-        58,
-        58
-      ],
-      "toolbar_button_icon": [
-        199,
-        47,
-        7
-      ],
-      "omnibox_background": [
-        236,
-        236,
-        236
-      ],
-      "omnibox_text": [
-        58,
-        58,
-        58
-      ],
-      "button_background": [
-        240,
-        240,
-        240
-      ],
-      "ntp_background": [
-        247,
-        247,
-        247
-      ],
-      "ntp_text": [
-        58,
-        58,
-        58
-      ],
-      "ntp_link": [
-        37,
-        112,
-        138
-      ],
-      "ntp_header": [
-        236,
-        236,
-        236
-      ]
+      "frame": [255, 103, 29],
+      "frame_inactive": [240, 66, 5],
+      "frame_incognito": [240, 66, 5],
+      "frame_incognito_inactive": [240, 66, 5],
+      "toolbar": [255, 103, 29],
+      "toolbar_text": [23, 23, 23],
+      "toolbar_button_icon": [23, 23, 23],
+      "bookmark_text": [23, 23, 23],
+      "background_tab": [240, 66, 5],
+      "background_tab_inactive": [240, 66, 5],
+      "background_tab_incognito": [240, 66, 5],
+      "background_tab_incognito_inactive": [240, 66, 5],
+      "tab_text": [23, 23, 23],
+      "tab_background_text": [23, 23, 23],
+      "tab_background_text_inactive": [23, 23, 23],
+      "tab_background_text_incognito": [23, 23, 23],
+      "tab_background_text_incognito_inactive": [23, 23, 23],
+      "button_background": [255, 129, 55],
+      "omnibox_background": [255, 255, 255],
+      "omnibox_text": [58, 58, 58],
+      "ntp_background": [247, 247, 247],
+      "ntp_text": [58, 58, 58],
+      "ntp_link": [37, 112, 138],
+      "ntp_header": [199, 47, 7]
     },
     "tints": {
-      "buttons": [
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "frame": [
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "frame_inactive": [
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "frame_incognito": [
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "frame_incognito_inactive": [
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "background_tab": [
-        -1.0,
-        -1.0,
-        -1.0
-      ]
+      "buttons": [-1.0, -1.0, 0.0],
+      "frame": [-1.0, -1.0, -1.0],
+      "frame_inactive": [-1.0, -1.0, -1.0],
+      "frame_incognito": [-1.0, -1.0, -1.0],
+      "frame_incognito_inactive": [-1.0, -1.0, -1.0],
+      "background_tab": [-1.0, -1.0, -1.0]
     },
     "properties": {
       "ntp_background_alignment": "center",

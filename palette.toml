@@ -113,6 +113,19 @@ blue         = "#2970ff"
 purple       = "#d444f1"
 "light-blue" = "#3fc6eb"
 
+# Browser chrome is a branding surface, not a reading surface. A browser
+# theme that leaves the frame neutral and only tints the icons reads as "grey
+# browser with orange icons" rather than as the brand, so the key color goes
+# on the frame and toolbar and the text on top flips to whatever contrasts.
+# This is why these are their own tokens: `accent` is a syntax role and is
+# derived to sit QUIETLY against a code background, which is the opposite of
+# what a browser frame needs.
+[variants.dark.browser]
+key        = "#c72f07"   # orange-140, frame and toolbar
+key_alt    = "#9d250e"   # orange-160, inactive tabs and inactive frame
+key_accent = "#7f230f"   # orange-180, button background and NTP header
+on_key     = "#ffffff"   # text and icons on all three of the above
+
 # ─── Layer 3: light variant ──────────────────────────────────────────────────
 
 [variants.light]
@@ -160,6 +173,15 @@ amber        = "#aa710e"
 blue         = "#1b55f5"
 purple       = "#bb23d5"
 "light-blue" = "#1b6e85"
+
+# See the note on [variants.dark.browser]. The light variant carries the
+# undimmed primary brand orange, so `on_key` flips to near-black: white on
+# #ff671d is only 2.8:1, well under AA.
+[variants.light.browser]
+key        = "#ff671d"   # brand orange, frame and toolbar
+key_alt    = "#f04205"   # orange-120, inactive tabs and inactive frame
+key_accent = "#ff8137"   # orange-80, button background and NTP header
+on_key     = "#171717"   # text and icons on all three of the above
 
 # ─── Layer 4: semantics ──────────────────────────────────────────────────────
 #
@@ -317,6 +339,24 @@ tokens  = "accents_vivid.*"
 against = "surfaces.base"
 min     = 3.0
 why     = "bright ANSI slots only, so large/bold text per WCAG 1.4.3"
+
+[[contrast.rules]]
+tokens  = "browser.on_key"
+against = "browser.key"
+min     = 4.5
+why     = "tab titles, bookmarks and toolbar text sit directly on the key color"
+
+[[contrast.rules]]
+tokens  = "browser.on_key"
+against = "browser.key_alt"
+min     = 4.5
+why     = "inactive tab titles"
+
+[[contrast.rules]]
+tokens  = "browser.on_key"
+against = "browser.key_accent"
+min     = 4.5
+why     = "button labels and the new-tab-page header"
 
 [contrast.separation]
 accent_delta_e_min = 10.0

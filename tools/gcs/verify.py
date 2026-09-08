@@ -27,7 +27,7 @@ class Problem:
         return f"{self.kind:10} {self.message}"
 
 
-_TOKEN_GROUPS = ("surfaces", "text", "accents", "accents_vivid")
+_TOKEN_GROUPS = ("surfaces", "text", "accents", "accents_vivid", "browser")
 
 
 def _expand(pattern: str | list[str], v: Variant) -> list[tuple[str, str]]:
