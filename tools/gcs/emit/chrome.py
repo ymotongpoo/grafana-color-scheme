@@ -53,54 +53,46 @@ def _dumps(obj: object) -> str:
 _COLOR_KEYS: tuple[tuple[str, str], ...] = (
     # The frame: the strip behind the tabs, and the window border.
     ("frame", "browser.key"),
-    ("frame_inactive", "browser.key_alt"),
-    ("frame_incognito", "browser.key_alt"),
-    ("frame_incognito_inactive", "browser.key_alt"),
-    # The toolbar. The active tab merges into this, so it is also the
-    # active tab's fill.
-    ("toolbar", "browser.key"),
-    ("toolbar_text", "browser.on_key"),
-    ("toolbar_button_icon", "browser.on_key"),
-    ("bookmark_text", "browser.on_key"),
-    # Inactive tabs sit on the frame and should recede from the active one.
-    ("background_tab", "browser.key_alt"),
-    ("background_tab_inactive", "browser.key_alt"),
-    ("background_tab_incognito", "browser.key_alt"),
-    ("background_tab_incognito_inactive", "browser.key_alt"),
-    ("tab_text", "browser.on_key"),
+    ("frame_inactive", "browser.key"),
+    ("frame_incognito", "browser.key"),
+    ("frame_incognito_inactive", "browser.key"),
+    # The toolbar. Chrome merges the SELECTED tab into it, so this is also
+    # the selected tab's fill -- which is why it takes key_soft, not key.
+    ("toolbar", "browser.key_soft"),
+    ("toolbar_text", "browser.on_key_soft"),
+    ("toolbar_button_icon", "browser.on_key_soft"),
+    ("bookmark_text", "browser.on_key_soft"),
+    ("tab_text", "browser.on_key_soft"),
+    # Unselected tabs take the key color, so the strip reads as one band and
+    # the selected tab is the thing that stands out from it.
+    ("background_tab", "browser.key"),
+    ("background_tab_inactive", "browser.key"),
+    ("background_tab_incognito", "browser.key"),
+    ("background_tab_incognito_inactive", "browser.key"),
     ("tab_background_text", "browser.on_key"),
     ("tab_background_text_inactive", "browser.on_key"),
     ("tab_background_text_incognito", "browser.on_key"),
     ("tab_background_text_incognito_inactive", "browser.on_key"),
     ("button_background", "browser.key_accent"),
-    # Content surfaces, where reading actually happens. The new tab page's
-    # background is surfaces.base, so anything drawn on it uses the syntax
-    # accents -- those are the colors already contrast-checked against that
-    # exact surface. Using browser.key_accent here instead would put a deep
-    # orange on a near-black page at about 1.7:1.
+    # Content surfaces, where reading actually happens. The new tab page has
+    # its own warm-tinted background rather than surfaces.base, so everything
+    # drawn on it is re-checked against ntp_bg by --verify.
     ("omnibox_background", "browser.omnibox_bg"),
-    ("omnibox_text", "browser.omnibox_text"),
-    ("ntp_background", "surfaces.base"),
-    ("ntp_text", "text.fg"),
-    ("ntp_link", "accents.light-blue"),
-    ("ntp_header", "accents.orange"),
+    ("omnibox_text", "browser.omnibox_fg"),
+    ("ntp_background", "browser.ntp_bg"),
+    ("ntp_text", "browser.ntp_fg"),
+    ("ntp_link", "browser.ntp_link"),
+    ("ntp_header", "browser.ntp_header"),
 )
 
 
 def _manifest(p: Palette, v: Variant) -> str:
-    # The omnibox is a text field, so it takes a content surface rather than
-    # the key color; resolved here so palette.toml need not spell it out.
-    browser = dict(v.browser)
-    browser.setdefault("omnibox_bg", v.surfaces["base"] if v.is_dark else "#ffffff")
-    browser.setdefault("omnibox_text", v.text["fg"])
-    resolved = Variant(**{**v.__dict__, "browser": browser})
-
-    colors = {key: C.to_rgb_list(resolved.color(ref)) for key, ref in _COLOR_KEYS}
+    colors = {key: C.to_rgb_list(v.color(ref)) for key, ref in _COLOR_KEYS}
 
     # `buttons` tints the icon mask. Drive it to the same pole as
-    # `toolbar_button_icon` so the two cannot disagree on platforms that
-    # still honour the tint.
-    on_key_is_light = C.luminance(v.browser["on_key"]) > 0.5
+    # `toolbar_button_icon`, which sits on key_soft, so the two cannot
+    # disagree on platforms that still honour the tint.
+    on_key_is_light = C.luminance(v.browser["on_key_soft"]) > 0.5
     body = {
         "manifest_version": 3,
         "name": v.label,

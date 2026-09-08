@@ -38,26 +38,32 @@ version of this theme left the frame neutral and tinted only
 `toolbar_button_icon`, which produced a grey browser with orange icons —
 it read as a bug rather than as a theme.
 
-So `frame`, `toolbar` and the tab strip all carry the **key color**, and
-every piece of text and iconography on top flips to `on_key`:
+So the frame and the unselected tabs carry the **key color**, and the
+selected tab breaks away to `key_soft`:
 
-| variant | key (frame, toolbar) | inactive tabs | on_key | contrast |
-|---|---|---|---|---|
-| Light | `#ff671d` brand orange | `#f04205` | `#171717` | 6.16:1 |
-| Dark | `#c72f07` orange 140% | `#9d250e` | `#ffffff` | 5.47:1 |
+| variant | key (frame + unselected tabs) | key_soft (selected tab + toolbar) | ΔE |
+|---|---|---|---|
+| Light | `#ff671d` brand orange | `#fee9d4` orange 20% | 79 |
+| Dark | `#c72f07` orange 140% | `#32251e` warmed base | 77 |
 
-The light variant flips to near-black text because white on `#ff671d` is
-only 2.8:1 — well under AA. That is why `on_key` is a stored token rather
-than something the emitter guesses.
+Chrome merges the selected tab into the toolbar, so `key_soft` fills both.
+Giving the unselected tabs the key color makes the strip read as one branded
+band with the selected tab standing out of it. Two adjacent steps of the same
+ramp — which is what this used to be — left the tabs hard to tell apart.
+
+Text flips per surface: `on_key` on the frame and unselected tabs,
+`on_key_soft` on the selected tab and toolbar. In the light variant both are
+near-black, because white on `#ff671d` is only 2.8:1 — well under AA. That is
+why these are stored tokens rather than something the emitter guesses.
+
+The new tab page gets its own warm background (`ntp_bg`): `#fef3e7` on light,
+`#2c221e` on dark. Everything drawn on it is re-checked against that surface
+by `--verify` rather than against `surfaces.base`.
 
 These live in `palette.toml` under `[variants.*.browser]` and are
 deliberately **not** the syntax accents. The accents are derived to sit
 *quietly* against a code background, which is the opposite of what a browser
 frame needs.
-
-The new tab page is the exception: its background is `surfaces.base`, so
-what is drawn on it (`ntp_text`, `ntp_link`, `ntp_header`) uses the syntax
-accents, which are already contrast-checked against exactly that surface.
 
 ## Why no images
 

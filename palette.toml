@@ -120,11 +120,24 @@ purple       = "#d444f1"
 # This is why these are their own tokens: `accent` is a syntax role and is
 # derived to sit QUIETLY against a code background, which is the opposite of
 # what a browser frame needs.
+# The tab strip is the part people actually have to read. Unselected tabs
+# carry the key color so the strip reads as one branded band, and the
+# selected tab breaks away to a clearly different surface -- if the two are
+# merely adjacent steps of the same ramp, the selected tab is hard to spot.
+# `key_soft` is that surface, and it also fills the toolbar, since Chrome
+# merges the selected tab into it.
 [variants.dark.browser]
-key        = "#c72f07"   # orange-140, frame and toolbar
-key_alt    = "#9d250e"   # orange-160, inactive tabs and inactive frame
-key_accent = "#7f230f"   # orange-180, button background and NTP header
-on_key     = "#ffffff"   # text and icons on all three of the above
+key         = "#c72f07"   # orange-140, frame and UNSELECTED tabs
+on_key      = "#ffffff"   # text and icons on key
+key_soft    = "#32251e"   # SELECTED tab and toolbar; base warmed 9% toward brand orange
+on_key_soft = "#c9c9c9"   # text and icons on key_soft
+key_accent  = "#7f230f"   # orange-180, button background
+ntp_bg      = "#2c221e"   # new tab page; base warmed 6% toward brand orange
+ntp_fg      = "#c9c9c9"
+ntp_link    = "#38a4c2"   # accents.light-blue, re-checked against ntp_bg
+ntp_header  = "#e47534"   # accents.orange, re-checked against ntp_bg
+omnibox_bg  = "#1e1e1e"
+omnibox_fg  = "#c9c9c9"
 
 # ─── Layer 3: light variant ──────────────────────────────────────────────────
 
@@ -177,11 +190,20 @@ purple       = "#bb23d5"
 # See the note on [variants.dark.browser]. The light variant carries the
 # undimmed primary brand orange, so `on_key` flips to near-black: white on
 # #ff671d is only 2.8:1, well under AA.
+# See the note on [variants.dark.browser]. `on_key` is near-black because
+# white on #ff671d is only 2.8:1, well under AA.
 [variants.light.browser]
-key        = "#ff671d"   # brand orange, frame and toolbar
-key_alt    = "#f04205"   # orange-120, inactive tabs and inactive frame
-key_accent = "#ff8137"   # orange-80, button background and NTP header
-on_key     = "#171717"   # text and icons on all three of the above
+key         = "#ff671d"   # brand orange, frame and UNSELECTED tabs
+on_key      = "#171717"   # text and icons on key
+key_soft    = "#fee9d4"   # SELECTED tab and toolbar; orange-20, the near-white step
+on_key_soft = "#171717"
+key_accent  = "#ff8137"   # orange-80, button background
+ntp_bg      = "#fef3e7"   # new tab page; orange-20 lifted 45% toward white
+ntp_fg      = "#3a3a3a"
+ntp_link    = "#25708a"   # accents.light-blue, re-checked against ntp_bg
+ntp_header  = "#c72f07"   # accents.orange, re-checked against ntp_bg
+omnibox_bg  = "#ffffff"
+omnibox_fg  = "#3a3a3a"
 
 # ─── Layer 4: semantics ──────────────────────────────────────────────────────
 #
@@ -347,16 +369,28 @@ min     = 4.5
 why     = "tab titles, bookmarks and toolbar text sit directly on the key color"
 
 [[contrast.rules]]
-tokens  = "browser.on_key"
-against = "browser.key_alt"
+tokens  = "browser.on_key_soft"
+against = "browser.key_soft"
 min     = 4.5
-why     = "inactive tab titles"
+why     = "the selected tab and the whole toolbar"
 
 [[contrast.rules]]
 tokens  = "browser.on_key"
 against = "browser.key_accent"
 min     = 4.5
-why     = "button labels and the new-tab-page header"
+why     = "button labels"
+
+[[contrast.rules]]
+tokens  = ["browser.ntp_fg", "browser.ntp_link", "browser.ntp_header"]
+against = "browser.ntp_bg"
+min     = 4.5
+why     = "the new tab page has its own tinted background, so the syntax accents drawn on it must be re-checked against that surface rather than against surfaces.base"
+
+[[contrast.rules]]
+tokens  = "browser.omnibox_fg"
+against = "browser.omnibox_bg"
+min     = 4.5
+why     = "the address bar"
 
 [contrast.separation]
 accent_delta_e_min = 10.0
