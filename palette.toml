@@ -138,6 +138,10 @@ ntp_link    = "#38a4c2"   # accents.light-blue, re-checked against ntp_bg
 ntp_header  = "#e47534"   # accents.orange, re-checked against ntp_bg
 omnibox_bg  = "#1e1e1e"
 omnibox_fg  = "#c9c9c9"
+# Bottom-right artwork on the new tab page. The file is a hand-managed asset
+# under a different license from the rest of the repo; see NOTICE. A theme
+# cannot randomize this -- it is one static image baked in at install time.
+ntp_image   = "images/grot.png"
 
 # ─── Layer 3: light variant ──────────────────────────────────────────────────
 
@@ -204,6 +208,7 @@ ntp_link    = "#25708a"   # accents.light-blue, re-checked against ntp_bg
 ntp_header  = "#c72f07"   # accents.orange, re-checked against ntp_bg
 omnibox_bg  = "#ffffff"
 omnibox_fg  = "#3a3a3a"
+ntp_image   = "images/grot.png"
 
 # ─── Layer 4: semantics ──────────────────────────────────────────────────────
 #

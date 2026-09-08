@@ -65,11 +65,50 @@ deliberately **not** the syntax accents. The accents are derived to sit
 *quietly* against a code background, which is the opposite of what a browser
 frame needs.
 
-## Why no images
+## The Grot on the new tab page
 
-A colors-only theme is completely valid. The `theme_frame` family of PNG
-bitmaps has fiddly size and tiling expectations and buys nothing for a
-palette port, so the frame `tints` are set to the `[-1.0, -1.0, -1.0]` no-op
+Each theme bundles `images/grot.png`, anchored bottom right on the new tab
+page.
+
+**A theme cannot randomize it.** `theme.images` is a static map baked into
+the theme pack when the theme is installed, and a theme may not contain a
+script — a manifest carrying both `theme` and functional keys is not a theme.
+So it is one fixed illustration, not a rotating set. Getting a different Grot
+per new tab would need a separate extension that overrides
+`chrome_url_overrides.newtab`, which replaces Chrome's own new tab page
+(losing the search box and shortcuts).
+
+To swap the artwork, replace `images/grot.png` in **both** theme directories.
+Other Grot illustrations:
+
+- <https://grafana.com/media/grot/grafana-grot-error-meteor.svg>
+- <https://grafana.com/oss/assets/oss_hero-graphic.svg>
+
+Current Chromium accepts SVG in theme images as well as raster formats
+(`IsSupportedExtensionImageMimeType` allows `image/svg+xml` explicitly), even
+though the documentation reads as PNG-only. Older Chrome versions may not, so
+PNG is the safer choice for something you hand to other people.
+
+`images/` is hand-managed, not generated. `--check` ignores it.
+
+### License
+
+The bundled Grot is **not** Apache-2.0. It is copyright Grafana Labs, used
+under CC BY-NC (noncommercial, attribution required) — see the root
+[NOTICE](../../NOTICE) for the full carve-out. If you intend any commercial
+use, delete `images/` and drop the `theme.images` block from the manifest.
+
+### If the image does not appear
+
+`ntp_background` only affects Chrome's own local new tab page. It is ignored
+when a custom new-tab extension is installed, and when the user has chosen a
+Google background image or a Chrome color in
+`chrome://settings/appearance`.
+
+## Why no frame images
+
+The `theme_frame` family of PNG bitmaps has fiddly size and tiling
+expectations and buys nothing for a palette port, so the frame `tints` are set to the `[-1.0, -1.0, -1.0]` no-op
 that stops Chrome auto-tinting anything. `tints.buttons` is driven to the
 same light or dark pole as `toolbar_button_icon`, so the two cannot disagree
 on platforms that still honour the tint.

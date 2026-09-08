@@ -19,8 +19,11 @@ Colors are RGB INTEGER ARRAYS, not hex. Tints are [hue, saturation,
 lightness] floats where 0.5 means "unchanged" and -1.0 means "leave this
 component alone".
 
-No images: a colors-only theme is completely valid, and PNG frame bitmaps
-have fiddly size expectations that buy nothing for a palette port.
+The only image is the new tab page artwork, anchored bottom right. Note that
+a theme CANNOT randomize it: `theme.images` is a static map baked into the
+theme pack at install time, and a theme may not carry a script. Frame bitmaps
+are still avoided -- they have fiddly size and tiling expectations and buy
+nothing for a palette port.
 """
 
 from __future__ import annotations
@@ -111,8 +114,11 @@ def _manifest(p: Palette, v: Variant) -> str:
                 "frame_incognito_inactive": NO_TINT,
                 "background_tab": NO_TINT,
             },
+            "images": {"theme_ntp_background": v.browser["ntp_image"]},
             "properties": {
-                "ntp_background_alignment": "center",
+                # Anchored bottom right so it sits beside the content rather
+                # than behind it.
+                "ntp_background_alignment": "bottom right",
                 "ntp_background_repeat": "no-repeat",
                 # 1 selects the white wordmark, for a dark new tab page.
                 "ntp_logo_alternate": 1 if v.is_dark else 0,

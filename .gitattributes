@@ -8,3 +8,6 @@ docs/*.svg linguist-generated=true
 
 # Except the hand-written install notes, which do want reviewing.
 targets/**/README.md -linguist-generated
+
+# Binary artwork, not generated from the palette.
+targets/chrome/*/images/*.png binary -linguist-generated

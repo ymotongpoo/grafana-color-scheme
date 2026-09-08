@@ -18,8 +18,42 @@ used only to identify the color palette the scheme is derived from.
 
 The color values in this repository are derived from the publicly stated
 Grafana Labs brand palette. Individual color values are facts and are not
-themselves subject to copyright. No Grafana Labs logo, wordmark, icon, or
-other brand asset is included in or distributed with this repository, and
-none of the brand guide's text or imagery is reproduced here.
+themselves subject to copyright. None of the brand guide's text is
+reproduced here.
+
+
+BUNDLED ARTWORK -- NOT UNDER THE APACHE LICENSE
+-----------------------------------------------
+
+The following files are NOT covered by the Apache License 2.0 that governs
+the rest of this repository:
+
+    targets/chrome/grafana-dark/images/grot.png
+    targets/chrome/grafana-light/images/grot.png
+
+Both are the same file: an illustration of Grot, the Grafana Labs mascot,
+copyright Grafana Labs.
+
+    Source:  https://a-us.storyblok.com/f/1022730/465x252/1fc0076fbf/grot-smile.png
+    License: Creative Commons Attribution-NonCommercial (CC BY-NC)
+    Credit:  Grot illustration by Grafana Labs, https://grafana.com
+
+CC BY-NC permits noncommercial use with attribution. It does NOT permit
+commercial use. The Apache License 2.0 does permit commercial use, so these
+two licenses are not compatible and the artwork is carved out here rather
+than relicensed.
+
+What this means if you reuse this repository:
+
+  * Everything except those two files is Apache-2.0 and may be used
+    commercially.
+  * Those two files may not. If you intend any commercial use, delete them
+    and remove the `theme.images` block from the affected manifest.json, or
+    substitute your own artwork.
+
+The license attribution above is as reported by this repository's author.
+Grafana Labs does not publish a license for Grot on its website, so if you
+are relying on these terms for anything consequential, confirm them with
+Grafana Labs directly. See also https://grafana.com/trademark-policy/.
 
 If you are looking for Grafana itself, see https://grafana.com.

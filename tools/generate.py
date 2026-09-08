@@ -29,6 +29,10 @@ DOCS_DIR = ROOT / "docs"
 
 # Hand-written files that live inside targets/ and are not generated.
 NOT_GENERATED = {"README.md"}
+# Directories of hand-managed binary assets. They are referenced by generated
+# manifests but are not themselves derived from the palette, so orphan
+# detection must leave them alone.
+NOT_GENERATED_DIRS = {"images"}
 
 
 def _render(pal, slugs: list[str]) -> dict[Path, str]:
@@ -60,6 +64,8 @@ def _orphans(slugs: list[str], expected: dict[Path, str]) -> list[Path]:
             continue
         for path in sorted(base.rglob("*")):
             if not path.is_file() or path.name in NOT_GENERATED:
+                continue
+            if NOT_GENERATED_DIRS & set(path.relative_to(base).parts):
                 continue
             if path not in expected:
                 found.append(path)

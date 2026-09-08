@@ -38,8 +38,11 @@
       "frame_incognito_inactive": [-1.0, -1.0, -1.0],
       "background_tab": [-1.0, -1.0, -1.0]
     },
+    "images": {
+      "theme_ntp_background": "images/grot.png"
+    },
     "properties": {
-      "ntp_background_alignment": "center",
+      "ntp_background_alignment": "bottom right",
       "ntp_background_repeat": "no-repeat",
       "ntp_logo_alternate": 0
     }
