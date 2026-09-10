@@ -31,31 +31,29 @@
         "#54b0ca",
         "#f4f4f4"
       ],
-      "indexed": {
-        "copy_mode_active_highlight_bg": {
-          "Color": "#d28f27"
-        },
-        "copy_mode_active_highlight_fg": {
-          "Color": "#1e1e1e"
-        },
-        "copy_mode_inactive_highlight_bg": {
-          "Color": "#303030"
-        },
-        "copy_mode_inactive_highlight_fg": {
-          "Color": "#c9c9c9"
-        },
-        "quick_select_label_bg": {
-          "Color": "#e47534"
-        },
-        "quick_select_label_fg": {
-          "Color": "#1e1e1e"
-        },
-        "quick_select_match_bg": {
-          "Color": "#c48ed0"
-        },
-        "quick_select_match_fg": {
-          "Color": "#1e1e1e"
-        }
+      "copy_mode_active_highlight_bg": {
+        "Color": "#d28f27"
+      },
+      "copy_mode_active_highlight_fg": {
+        "Color": "#1e1e1e"
+      },
+      "copy_mode_inactive_highlight_bg": {
+        "Color": "#303030"
+      },
+      "copy_mode_inactive_highlight_fg": {
+        "Color": "#c9c9c9"
+      },
+      "quick_select_label_bg": {
+        "Color": "#e47534"
+      },
+      "quick_select_label_fg": {
+        "Color": "#1e1e1e"
+      },
+      "quick_select_match_bg": {
+        "Color": "#c48ed0"
+      },
+      "quick_select_match_fg": {
+        "Color": "#1e1e1e"
       },
       "tab_bar": {
         "background": "#141414",
@@ -313,31 +311,29 @@
         "#236379",
         "#ffffff"
       ],
-      "indexed": {
-        "copy_mode_active_highlight_bg": {
-          "Color": "#915d14"
-        },
-        "copy_mode_active_highlight_fg": {
-          "Color": "#f7f7f7"
-        },
-        "copy_mode_inactive_highlight_bg": {
-          "Color": "#dcdcdc"
-        },
-        "copy_mode_inactive_highlight_fg": {
-          "Color": "#3a3a3a"
-        },
-        "quick_select_label_bg": {
-          "Color": "#c72f07"
-        },
-        "quick_select_label_fg": {
-          "Color": "#f7f7f7"
-        },
-        "quick_select_match_bg": {
-          "Color": "#9d1ab1"
-        },
-        "quick_select_match_fg": {
-          "Color": "#f7f7f7"
-        }
+      "copy_mode_active_highlight_bg": {
+        "Color": "#915d14"
+      },
+      "copy_mode_active_highlight_fg": {
+        "Color": "#f7f7f7"
+      },
+      "copy_mode_inactive_highlight_bg": {
+        "Color": "#dcdcdc"
+      },
+      "copy_mode_inactive_highlight_fg": {
+        "Color": "#3a3a3a"
+      },
+      "quick_select_label_bg": {
+        "Color": "#c72f07"
+      },
+      "quick_select_label_fg": {
+        "Color": "#f7f7f7"
+      },
+      "quick_select_match_bg": {
+        "Color": "#9d1ab1"
+      },
+      "quick_select_match_fg": {
+        "Color": "#f7f7f7"
       },
       "tab_bar": {
         "background": "#e4e4e4",

@@ -55,9 +55,6 @@ ansi = [{normal}]
 # 8-15: the bright variants
 brights = [{bright}]
 
-# Palette slots 16-255 are left to the terminal's own cube.
-[colors.indexed]
-
 copy_mode_active_highlight_bg = {{ Color = "{v.rc('builtin')}" }}
 copy_mode_active_highlight_fg = {{ Color = "{v.surfaces['base']}" }}
 copy_mode_inactive_highlight_bg = {{ Color = "{v.surfaces['surface1']}" }}

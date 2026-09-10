@@ -29,9 +29,6 @@ ansi = ["#303030", "#e2548e", "#7ab03a", "#d28f27", "#77a0d2", "#c48ed0", "#38a4
 # 8-15: the bright variants
 brights = ["#8c8c8c", "#e56c9d", "#8cba56", "#d79e46", "#8aadd7", "#cb9dd5", "#54b0ca", "#f4f4f4"]
 
-# Palette slots 16-255 are left to the terminal's own cube.
-[colors.indexed]
-
 copy_mode_active_highlight_bg = { Color = "#d28f27" }
 copy_mode_active_highlight_fg = { Color = "#1e1e1e" }
 copy_mode_inactive_highlight_bg = { Color = "#303030" }
