@@ -49,7 +49,7 @@ for name, v in p.each():        # ("dark", Variant), ("light", Variant)
     v.diff["added"].color
 
     v.color("accents.pink")     # resolve any dotted reference
-    v.ansi("dim")[9]            # ANSI slot, "dim" | "vivid"
+    v.ansi()[9]                 # ANSI slot for this resolved flavor
     v.terminal["cursor_bg"]
 
     v.contrast_on_base(hexv)    # WCAG ratio, if you need to decide something
@@ -109,6 +109,13 @@ in a list of thirty themes.
 `grafana-dark-vivid.toml` is vivid. Read `p.scheme["default_flavor"]` rather
 than hardcoding which one is bare.
 
-**Terminal targets should consume `v.ansi(flavor)`** rather than picking
-accents themselves. That table is shared across seven targets on purpose; a
-target that invents its own mapping will drift.
+**Resolve the full flavor first.** Use `p.variant(name, flavor="vivid")`
+or iterate `p.each(flavor="vivid")`, then consume `v.ansi()`. Omitting the
+flavor selects dim. Each resolved variant includes its own surfaces, text,
+accents, roles, terminal colors, and complete ANSI table; Vivid must not
+inherit reading colors from dim. Browser tokens remain shared per appearance.
+
+The TOML stores dim in `[variants.<name>]` and the complete Vivid surfaces,
+text, and accents in `[variants.<name>.vivid]`. Each `[ansi.<name>.<flavor>]`
+table declares all 16 slots and resolves against that flavor. Shared semantic
+and terminal role references are resolved separately for each flavor.

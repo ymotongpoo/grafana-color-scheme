@@ -2,7 +2,7 @@
 
 The prose stays hand-written; only the numbers are generated. That is what
 makes it safe to print contrast ratios in the README -- they come from the
-same code that enforces them, so a palette tweak either updates the README in
+resolved colors, so a palette tweak either updates the README in
 the same commit or fails --check.
 
     <!-- BEGIN GENERATED: palette-dark -->
@@ -103,7 +103,7 @@ def _variant_block(p: Palette, v: Variant) -> str:
             [
                 f"`{name}`",
                 f"`{hexv}`",
-                origins.get(name, "-"),
+                origins.get(name, "-") + "; hand-muted",
                 f"{C.contrast(hexv, base):.2f}:1",
             ]
         )
@@ -166,10 +166,10 @@ def _ansi_block(p: Palette) -> str:
             [
                 str(i),
                 label,
-                f"`{dark.ansi_dim[i]}`",
-                f"`{dark.ansi_vivid[i]}`",
-                f"`{light.ansi_dim[i]}`",
-                f"`{light.ansi_vivid[i]}`",
+                f"`{dark.ansi()[i]}`",
+                f"`{p.variant('dark', 'vivid').ansi()[i]}`",
+                f"`{light.ansi()[i]}`",
+                f"`{p.variant('light', 'vivid').ansi()[i]}`",
             ]
         )
     return _table(rows, ["slot", "name", "dark dim", "dark vivid", "light dim", "light vivid"])

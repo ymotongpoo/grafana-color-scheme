@@ -1,72 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1144" height="444" viewBox="0 0 1144 444" role="img" aria-label="Grafana Dark ANSI palette">
-<rect width="1144" height="444" fill="#1e1e1e"/>
-<text x="16" y="22" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#f4f4f4">Grafana Dark ANSI</text>
-<text x="16" y="44" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#c9c9c9" opacity="0.75">dim (slots 9-14 differ)</text>
-<rect x="16" y="56" width="132" height="76" rx="6" fill="#303030"/>
-<text x="26" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#f4f4f4">0</text>
-<text x="26" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#f4f4f4" opacity="0.85">#303030</text>
-<text x="26" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#f4f4f4" opacity="0.7">1.26:1</text>
-<rect x="156" y="56" width="132" height="76" rx="6" fill="#e2548e"/>
-<text x="166" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">1</text>
-<text x="166" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#e2548e</text>
-<text x="166" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">4.68:1</text>
-<rect x="296" y="56" width="132" height="76" rx="6" fill="#7ab03a"/>
-<text x="306" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">2</text>
-<text x="306" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#7ab03a</text>
-<text x="306" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">6.43:1</text>
-<rect x="436" y="56" width="132" height="76" rx="6" fill="#d28f27"/>
-<text x="446" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">3</text>
-<text x="446" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#d28f27</text>
-<text x="446" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">6.11:1</text>
-<rect x="576" y="56" width="132" height="76" rx="6" fill="#77a0d2"/>
-<text x="586" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">4</text>
-<text x="586" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#77a0d2</text>
-<text x="586" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">6.15:1</text>
-<rect x="716" y="56" width="132" height="76" rx="6" fill="#c48ed0"/>
-<text x="726" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">5</text>
-<text x="726" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#c48ed0</text>
-<text x="726" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">6.45:1</text>
-<rect x="856" y="56" width="132" height="76" rx="6" fill="#38a4c2"/>
-<text x="866" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">6</text>
-<text x="866" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#38a4c2</text>
-<text x="866" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.76:1</text>
-<rect x="996" y="56" width="132" height="76" rx="6" fill="#c9c9c9"/>
-<text x="1006" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">7</text>
-<text x="1006" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#c9c9c9</text>
-<text x="1006" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">10.07:1</text>
-<rect x="16" y="140" width="132" height="76" rx="6" fill="#8c8c8c"/>
-<text x="26" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">8</text>
-<text x="26" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#8c8c8c</text>
-<text x="26" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">4.96:1</text>
-<rect x="156" y="140" width="132" height="76" rx="6" fill="#e56c9d"/>
-<text x="166" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">9</text>
-<text x="166" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#e56c9d</text>
-<text x="166" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.53:1</text>
-<rect x="296" y="140" width="132" height="76" rx="6" fill="#8cba56"/>
-<text x="306" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">10</text>
-<text x="306" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#8cba56</text>
-<text x="306" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.36:1</text>
-<rect x="436" y="140" width="132" height="76" rx="6" fill="#d79e46"/>
-<text x="446" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">11</text>
-<text x="446" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#d79e46</text>
-<text x="446" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.04:1</text>
-<rect x="576" y="140" width="132" height="76" rx="6" fill="#8aadd7"/>
-<text x="586" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">12</text>
-<text x="586" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#8aadd7</text>
-<text x="586" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.18:1</text>
-<rect x="716" y="140" width="132" height="76" rx="6" fill="#cb9dd5"/>
-<text x="726" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">13</text>
-<text x="726" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#cb9dd5</text>
-<text x="726" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.40:1</text>
-<rect x="856" y="140" width="132" height="76" rx="6" fill="#54b0ca"/>
-<text x="866" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">14</text>
-<text x="866" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#54b0ca</text>
-<text x="866" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">6.70:1</text>
-<rect x="996" y="140" width="132" height="76" rx="6" fill="#f4f4f4"/>
-<text x="1006" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">15</text>
-<text x="1006" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#f4f4f4</text>
-<text x="1006" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">15.16:1</text>
-<text x="16" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#c9c9c9" opacity="0.75">vivid (slots 9-14 differ)</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1144" height="440" viewBox="0 0 1144 440" role="img" aria-label="Grafana Dark ANSI palette">
+<rect x="0" y="0" width="1144" height="220" fill="#241f1c"/>
+<text x="16" y="28" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#b9b1a9" opacity="0.75">Grafana Dark / dim / background #241f1c</text>
+<rect x="16" y="40" width="132" height="76" rx="6" fill="#362f2a"/>
+<text x="26" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#f4f4f4">0</text>
+<text x="26" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#f4f4f4" opacity="0.85">#362f2a</text>
+<text x="26" y="101" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#f4f4f4" opacity="0.7">1.24:1</text>
+<rect x="156" y="40" width="132" height="76" rx="6" fill="#b77f94"/>
+<text x="166" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">1</text>
+<text x="166" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#b77f94</text>
+<text x="166" y="101" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.03:1</text>
+<rect x="296" y="40" width="132" height="76" rx="6" fill="#89a17e"/>
+<text x="306" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">2</text>
+<text x="306" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#89a17e</text>
+<text x="306" y="101" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.80:1</text>
+<rect x="436" y="40" width="132" height="76" rx="6" fill="#b4a075"/>
+<text x="446" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">3</text>
+<text x="446" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#b4a075</text>
+<text x="446" y="101" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">6.39:1</text>
+<rect x="576" y="40" width="132" height="76" rx="6" fill="#8198b5"/>
+<text x="586" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">4</text>
+<text x="586" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#8198b5</text>
+<text x="586" y="101" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.51:1</text>
+<rect x="716" y="40" width="132" height="76" rx="6" fill="#ad8eaf"/>
+<text x="726" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">5</text>
+<text x="726" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#ad8eaf</text>
+<text x="726" y="101" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.64:1</text>
+<rect x="856" y="40" width="132" height="76" rx="6" fill="#789fa6"/>
+<text x="866" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">6</text>
+<text x="866" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#789fa6</text>
+<text x="866" y="101" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.68:1</text>
+<rect x="996" y="40" width="132" height="76" rx="6" fill="#b9b1a9"/>
+<text x="1006" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">7</text>
+<text x="1006" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#b9b1a9</text>
+<text x="1006" y="101" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.71:1</text>
+<rect x="16" y="124" width="132" height="76" rx="6" fill="#786d63"/>
+<text x="26" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#f4f4f4">8</text>
+<text x="26" y="167" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#f4f4f4" opacity="0.85">#786d63</text>
+<text x="26" y="185" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#f4f4f4" opacity="0.7">3.24:1</text>
+<rect x="156" y="124" width="132" height="76" rx="6" fill="#b78396"/>
+<text x="166" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">9</text>
+<text x="166" y="167" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#b78396</text>
+<text x="166" y="185" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.20:1</text>
+<rect x="296" y="124" width="132" height="76" rx="6" fill="#8da281"/>
+<text x="306" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">10</text>
+<text x="306" y="167" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#8da281</text>
+<text x="306" y="185" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.92:1</text>
+<rect x="436" y="124" width="132" height="76" rx="6" fill="#b4a179"/>
+<text x="446" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">11</text>
+<text x="446" y="167" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#b4a179</text>
+<text x="446" y="185" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">6.46:1</text>
+<rect x="576" y="124" width="132" height="76" rx="6" fill="#859ab4"/>
+<text x="586" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">12</text>
+<text x="586" y="167" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#859ab4</text>
+<text x="586" y="185" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.65:1</text>
+<rect x="716" y="124" width="132" height="76" rx="6" fill="#ae91af"/>
+<text x="726" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">13</text>
+<text x="726" y="167" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#ae91af</text>
+<text x="726" y="185" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.80:1</text>
+<rect x="856" y="124" width="132" height="76" rx="6" fill="#7da0a6"/>
+<text x="866" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">14</text>
+<text x="866" y="167" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#7da0a6</text>
+<text x="866" y="185" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.79:1</text>
+<rect x="996" y="124" width="132" height="76" rx="6" fill="#cbc3ba"/>
+<text x="1006" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">15</text>
+<text x="1006" y="167" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#cbc3ba</text>
+<text x="1006" y="185" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">9.36:1</text>
+<rect x="0" y="220" width="1144" height="220" fill="#1e1e1e"/>
+<text x="16" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#c9c9c9" opacity="0.75">Grafana Dark / vivid / background #1e1e1e</text>
 <rect x="16" y="260" width="132" height="76" rx="6" fill="#303030"/>
 <text x="26" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#f4f4f4">0</text>
 <text x="26" y="303" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#f4f4f4" opacity="0.85">#303030</text>
@@ -103,30 +103,30 @@
 <text x="26" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">8</text>
 <text x="26" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#8c8c8c</text>
 <text x="26" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">4.96:1</text>
-<rect x="156" y="344" width="132" height="76" rx="6" fill="#f35998"/>
+<rect x="156" y="344" width="132" height="76" rx="6" fill="#e56c9d"/>
 <text x="166" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">9</text>
-<text x="166" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#f35998</text>
-<text x="166" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.31:1</text>
-<rect x="296" y="344" width="132" height="76" rx="6" fill="#91d441"/>
+<text x="166" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#e56c9d</text>
+<text x="166" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">5.53:1</text>
+<rect x="296" y="344" width="132" height="76" rx="6" fill="#8cba56"/>
 <text x="306" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">10</text>
-<text x="306" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#91d441</text>
-<text x="306" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">9.29:1</text>
-<rect x="436" y="344" width="132" height="76" rx="6" fill="#ffab29"/>
+<text x="306" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#8cba56</text>
+<text x="306" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.36:1</text>
+<rect x="436" y="344" width="132" height="76" rx="6" fill="#d79e46"/>
 <text x="446" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">11</text>
-<text x="446" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#ffab29</text>
-<text x="446" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">8.82:1</text>
-<rect x="576" y="344" width="132" height="76" rx="6" fill="#2970ff"/>
+<text x="446" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#d79e46</text>
+<text x="446" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.04:1</text>
+<rect x="576" y="344" width="132" height="76" rx="6" fill="#8aadd7"/>
 <text x="586" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">12</text>
-<text x="586" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#2970ff</text>
-<text x="586" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">3.85:1</text>
-<rect x="716" y="344" width="132" height="76" rx="6" fill="#d444f1"/>
+<text x="586" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#8aadd7</text>
+<text x="586" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.18:1</text>
+<rect x="716" y="344" width="132" height="76" rx="6" fill="#cb9dd5"/>
 <text x="726" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">13</text>
-<text x="726" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#d444f1</text>
-<text x="726" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">4.68:1</text>
-<rect x="856" y="344" width="132" height="76" rx="6" fill="#3fc6eb"/>
+<text x="726" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#cb9dd5</text>
+<text x="726" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">7.40:1</text>
+<rect x="856" y="344" width="132" height="76" rx="6" fill="#54b0ca"/>
 <text x="866" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">14</text>
-<text x="866" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#3fc6eb</text>
-<text x="866" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">8.33:1</text>
+<text x="866" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#54b0ca</text>
+<text x="866" y="405" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#171717" opacity="0.7">6.70:1</text>
 <rect x="996" y="344" width="132" height="76" rx="6" fill="#f4f4f4"/>
 <text x="1006" y="368" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#171717">15</text>
 <text x="1006" y="387" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#171717" opacity="0.85">#f4f4f4</text>

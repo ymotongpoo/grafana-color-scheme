@@ -21,26 +21,26 @@ let s:italic = get(g:, 'grafana_italic', 1) ? 'italic' : 'NONE'
 let s:bold = get(g:, 'grafana_bold', 1) ? 'bold' : 'NONE'
 
 " Palette: [gui, cterm]
-let s:crust       = ['#e4e4e4', '252']
-let s:mantle      = ['#f0f0f0', '254']
-let s:base        = ['#f7f7f7', '255']
-let s:surface0    = ['#ececec', '255']
-let s:surface1    = ['#dcdcdc', '253']
-let s:surface2    = ['#c9c9c9', '251']
-let s:bright      = ['#171717', '233']
-let s:fg          = ['#3a3a3a', '238']
-let s:subtext     = ['#5e5e5e', '240']
-let s:faint       = ['#6a6a6a', '242']
-let s:orange      = ['#c72f07', '124']
-let s:amber       = ['#915d14', '94']
-let s:yellow      = ['#6f681c', '58']
-let s:green       = ['#0b7347', '29']
-let s:light_green = ['#084b31', '23']
-let s:light_blue  = ['#25708a', '24']
-let s:blue        = ['#1540e0', '20']
-let s:indigo      = ['#5240b8', '61']
-let s:purple      = ['#9d1ab1', '127']
-let s:pink        = ['#a93c68', '125']
+let s:crust       = ['#d2c8bd', '251']
+let s:mantle      = ['#e0d7cd', '188']
+let s:base        = ['#e8e1d9', '254']
+let s:surface0    = ['#e0d5ca', '188']
+let s:surface1    = ['#d3c5b8', '251']
+let s:surface2    = ['#c4b2a2', '249']
+let s:bright      = ['#574e47', '239']
+let s:fg          = ['#6b625b', '241']
+let s:subtext     = ['#928579', '102']
+let s:faint       = ['#a89b8e', '247']
+let s:orange      = ['#ac795a', '137']
+let s:amber       = ['#a08a61', '137']
+let s:yellow      = ['#989363', '101']
+let s:green       = ['#7d9068', '101']
+let s:light_green = ['#6f9381', '66']
+let s:light_blue  = ['#719399', '66']
+let s:blue        = ['#7b8da5', '67']
+let s:indigo      = ['#8a80aa', '103']
+let s:purple      = ['#a183a2', '139']
+let s:pink        = ['#ac7b8d', '138']
 let s:none = ['NONE', 'NONE']
 
 function! s:hi(group, fg, bg, attr, sp) abort
@@ -242,28 +242,28 @@ call s:hi('@comment.note', s:blue, s:none, 'NONE', '')
 
 " Terminal palette
 let g:terminal_ansi_colors = [
-      \ '#171717', '#a93c68', '#0b7347', '#915d14',
-      \ '#1540e0', '#9d1ab1', '#25708a', '#dcdcdc',
-      \ '#5e5e5e', '#93365c', '#0d6540', '#7f5214',
-      \ '#153ac2', '#891a9a', '#236379', '#ffffff'
+      \ '#574e47', '#ac7b8d', '#7d9068', '#a08a61',
+      \ '#7b8da5', '#a183a2', '#719399', '#d3c5b8',
+      \ '#928579', '#a77989', '#7c8c67', '#9c8761',
+      \ '#7a8a9f', '#9d809c', '#718f94', '#efe8e0'
       \ ]
 if has('nvim')
-  let g:terminal_color_0 = '#171717'
-  let g:terminal_color_1 = '#a93c68'
-  let g:terminal_color_2 = '#0b7347'
-  let g:terminal_color_3 = '#915d14'
-  let g:terminal_color_4 = '#1540e0'
-  let g:terminal_color_5 = '#9d1ab1'
-  let g:terminal_color_6 = '#25708a'
-  let g:terminal_color_7 = '#dcdcdc'
-  let g:terminal_color_8 = '#5e5e5e'
-  let g:terminal_color_9 = '#93365c'
-  let g:terminal_color_10 = '#0d6540'
-  let g:terminal_color_11 = '#7f5214'
-  let g:terminal_color_12 = '#153ac2'
-  let g:terminal_color_13 = '#891a9a'
-  let g:terminal_color_14 = '#236379'
-  let g:terminal_color_15 = '#ffffff'
+  let g:terminal_color_0 = '#574e47'
+  let g:terminal_color_1 = '#ac7b8d'
+  let g:terminal_color_2 = '#7d9068'
+  let g:terminal_color_3 = '#a08a61'
+  let g:terminal_color_4 = '#7b8da5'
+  let g:terminal_color_5 = '#a183a2'
+  let g:terminal_color_6 = '#719399'
+  let g:terminal_color_7 = '#d3c5b8'
+  let g:terminal_color_8 = '#928579'
+  let g:terminal_color_9 = '#a77989'
+  let g:terminal_color_10 = '#7c8c67'
+  let g:terminal_color_11 = '#9c8761'
+  let g:terminal_color_12 = '#7a8a9f'
+  let g:terminal_color_13 = '#9d809c'
+  let g:terminal_color_14 = '#718f94'
+  let g:terminal_color_15 = '#efe8e0'
 endif
 
 delfunction s:hi

@@ -4,7 +4,7 @@
     python3 tools/generate.py                       regenerate everything
     python3 tools/generate.py --check               exit 1 if anything is stale
     python3 tools/generate.py --check --diff        ... and show what differs
-    python3 tools/generate.py --verify              palette invariants + WCAG
+    python3 tools/generate.py --verify              palette invariants + browser contrast
     python3 tools/generate.py --target wezterm zed  a subset
     python3 tools/generate.py --list                registered targets
 

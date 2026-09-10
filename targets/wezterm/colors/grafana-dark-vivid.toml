@@ -27,7 +27,7 @@ compose_cursor = "#d28f27"
 # 0-7: black red green yellow blue magenta cyan white
 ansi = ["#303030", "#e2548e", "#7ab03a", "#d28f27", "#77a0d2", "#c48ed0", "#38a4c2", "#c9c9c9"]
 # 8-15: the bright variants
-brights = ["#8c8c8c", "#f35998", "#91d441", "#ffab29", "#2970ff", "#d444f1", "#3fc6eb", "#f4f4f4"]
+brights = ["#8c8c8c", "#e56c9d", "#8cba56", "#d79e46", "#8aadd7", "#cb9dd5", "#54b0ca", "#f4f4f4"]
 
 # Palette slots 16-255 are left to the terminal's own cube.
 [colors.indexed]

@@ -1,7 +1,7 @@
 # Grafana color scheme
 
 One palette, derived from the Grafana Labs brand colors, ported to 11 tools.
-Dim rather than high contrast, and every syntax token clears WCAG AA.
+Warm gray surfaces and muted Grafana accents, inspired by Nord.
 
 ![Grafana Dark palette](docs/palette-dark.svg)
 
@@ -77,52 +77,48 @@ Two things worth knowing about the source data:
 
 ### Derivation
 
-The point of the scheme is that no single token shouts over the others, so
-both variants aim their accents into a narrow contrast band instead of
-maximizing contrast.
+The default palette uses warm gray surfaces and muted versions of Grafana's
+hues, inspired by [Nord's pastel colors](https://www.nordtheme.com/docs/colors-and-palettes/).
 
-- **Dark** puts the background at `#1e1e1e` — brand `neutral-5` mixed 20%
-  toward `neutral-4` — then mixes each brand hue 5–30% *toward that
-  background*. Mixing toward the background lowers luminance and saturation
-  together, which is what reads as "dim" rather than merely "dark".
-- **Light** puts the background at `#f7f7f7` and starts from the brand's
-  140–180% shades, deepening toward `neutral-5` only as far as needed.
+- **Dark** uses `#241f1c` for the background, with a subtle orange tint.
+- **Light** uses `#e8e1d9`, with softened text and accents on a warm gray background.
 
-Full reasoning, including the values that had to be nudged and why, is in
-[docs/derivation.md](docs/derivation.md).
+The colors are hand-tuned for their appearance together. Reading palettes
+have no minimum contrast requirement. See [docs/derivation.md](docs/derivation.md)
+for the palette and flavor design.
 
 ### Dark
 
 <!-- BEGIN GENERATED: palette-dark -->
-| token         | hex       | brand origin | contrast on `#1e1e1e` |
-|---------------|-----------|--------------|-----------------------|
-| `orange`      | `#e47534` | orange 80%   | 5.47:1                |
-| `amber`       | `#d28f27` | amber        | 6.11:1                |
-| `yellow`      | `#bdaa2f` | yellow 100%  | 7.11:1                |
-| `green`       | `#7ab03a` | light green  | 6.43:1                |
-| `light-green` | `#48aa78` | green 80%    | 5.79:1                |
-| `light-blue`  | `#38a4c2` | light blue   | 5.76:1                |
-| `blue`        | `#77a0d2` | blue 60%     | 6.15:1                |
-| `indigo`      | `#9084d7` | indigo       | 5.13:1                |
-| `purple`      | `#c48ed0` | purple 60%   | 6.45:1                |
-| `pink`        | `#e2548e` | pink         | 4.68:1                |
+| token         | hex       | brand origin            | contrast on `#241f1c` |
+|---------------|-----------|-------------------------|-----------------------|
+| `orange`      | `#c18c68` | orange 80%; hand-muted  | 5.61:1                |
+| `amber`       | `#b4a075` | amber; hand-muted       | 6.39:1                |
+| `yellow`      | `#acaa70` | yellow 100%; hand-muted | 6.79:1                |
+| `green`       | `#89a17e` | light green; hand-muted | 5.80:1                |
+| `light-green` | `#79a08a` | green 80%; hand-muted   | 5.60:1                |
+| `light-blue`  | `#789fa6` | light blue; hand-muted  | 5.68:1                |
+| `blue`        | `#8198b5` | blue 60%; hand-muted    | 5.51:1                |
+| `indigo`      | `#8d86b1` | indigo; hand-muted      | 4.80:1                |
+| `purple`      | `#ad8eaf` | purple 60%; hand-muted  | 5.64:1                |
+| `pink`        | `#b77f94` | pink; hand-muted        | 5.03:1                |
 <!-- END GENERATED: palette-dark -->
 
 ### Light
 
 <!-- BEGIN GENERATED: palette-light -->
-| token         | hex       | brand origin | contrast on `#f7f7f7` |
-|---------------|-----------|--------------|-----------------------|
-| `orange`      | `#c72f07` | orange 140%  | 5.11:1                |
-| `amber`       | `#915d14` | yellow 180%  | 5.19:1                |
-| `yellow`      | `#6f681c` | yellow       | 5.34:1                |
-| `green`       | `#0b7347` | green 140%   | 5.51:1                |
-| `light-green` | `#084b31` | green 180%   | 9.51:1                |
-| `light-blue`  | `#25708a` | light blue   | 5.21:1                |
-| `blue`        | `#1540e0` | blue 140%    | 6.90:1                |
-| `indigo`      | `#5240b8` | indigo       | 7.04:1                |
-| `purple`      | `#9d1ab1` | purple 140%  | 6.09:1                |
-| `pink`        | `#a93c68` | pink         | 5.55:1                |
+| token         | hex       | brand origin            | contrast on `#e8e1d9` |
+|---------------|-----------|-------------------------|-----------------------|
+| `orange`      | `#ac795a` | orange 140%; hand-muted | 2.87:1                |
+| `amber`       | `#a08a61` | yellow 180%; hand-muted | 2.57:1                |
+| `yellow`      | `#989363` | yellow; hand-muted      | 2.42:1                |
+| `green`       | `#7d9068` | green 140%; hand-muted  | 2.67:1                |
+| `light-green` | `#6f9381` | green 180%; hand-muted  | 2.63:1                |
+| `light-blue`  | `#719399` | light blue; hand-muted  | 2.56:1                |
+| `blue`        | `#7b8da5` | blue 140%; hand-muted   | 2.62:1                |
+| `indigo`      | `#8a80aa` | indigo; hand-muted      | 2.82:1                |
+| `purple`      | `#a183a2` | purple 140%; hand-muted | 2.58:1                |
+| `pink`        | `#ac7b8d` | pink; hand-muted        | 2.71:1                |
 <!-- END GENERATED: palette-light -->
 
 ### Surfaces and text
@@ -137,18 +133,18 @@ In the light variant this matters — `mantle` is lighter than `surface0`, and
 single ordering will give you the wrong answer.
 
 <!-- BEGIN GENERATED: surfaces -->
-| token      | dark                | light               |
-|------------|---------------------|---------------------|
-| `crust`    | `#141414`           | `#e4e4e4`           |
-| `mantle`   | `#191919`           | `#f0f0f0`           |
-| `base`     | `#1e1e1e`           | `#f7f7f7`           |
-| `surface0` | `#252525`           | `#ececec`           |
-| `surface1` | `#303030`           | `#dcdcdc`           |
-| `surface2` | `#3a3a3a`           | `#c9c9c9`           |
-| `bright`   | `#f4f4f4` (15.16:1) | `#171717` (16.73:1) |
-| `fg`       | `#c9c9c9` (10.07:1) | `#3a3a3a` (10.62:1) |
-| `subtext`  | `#9e9e9e` (6.22:1)  | `#5e5e5e` (6.05:1)  |
-| `faint`    | `#8c8c8c` (4.96:1)  | `#6a6a6a` (5.05:1)  |
+| token      | dark               | light              |
+|------------|--------------------|--------------------|
+| `crust`    | `#181411`          | `#d2c8bd`          |
+| `mantle`   | `#1e1916`          | `#e0d7cd`          |
+| `base`     | `#241f1c`          | `#e8e1d9`          |
+| `surface0` | `#2c2622`          | `#e0d5ca`          |
+| `surface1` | `#362f2a`          | `#d3c5b8`          |
+| `surface2` | `#423932`          | `#c4b2a2`          |
+| `bright`   | `#cbc3ba` (9.36:1) | `#574e47` (6.27:1) |
+| `fg`       | `#b9b1a9` (7.71:1) | `#6b625b` (4.60:1) |
+| `subtext`  | `#8d8279` (4.35:1) | `#928579` (2.77:1) |
+| `faint`    | `#786d63` (3.24:1) | `#a89b8e` (2.09:1) |
 <!-- END GENERATED: surfaces -->
 
 ### Semantic roles
@@ -160,46 +156,46 @@ role points at.
 <!-- BEGIN GENERATED: roles -->
 | role                 | token         | dark      | light     | style         |
 |----------------------|---------------|-----------|-----------|---------------|
-| `keyword`            | `orange`      | `#e47534` | `#c72f07` | -             |
-| `keyword-ctrl`       | `orange`      | `#e47534` | `#c72f07` | -             |
-| `keyword-op`         | `orange`      | `#e47534` | `#c72f07` | -             |
-| `operator`           | `orange`      | `#e47534` | `#c72f07` | -             |
-| `builtin`            | `amber`       | `#d28f27` | `#915d14` | -             |
-| `decorator`          | `amber`       | `#d28f27` | `#915d14` | -             |
-| `string`             | `green`       | `#7ab03a` | `#0b7347` | -             |
-| `string-doc`         | `green`       | `#7ab03a` | `#0b7347` | italic        |
-| `string-escape`      | `amber`       | `#d28f27` | `#915d14` | -             |
-| `regex`              | `pink`        | `#e2548e` | `#a93c68` | -             |
-| `number`             | `light-blue`  | `#38a4c2` | `#25708a` | -             |
-| `boolean`            | `light-blue`  | `#38a4c2` | `#25708a` | -             |
-| `constant`           | `light-blue`  | `#38a4c2` | `#25708a` | -             |
-| `type`               | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `class`              | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `namespace`          | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `interface`          | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `function`           | `purple`      | `#c48ed0` | `#9d1ab1` | -             |
-| `method`             | `purple`      | `#c48ed0` | `#9d1ab1` | -             |
-| `variable`           | `fg`          | `#c9c9c9` | `#3a3a3a` | -             |
-| `parameter`          | `fg`          | `#c9c9c9` | `#3a3a3a` | -             |
-| `property`           | `light-green` | `#48aa78` | `#084b31` | -             |
-| `attribute`          | `amber`       | `#d28f27` | `#915d14` | -             |
-| `tag`                | `orange`      | `#e47534` | `#c72f07` | -             |
-| `label`              | `amber`       | `#d28f27` | `#915d14` | -             |
-| `preprocessor`       | `indigo`      | `#9084d7` | `#5240b8` | -             |
-| `punctuation`        | `subtext`     | `#9e9e9e` | `#5e5e5e` | -             |
-| `comment`            | `subtext`     | `#9e9e9e` | `#5e5e5e` | italic        |
-| `comment-doc`        | `subtext`     | `#9e9e9e` | `#5e5e5e` | italic        |
-| `link`               | `light-blue`  | `#38a4c2` | `#25708a` | underline     |
-| `heading`            | `orange`      | `#e47534` | `#c72f07` | bold          |
-| `deprecated`         | `faint`       | `#8c8c8c` | `#6a6a6a` | strikethrough |
-| `diagnostic.error`   | `pink`        | `#e2548e` | `#a93c68` | -             |
-| `diagnostic.warning` | `amber`       | `#d28f27` | `#915d14` | -             |
-| `diagnostic.info`    | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `diagnostic.hint`    | `subtext`     | `#9e9e9e` | `#5e5e5e` | -             |
-| `diagnostic.ok`      | `green`       | `#7ab03a` | `#0b7347` | -             |
-| `diff.added`         | `green`       | `#7ab03a` | `#0b7347` | -             |
-| `diff.removed`       | `pink`        | `#e2548e` | `#a93c68` | -             |
-| `diff.changed`       | `yellow`      | `#bdaa2f` | `#6f681c` | -             |
+| `keyword`            | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `keyword-ctrl`       | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `keyword-op`         | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `operator`           | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `builtin`            | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `decorator`          | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `string`             | `green`       | `#89a17e` | `#7d9068` | -             |
+| `string-doc`         | `green`       | `#89a17e` | `#7d9068` | italic        |
+| `string-escape`      | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `regex`              | `pink`        | `#b77f94` | `#ac7b8d` | -             |
+| `number`             | `light-blue`  | `#789fa6` | `#719399` | -             |
+| `boolean`            | `light-blue`  | `#789fa6` | `#719399` | -             |
+| `constant`           | `light-blue`  | `#789fa6` | `#719399` | -             |
+| `type`               | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `class`              | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `namespace`          | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `interface`          | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `function`           | `purple`      | `#ad8eaf` | `#a183a2` | -             |
+| `method`             | `purple`      | `#ad8eaf` | `#a183a2` | -             |
+| `variable`           | `fg`          | `#b9b1a9` | `#6b625b` | -             |
+| `parameter`          | `fg`          | `#b9b1a9` | `#6b625b` | -             |
+| `property`           | `light-green` | `#79a08a` | `#6f9381` | -             |
+| `attribute`          | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `tag`                | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `label`              | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `preprocessor`       | `indigo`      | `#8d86b1` | `#8a80aa` | -             |
+| `punctuation`        | `subtext`     | `#8d8279` | `#928579` | -             |
+| `comment`            | `subtext`     | `#8d8279` | `#928579` | italic        |
+| `comment-doc`        | `subtext`     | `#8d8279` | `#928579` | italic        |
+| `link`               | `light-blue`  | `#789fa6` | `#719399` | underline     |
+| `heading`            | `orange`      | `#c18c68` | `#ac795a` | bold          |
+| `deprecated`         | `faint`       | `#786d63` | `#a89b8e` | strikethrough |
+| `diagnostic.error`   | `pink`        | `#b77f94` | `#ac7b8d` | -             |
+| `diagnostic.warning` | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `diagnostic.info`    | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `diagnostic.hint`    | `subtext`     | `#8d8279` | `#928579` | -             |
+| `diagnostic.ok`      | `green`       | `#89a17e` | `#7d9068` | -             |
+| `diff.added`         | `green`       | `#89a17e` | `#7d9068` | -             |
+| `diff.removed`       | `pink`        | `#b77f94` | `#ac7b8d` | -             |
+| `diff.changed`       | `yellow`      | `#acaa70` | `#989363` | -             |
 <!-- END GENERATED: roles -->
 
 See [docs/roles.md](docs/roles.md) for the reasoning behind individual
@@ -214,30 +210,29 @@ and Herdr's `terminal` mode all consume it.
 <!-- BEGIN GENERATED: ansi -->
 | slot | name           | dark dim  | dark vivid | light dim | light vivid |
 |------|----------------|-----------|------------|-----------|-------------|
-| 0    | black          | `#303030` | `#303030`  | `#171717` | `#171717`   |
-| 1    | red            | `#e2548e` | `#e2548e`  | `#a93c68` | `#a93c68`   |
-| 2    | green          | `#7ab03a` | `#7ab03a`  | `#0b7347` | `#0b7347`   |
-| 3    | yellow         | `#d28f27` | `#d28f27`  | `#915d14` | `#915d14`   |
-| 4    | blue           | `#77a0d2` | `#77a0d2`  | `#1540e0` | `#1540e0`   |
-| 5    | magenta        | `#c48ed0` | `#c48ed0`  | `#9d1ab1` | `#9d1ab1`   |
-| 6    | cyan           | `#38a4c2` | `#38a4c2`  | `#25708a` | `#25708a`   |
-| 7    | white          | `#c9c9c9` | `#c9c9c9`  | `#dcdcdc` | `#dcdcdc`   |
-| 8    | bright black   | `#8c8c8c` | `#8c8c8c`  | `#5e5e5e` | `#5e5e5e`   |
-| 9    | bright red     | `#e56c9d` | `#f35998`  | `#93365c` | `#c72f5f`   |
-| 10   | bright green   | `#8cba56` | `#91d441`  | `#0d6540` | `#0c9065`   |
-| 11   | bright yellow  | `#d79e46` | `#ffab29`  | `#7f5214` | `#aa710e`   |
-| 12   | bright blue    | `#8aadd7` | `#2970ff`  | `#153ac2` | `#1b55f5`   |
-| 13   | bright magenta | `#cb9dd5` | `#d444f1`  | `#891a9a` | `#bb23d5`   |
-| 14   | bright cyan    | `#54b0ca` | `#3fc6eb`  | `#236379` | `#1b6e85`   |
-| 15   | bright white   | `#f4f4f4` | `#f4f4f4`  | `#ffffff` | `#ffffff`   |
+| 0    | black          | `#362f2a` | `#303030`  | `#574e47` | `#171717`   |
+| 1    | red            | `#b77f94` | `#e2548e`  | `#ac7b8d` | `#a93c68`   |
+| 2    | green          | `#89a17e` | `#7ab03a`  | `#7d9068` | `#0b7347`   |
+| 3    | yellow         | `#b4a075` | `#d28f27`  | `#a08a61` | `#915d14`   |
+| 4    | blue           | `#8198b5` | `#77a0d2`  | `#7b8da5` | `#1540e0`   |
+| 5    | magenta        | `#ad8eaf` | `#c48ed0`  | `#a183a2` | `#9d1ab1`   |
+| 6    | cyan           | `#789fa6` | `#38a4c2`  | `#719399` | `#25708a`   |
+| 7    | white          | `#b9b1a9` | `#c9c9c9`  | `#d3c5b8` | `#dcdcdc`   |
+| 8    | bright black   | `#786d63` | `#8c8c8c`  | `#928579` | `#5e5e5e`   |
+| 9    | bright red     | `#b78396` | `#e56c9d`  | `#a77989` | `#93365c`   |
+| 10   | bright green   | `#8da281` | `#8cba56`  | `#7c8c67` | `#0d6540`   |
+| 11   | bright yellow  | `#b4a179` | `#d79e46`  | `#9c8761` | `#7f5214`   |
+| 12   | bright blue    | `#859ab4` | `#8aadd7`  | `#7a8a9f` | `#153ac2`   |
+| 13   | bright magenta | `#ae91af` | `#cb9dd5`  | `#9d809c` | `#891a9a`   |
+| 14   | bright cyan    | `#7da0a6` | `#54b0ca`  | `#718f94` | `#236379`   |
+| 15   | bright white   | `#cbc3ba` | `#f4f4f4`  | `#efe8e0` | `#ffffff`   |
 <!-- END GENERATED: ansi -->
 
 ![Grafana Dark ANSI](docs/ansi-dark.svg)
 
-Slot 0 and slot 15 are the extremes of the variant, so the dark and light
-mappings are mirrored rather than identical. Two constraints are enforced:
-slot 0 is never equal to the background (or `bg=black` would be invisible),
-and slot 8 keeps at least 3:1 against it (or dim output disappears).
+Dark and light have different ANSI mappings. Slot 0 must differ from the
+background. Dim slots 9–14 blend their normal color 8% toward `text.fg` in
+sRGB; light dim slot 15 is a softened ivory (`#efe8e0`).
 
 ### There is no red
 
@@ -261,23 +256,16 @@ the frame and toolbar, and `on_key` flips to whichever of near-black or
 white clears AA on top of it. See
 [targets/chrome/README.md](targets/chrome/README.md).
 
-### Accessibility
+### Palette checks
 
-- Every entry in `text.*` and `accents.*` clears **4.5:1** (WCAG 2.1 AA for
-  normal text) against its variant's background.
-- `text.fg` and `text.subtext` additionally clear 4.5:1 against `surface1`,
-  and `text.faint` against `surface0`, so text stays readable on a selected
-  or current line rather than only on the plain background.
-- The vivid ANSI brights are held to **3:1**. They appear only in slots 9–14,
-  which terminals render as bright or bold text, where WCAG 1.4.3 applies the
-  large-text threshold.
-- Accents are additionally required to be **CIE76 ΔE ≥ 10** apart pairwise.
-  Contrast alone does not catch the real failure mode of mixing toward a
-  background: two brand hues collapsing into the same color.
+Reading palettes have no WCAG minimum contrast requirement; the ratios in
+these tables describe the colors, rather than acting as pass/fail thresholds.
+Chrome retains its separate browser contrast checks.
 
-These rules live in `palette.toml` as data and are enforced by
-`python3 tools/generate.py --verify`, which refuses to generate anything from
-a palette that violates them.
+`python3 tools/generate.py --verify` checks both flavors for valid colors,
+resolved roles, complete ANSI tables, and ordered surface ladders. It also
+requires accents to remain at least CIE76 ΔE 8 apart, so adjacent hues retain
+some separation after dimming. These rules live in `palette.toml`.
 
 ## Install
 
@@ -304,21 +292,25 @@ extension root, and so on.
 
 ## Terminal flavors
 
-Terminal targets ship two flavors:
+WezTerm and iTerm2 ship two complete flavors:
 
-- **dim** (the default, unsuffixed) derives all 16 slots from the same values
-  the editors use, so a terminal inside your editor matches it exactly.
-- **vivid** (`-vivid`) replaces **only slots 9–14** with the undimmed brand
-  colors, so `ls` output and bold text separate more sharply from normal
-  text. Everything else is shared with dim.
+- **dim** (the default, unsuffixed) uses the warm gray palette shared with
+  the editors. ANSI slots match the terminals embedded in those editors.
+- **vivid** (`-vivid`) preserves the previous default palette, including its
+  backgrounds, text, accents, cursor, selection, UI colors, and all 16 ANSI
+  colors. Choose it to keep the appearance of the old unsuffixed theme.
+
+The former Vivid palette with undimmed brand brights is replaced by this
+preserved default. Theme names and filenames are unchanged.
 
 ## Regenerate
 
 ```sh
 python3 tools/generate.py            # rewrite every target and the doc tables
-python3 tools/generate.py --verify   # palette invariants and WCAG only
+python3 tools/generate.py --verify   # palette invariants and browser contrast
 python3 tools/generate.py --check    # fail if anything on disk is stale
 python3 tools/generate.py --list     # registered targets
+python3 -m unittest discover -s tools/tests  # flavor regression tests
 ```
 
 Requires Python 3.11 or newer (for `tomllib`) and nothing else.

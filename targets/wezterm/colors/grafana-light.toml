@@ -10,63 +10,63 @@ author = "Yoshi Yamaguchi"
 origin_url = "https://github.com/ymotongpoo/grafana-color-scheme"
 
 [colors]
-foreground = "#3a3a3a"
-background = "#f7f7f7"
+foreground = "#6b625b"
+background = "#e8e1d9"
 
-cursor_bg = "#c72f07"
-cursor_fg = "#f7f7f7"
-cursor_border = "#c72f07"
+cursor_bg = "#ac795a"
+cursor_fg = "#e8e1d9"
+cursor_border = "#ac795a"
 
-selection_bg = "#c9c9c9"
-selection_fg = "#171717"
+selection_bg = "#c4b2a2"
+selection_fg = "#574e47"
 
-scrollbar_thumb = "#dcdcdc"
-split = "#dcdcdc"
-compose_cursor = "#915d14"
+scrollbar_thumb = "#d3c5b8"
+split = "#d3c5b8"
+compose_cursor = "#a08a61"
 
 # 0-7: black red green yellow blue magenta cyan white
-ansi = ["#171717", "#a93c68", "#0b7347", "#915d14", "#1540e0", "#9d1ab1", "#25708a", "#dcdcdc"]
+ansi = ["#574e47", "#ac7b8d", "#7d9068", "#a08a61", "#7b8da5", "#a183a2", "#719399", "#d3c5b8"]
 # 8-15: the bright variants
-brights = ["#5e5e5e", "#93365c", "#0d6540", "#7f5214", "#153ac2", "#891a9a", "#236379", "#ffffff"]
+brights = ["#928579", "#a77989", "#7c8c67", "#9c8761", "#7a8a9f", "#9d809c", "#718f94", "#efe8e0"]
 
 # Palette slots 16-255 are left to the terminal's own cube.
 [colors.indexed]
 
-copy_mode_active_highlight_bg = { Color = "#915d14" }
-copy_mode_active_highlight_fg = { Color = "#f7f7f7" }
-copy_mode_inactive_highlight_bg = { Color = "#dcdcdc" }
-copy_mode_inactive_highlight_fg = { Color = "#3a3a3a" }
-quick_select_label_bg = { Color = "#c72f07" }
-quick_select_label_fg = { Color = "#f7f7f7" }
-quick_select_match_bg = { Color = "#9d1ab1" }
-quick_select_match_fg = { Color = "#f7f7f7" }
+copy_mode_active_highlight_bg = { Color = "#a08a61" }
+copy_mode_active_highlight_fg = { Color = "#e8e1d9" }
+copy_mode_inactive_highlight_bg = { Color = "#d3c5b8" }
+copy_mode_inactive_highlight_fg = { Color = "#6b625b" }
+quick_select_label_bg = { Color = "#ac795a" }
+quick_select_label_fg = { Color = "#e8e1d9" }
+quick_select_match_bg = { Color = "#a183a2" }
+quick_select_match_fg = { Color = "#e8e1d9" }
 
 [colors.tab_bar]
-background = "#e4e4e4"
-inactive_tab_edge = "#dcdcdc"
+background = "#d2c8bd"
+inactive_tab_edge = "#d3c5b8"
 
 [colors.tab_bar.active_tab]
-bg_color = "#f7f7f7"
-fg_color = "#171717"
+bg_color = "#e8e1d9"
+fg_color = "#574e47"
 intensity = "Normal"
 underline = "None"
 italic = false
 strikethrough = false
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#f0f0f0"
-fg_color = "#6a6a6a"
+bg_color = "#e0d7cd"
+fg_color = "#a89b8e"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#ececec"
-fg_color = "#3a3a3a"
+bg_color = "#e0d5ca"
+fg_color = "#6b625b"
 italic = true
 
 [colors.tab_bar.new_tab]
-bg_color = "#f0f0f0"
-fg_color = "#6a6a6a"
+bg_color = "#e0d7cd"
+fg_color = "#a89b8e"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "#ececec"
-fg_color = "#171717"
+bg_color = "#e0d5ca"
+fg_color = "#574e47"
 italic = true

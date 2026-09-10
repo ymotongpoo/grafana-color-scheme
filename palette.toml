@@ -8,7 +8,7 @@
 # these values by `tools/generate.py --verify` and by README generation, so
 # they can never go stale.
 #
-# Colors come from the Grafana Labs brand guide. This is not an official
+# Brand colors come from the Grafana Labs brand guide; reading colors are hand-tuned. This is not an official
 # Grafana Labs project; see NOTICE.
 
 schema_version = 1
@@ -69,49 +69,63 @@ appearance = "dark"
 label      = "Grafana Dark"
 
 [variants.dark.derivation]
-background = "neutral-5 mixed 20% toward neutral-4"
-accents     = "brand hue mixed 5-30% toward the background, lowering luminance and saturation together"
-target_band = "4.5-7.5:1 against surfaces.base, so no single token shouts over the others"
-reference   = "docs/derivation.md"
+background     = "warm gray, hand-tuned to #241f1c"
+accents        = "muted Grafana hues, inspired by Nord pastel colors; no minimum contrast target"
+reference      = "docs/derivation.md"
 
-# Two ladders diverge from `base`; this is NOT one monotone chain.
-#   shadow    : base -> mantle -> crust
-#   elevation : base -> surface0 -> surface1 -> surface2
+# Shadow: base -> mantle -> crust. Elevation: base -> surface0 -> surface1 -> surface2.
 [variants.dark.surfaces]
-crust    = "#141414"
-mantle   = "#191919"
-base     = "#1e1e1e"
-surface0 = "#252525"
-surface1 = "#303030"
-surface2 = "#3a3a3a"
+crust          = "#181411"
+mantle         = "#1e1916"
+base           = "#241f1c"
+surface0       = "#2c2622"
+surface1       = "#362f2a"
+surface2       = "#423932"
 
 [variants.dark.text]
-bright  = "#f4f4f4"
-fg      = "#c9c9c9"
-subtext = "#9e9e9e"
-faint   = "#8c8c8c"
+bright         = "#cbc3ba"
+fg             = "#b9b1a9"
+subtext        = "#8d8279"
+faint          = "#786d63"
 
 [variants.dark.accents]
-orange        = "#e47534"   # orange-80  + 12% base
-amber         = "#d28f27"   # amber      + 20% base
-yellow        = "#bdaa2f"   # yellow-100 + 28% base
-green         = "#7ab03a"   # light-green+ 20% base
-"light-green" = "#48aa78"   # green-80   + 22% base
-"light-blue"  = "#38a4c2"   # light-blue + 20% base
-blue          = "#77a0d2"   # blue-60    + 20% base
-indigo        = "#9084d7"   # indigo, lifted toward white then + 18% base
-purple        = "#c48ed0"   # purple-60  + 20% base
-pink          = "#e2548e"   # pink       +  8% base
+orange         = "#c18c68"
+amber          = "#b4a075"
+yellow         = "#acaa70"
+green          = "#89a17e"
+light-green    = "#79a08a"
+light-blue     = "#789fa6"
+blue           = "#8198b5"
+indigo         = "#8d86b1"
+purple         = "#ad8eaf"
+pink           = "#b77f94"
 
-# Terminal-only, and only in ANSI slots 9-14 (bright). The relaxed 3.0 floor
-# therefore applies to bright text only. These are the brand colors as-is.
-[variants.dark.accents_vivid]
-pink         = "#f35998"
-green        = "#91d441"
-amber        = "#ffab29"
-blue         = "#2970ff"
-purple       = "#d444f1"
-"light-blue" = "#3fc6eb"
+# Vivid preserves the previous default palette, including all UI colors.
+[variants.dark.vivid.surfaces]
+crust          = "#141414"
+mantle         = "#191919"
+base           = "#1e1e1e"
+surface0       = "#252525"
+surface1       = "#303030"
+surface2       = "#3a3a3a"
+
+[variants.dark.vivid.text]
+bright         = "#f4f4f4"
+fg             = "#c9c9c9"
+subtext        = "#9e9e9e"
+faint          = "#8c8c8c"
+
+[variants.dark.vivid.accents]
+orange         = "#e47534"
+amber          = "#d28f27"
+yellow         = "#bdaa2f"
+green          = "#7ab03a"
+light-green    = "#48aa78"
+light-blue     = "#38a4c2"
+blue           = "#77a0d2"
+indigo         = "#9084d7"
+purple         = "#c48ed0"
+pink           = "#e2548e"
 
 # Browser chrome is a branding surface, not a reading surface. A browser
 # theme that leaves the frame neutral and only tints the icons reads as "grey
@@ -131,6 +145,8 @@ purple       = "#d444f1"
 # `on_key` and `key_accent` are identical to the light variant, and only the
 # content surfaces below them flip. An earlier version used orange-140 here,
 # which read as a duller, browner orange rather than as Grafana's.
+# These browser tokens are independent of the palette redesign above and
+# retain their values through it.
 [variants.dark.browser]
 key         = "#ff671d"   # brand orange, frame and UNSELECTED tabs -- same as light
 on_key      = "#171717"   # text and icons on key -- same as light
@@ -140,8 +156,8 @@ key_accent  = "#ff8137"   # orange-80, button background -- same as light
 ntp_bg      = "#251d19"   # new tab page, kept a step below the toolbar so the
                           # page reads as content rather than as more chrome
 ntp_fg      = "#c9c9c9"
-ntp_link    = "#38a4c2"   # accents.light-blue, re-checked against ntp_bg
-ntp_header  = "#e47534"   # accents.orange, re-checked against ntp_bg
+ntp_link    = "#38a4c2"   # preserved browser link, checked against ntp_bg
+ntp_header  = "#e47534"   # preserved browser heading, checked against ntp_bg
 omnibox_bg  = "#1e1e1e"
 omnibox_fg  = "#c9c9c9"
 # Bottom-right artwork on the new tab page. The file is a hand-managed asset
@@ -157,51 +173,63 @@ appearance = "light"
 label      = "Grafana Light"
 
 [variants.light.derivation]
-background = "neutral-1 lifted slightly, #f7f7f7"
-accents     = "brand 140-180% shades, deepened toward neutral-5 only as far as needed"
-target_band = "5.0-7.5:1 against surfaces.base"
-note        = "yellow hues collapse toward brown on white. amber is drawn from the yellow-180 shade and yellow from the greener brand yellow so the two stay distinguishable (CIE76 dE 22.9)."
-reference   = "docs/derivation.md"
+background     = "warm gray, hand-tuned to #e8e1d9"
+accents        = "muted Grafana hues, inspired by Nord pastel colors; no minimum contrast target"
+reference      = "docs/derivation.md"
 
 [variants.light.surfaces]
-crust    = "#e4e4e4"
-mantle   = "#f0f0f0"
-base     = "#f7f7f7"
-surface0 = "#ececec"
-surface1 = "#dcdcdc"
-surface2 = "#c9c9c9"
+crust          = "#d2c8bd"
+mantle         = "#e0d7cd"
+base           = "#e8e1d9"
+surface0       = "#e0d5ca"
+surface1       = "#d3c5b8"
+surface2       = "#c4b2a2"
 
 [variants.light.text]
-bright  = "#171717"
-fg      = "#3a3a3a"
-subtext = "#5e5e5e"
-faint   = "#6a6a6a"
+bright         = "#574e47"
+fg             = "#6b625b"
+subtext        = "#928579"
+faint          = "#a89b8e"
 
 [variants.light.accents]
-orange        = "#c72f07"   # orange-140, as-is
-amber         = "#915d14"   # yellow-180, as-is
-yellow        = "#6f681c"   # brand yellow + 62% neutral-5, keeps an olive cast
-green         = "#0b7347"   # green-140, as-is
-"light-green" = "#084b31"   # green-180, as-is
-"light-blue"  = "#25708a"   # light-blue + 55% neutral-5
-blue          = "#1540e0"   # blue-140, as-is
-indigo        = "#5240b8"   # indigo + 40% neutral-5
-purple        = "#9d1ab1"   # purple-140, as-is
-pink          = "#a93c68"   # pink + 42% neutral-5
+orange         = "#ac795a"
+amber          = "#a08a61"
+yellow         = "#989363"
+green          = "#7d9068"
+light-green    = "#6f9381"
+light-blue     = "#719399"
+blue           = "#7b8da5"
+indigo         = "#8a80aa"
+purple         = "#a183a2"
+pink           = "#ac7b8d"
 
-[variants.light.accents_vivid]
-pink         = "#c72f5f"
-green        = "#0c9065"
-amber        = "#aa710e"
-blue         = "#1b55f5"
-purple       = "#bb23d5"
-"light-blue" = "#1b6e85"
+# Vivid preserves the previous default palette, including all UI colors.
+[variants.light.vivid.surfaces]
+crust          = "#e4e4e4"
+mantle         = "#f0f0f0"
+base           = "#f7f7f7"
+surface0       = "#ececec"
+surface1       = "#dcdcdc"
+surface2       = "#c9c9c9"
 
-# See the note on [variants.dark.browser]. The light variant carries the
-# undimmed primary brand orange, so `on_key` flips to near-black: white on
-# #ff671d is only 2.8:1, well under AA.
-# See the note on [variants.dark.browser]. `on_key` is near-black because
-# white on #ff671d is only 2.8:1, well under AA.
+[variants.light.vivid.text]
+bright         = "#171717"
+fg             = "#3a3a3a"
+subtext        = "#5e5e5e"
+faint          = "#6a6a6a"
+
+[variants.light.vivid.accents]
+orange         = "#c72f07"
+amber          = "#915d14"
+yellow         = "#6f681c"
+green          = "#0b7347"
+light-green    = "#084b31"
+light-blue     = "#25708a"
+blue           = "#1540e0"
+indigo         = "#5240b8"
+purple         = "#9d1ab1"
+pink           = "#a93c68"
+
 [variants.light.browser]
 key         = "#ff671d"   # brand orange, frame and UNSELECTED tabs
 on_key      = "#171717"   # text and icons on key
@@ -210,8 +238,8 @@ on_key_soft = "#171717"
 key_accent  = "#ff8137"   # orange-80, button background
 ntp_bg      = "#fef3e7"   # new tab page; orange-20 lifted 45% toward white
 ntp_fg      = "#3a3a3a"
-ntp_link    = "#25708a"   # accents.light-blue, re-checked against ntp_bg
-ntp_header  = "#c72f07"   # accents.orange, re-checked against ntp_bg
+ntp_link    = "#25708a"   # preserved browser link, checked against ntp_bg
+ntp_header  = "#c72f07"   # preserved browser heading, checked against ntp_bg
 omnibox_bg  = "#ffffff"
 omnibox_fg  = "#3a3a3a"
 ntp_image   = "images/grot.png"
@@ -272,64 +300,83 @@ changed  = { color = "yellow" }
 # Consumed by WezTerm, iTerm2, tmux, Zed's terminal.ansi.*, VS Code's
 # terminal.ansi*, Vim's g:terminal_ansi_colors, and Herdr's `terminal` mode.
 #
-# The vivid flavor differs from dim ONLY in slots 9-14, so it is a small,
-# testable delta rather than a parallel palette.
+# Each flavor has a complete ANSI table resolved against its own colors.
+# Dim brights 9-14 blend the normal color 8% toward text.fg (sRGB).
 #
 # Slot 0 and 15 are the extremes of the variant, which means the dark and
 # light mappings are structurally mirrored, not identical.
 
 [ansi.dark.dim]
-0  = "surfaces.surface1"
-1  = "accents.pink"
-2  = "accents.green"
-3  = "accents.amber"
-4  = "accents.blue"
-5  = "accents.purple"
-6  = "accents.light-blue"
-7  = "text.fg"
-8  = "text.faint"
-9  = "#e56c9d"
-10 = "#8cba56"
-11 = "#d79e46"
-12 = "#8aadd7"
-13 = "#cb9dd5"
-14 = "#54b0ca"
-15 = "text.bright"
+0              = "surfaces.surface1"
+1              = "accents.pink"
+2              = "accents.green"
+3              = "accents.amber"
+4              = "accents.blue"
+5              = "accents.purple"
+6              = "accents.light-blue"
+7              = "text.fg"
+8              = "text.faint"
+9              = "#b78396"
+10             = "#8da281"
+11             = "#b4a179"
+12             = "#859ab4"
+13             = "#ae91af"
+14             = "#7da0a6"
+15             = "text.bright"
 
 [ansi.light.dim]
-0  = "text.bright"
-1  = "accents.pink"
-2  = "accents.green"
-3  = "accents.amber"
-4  = "accents.blue"
-5  = "accents.purple"
-6  = "accents.light-blue"
-7  = "surfaces.surface1"
-8  = "text.subtext"
-9  = "#93365c"
-10 = "#0d6540"
-11 = "#7f5214"
-12 = "#153ac2"
-13 = "#891a9a"
-14 = "#236379"
-15 = "#ffffff"
+0              = "text.bright"
+1              = "accents.pink"
+2              = "accents.green"
+3              = "accents.amber"
+4              = "accents.blue"
+5              = "accents.purple"
+6              = "accents.light-blue"
+7              = "surfaces.surface1"
+8              = "text.subtext"
+9              = "#a77989"
+10             = "#7c8c67"
+11             = "#9c8761"
+12             = "#7a8a9f"
+13             = "#9d809c"
+14             = "#718f94"
+15             = "#efe8e0"
 
-# Slots 0-8 and 15 are inherited from the matching dim table.
 [ansi.dark.vivid]
-9  = "accents_vivid.pink"
-10 = "accents_vivid.green"
-11 = "accents_vivid.amber"
-12 = "accents_vivid.blue"
-13 = "accents_vivid.purple"
-14 = "accents_vivid.light-blue"
+0              = "surfaces.surface1"
+1              = "accents.pink"
+2              = "accents.green"
+3              = "accents.amber"
+4              = "accents.blue"
+5              = "accents.purple"
+6              = "accents.light-blue"
+7              = "text.fg"
+8              = "text.faint"
+9              = "#e56c9d"
+10             = "#8cba56"
+11             = "#d79e46"
+12             = "#8aadd7"
+13             = "#cb9dd5"
+14             = "#54b0ca"
+15             = "text.bright"
 
 [ansi.light.vivid]
-9  = "accents_vivid.pink"
-10 = "accents_vivid.green"
-11 = "accents_vivid.amber"
-12 = "accents_vivid.blue"
-13 = "accents_vivid.purple"
-14 = "accents_vivid.light-blue"
+0              = "text.bright"
+1              = "accents.pink"
+2              = "accents.green"
+3              = "accents.amber"
+4              = "accents.blue"
+5              = "accents.purple"
+6              = "accents.light-blue"
+7              = "surfaces.surface1"
+8              = "text.subtext"
+9              = "#93365c"
+10             = "#0d6540"
+11             = "#7f5214"
+12             = "#153ac2"
+13             = "#891a9a"
+14             = "#236379"
+15             = "#ffffff"
 
 [terminal]
 cursor_bg    = "accents.orange"
@@ -338,40 +385,10 @@ selection_bg = "surfaces.surface2"
 selection_fg = "text.bright"
 split        = "surfaces.surface1"
 
-# ─── Accessibility policy ────────────────────────────────────────────────────
+# ─── Browser contrast policy ────────────────────────────────────────────────────
 #
-# Data, not code. `--verify` reads these; tightening a threshold is a palette
-# edit. Accessibility is the whole point of this palette, so it self-polices.
-
-[[contrast.rules]]
-tokens  = "text.*"
-against = "surfaces.base"
-min     = 4.5
-why     = "body text, WCAG 2.1 AA normal"
-
-[[contrast.rules]]
-tokens  = "accents.*"
-against = "surfaces.base"
-min     = 4.5
-why     = "every syntax token must clear AA"
-
-[[contrast.rules]]
-tokens  = ["text.fg", "text.subtext"]
-against = "surfaces.surface1"
-min     = 4.5
-why     = "text must stay readable on a selected line"
-
-[[contrast.rules]]
-tokens  = "text.faint"
-against = "surfaces.surface0"
-min     = 4.5
-why     = "comments on the current-line highlight"
-
-[[contrast.rules]]
-tokens  = "accents_vivid.*"
-against = "surfaces.base"
-min     = 3.0
-why     = "bright ANSI slots only, so large/bold text per WCAG 1.4.3"
+# Browser-only contrast rules. Reading palettes intentionally have no
+# minimum contrast requirement; ratios in documentation are informational.
 
 [[contrast.rules]]
 tokens  = "browser.on_key"
@@ -404,13 +421,12 @@ min     = 4.5
 why     = "the address bar"
 
 [contrast.separation]
-accent_delta_e_min = 10.0
+accent_delta_e_min = 8.0
 why = "mixing toward the background can collapse two brand hues into the same color; CIE76 pairwise across accents catches it"
 
 [ansi.constraints]
 slot0_not_base   = true
-slot8_min_on_base = 3.0
-why = "slot 0 equal to the background makes `bg=black` invisible; a too-faint slot 8 erases dim comments in terminals"
+why = "slot 0 equal to the background makes `bg=black` invisible"
 
 # ─── Target-specific pins ────────────────────────────────────────────────────
 

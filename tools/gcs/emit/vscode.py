@@ -304,7 +304,7 @@ def _workbench(v: Variant) -> dict[str, str]:
         "ports.iconRunningProcessForeground": ok,
     }
 
-    ansi = v.ansi("dim")
+    ansi = v.ansi()
     names = ("Black", "Red", "Green", "Yellow", "Blue", "Magenta", "Cyan", "White")
     for i, name in enumerate(names):
         c[f"terminal.ansi{name}"] = ansi[i]
@@ -467,7 +467,7 @@ def _manifest(p: Palette) -> str:
             "displayName": f"{p.name} Color Scheme",
             "description": (
                 f"{p.name}, a dim color scheme derived from the Grafana Labs brand "
-                "palette. Every syntax token clears WCAG AA."
+                "palette, with warm gray surfaces and muted accents."
             ),
             "version": "1.0.0",
             "engines": {"vscode": p.target_pin("vscode", "engine", "^1.90.0")},

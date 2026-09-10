@@ -9,46 +9,46 @@ to `pink` in `palette.toml` and all 11 targets follow in one regenerate.
 <!-- BEGIN GENERATED: roles -->
 | role                 | token         | dark      | light     | style         |
 |----------------------|---------------|-----------|-----------|---------------|
-| `keyword`            | `orange`      | `#e47534` | `#c72f07` | -             |
-| `keyword-ctrl`       | `orange`      | `#e47534` | `#c72f07` | -             |
-| `keyword-op`         | `orange`      | `#e47534` | `#c72f07` | -             |
-| `operator`           | `orange`      | `#e47534` | `#c72f07` | -             |
-| `builtin`            | `amber`       | `#d28f27` | `#915d14` | -             |
-| `decorator`          | `amber`       | `#d28f27` | `#915d14` | -             |
-| `string`             | `green`       | `#7ab03a` | `#0b7347` | -             |
-| `string-doc`         | `green`       | `#7ab03a` | `#0b7347` | italic        |
-| `string-escape`      | `amber`       | `#d28f27` | `#915d14` | -             |
-| `regex`              | `pink`        | `#e2548e` | `#a93c68` | -             |
-| `number`             | `light-blue`  | `#38a4c2` | `#25708a` | -             |
-| `boolean`            | `light-blue`  | `#38a4c2` | `#25708a` | -             |
-| `constant`           | `light-blue`  | `#38a4c2` | `#25708a` | -             |
-| `type`               | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `class`              | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `namespace`          | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `interface`          | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `function`           | `purple`      | `#c48ed0` | `#9d1ab1` | -             |
-| `method`             | `purple`      | `#c48ed0` | `#9d1ab1` | -             |
-| `variable`           | `fg`          | `#c9c9c9` | `#3a3a3a` | -             |
-| `parameter`          | `fg`          | `#c9c9c9` | `#3a3a3a` | -             |
-| `property`           | `light-green` | `#48aa78` | `#084b31` | -             |
-| `attribute`          | `amber`       | `#d28f27` | `#915d14` | -             |
-| `tag`                | `orange`      | `#e47534` | `#c72f07` | -             |
-| `label`              | `amber`       | `#d28f27` | `#915d14` | -             |
-| `preprocessor`       | `indigo`      | `#9084d7` | `#5240b8` | -             |
-| `punctuation`        | `subtext`     | `#9e9e9e` | `#5e5e5e` | -             |
-| `comment`            | `subtext`     | `#9e9e9e` | `#5e5e5e` | italic        |
-| `comment-doc`        | `subtext`     | `#9e9e9e` | `#5e5e5e` | italic        |
-| `link`               | `light-blue`  | `#38a4c2` | `#25708a` | underline     |
-| `heading`            | `orange`      | `#e47534` | `#c72f07` | bold          |
-| `deprecated`         | `faint`       | `#8c8c8c` | `#6a6a6a` | strikethrough |
-| `diagnostic.error`   | `pink`        | `#e2548e` | `#a93c68` | -             |
-| `diagnostic.warning` | `amber`       | `#d28f27` | `#915d14` | -             |
-| `diagnostic.info`    | `blue`        | `#77a0d2` | `#1540e0` | -             |
-| `diagnostic.hint`    | `subtext`     | `#9e9e9e` | `#5e5e5e` | -             |
-| `diagnostic.ok`      | `green`       | `#7ab03a` | `#0b7347` | -             |
-| `diff.added`         | `green`       | `#7ab03a` | `#0b7347` | -             |
-| `diff.removed`       | `pink`        | `#e2548e` | `#a93c68` | -             |
-| `diff.changed`       | `yellow`      | `#bdaa2f` | `#6f681c` | -             |
+| `keyword`            | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `keyword-ctrl`       | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `keyword-op`         | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `operator`           | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `builtin`            | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `decorator`          | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `string`             | `green`       | `#89a17e` | `#7d9068` | -             |
+| `string-doc`         | `green`       | `#89a17e` | `#7d9068` | italic        |
+| `string-escape`      | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `regex`              | `pink`        | `#b77f94` | `#ac7b8d` | -             |
+| `number`             | `light-blue`  | `#789fa6` | `#719399` | -             |
+| `boolean`            | `light-blue`  | `#789fa6` | `#719399` | -             |
+| `constant`           | `light-blue`  | `#789fa6` | `#719399` | -             |
+| `type`               | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `class`              | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `namespace`          | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `interface`          | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `function`           | `purple`      | `#ad8eaf` | `#a183a2` | -             |
+| `method`             | `purple`      | `#ad8eaf` | `#a183a2` | -             |
+| `variable`           | `fg`          | `#b9b1a9` | `#6b625b` | -             |
+| `parameter`          | `fg`          | `#b9b1a9` | `#6b625b` | -             |
+| `property`           | `light-green` | `#79a08a` | `#6f9381` | -             |
+| `attribute`          | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `tag`                | `orange`      | `#c18c68` | `#ac795a` | -             |
+| `label`              | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `preprocessor`       | `indigo`      | `#8d86b1` | `#8a80aa` | -             |
+| `punctuation`        | `subtext`     | `#8d8279` | `#928579` | -             |
+| `comment`            | `subtext`     | `#8d8279` | `#928579` | italic        |
+| `comment-doc`        | `subtext`     | `#8d8279` | `#928579` | italic        |
+| `link`               | `light-blue`  | `#789fa6` | `#719399` | underline     |
+| `heading`            | `orange`      | `#c18c68` | `#ac795a` | bold          |
+| `deprecated`         | `faint`       | `#786d63` | `#a89b8e` | strikethrough |
+| `diagnostic.error`   | `pink`        | `#b77f94` | `#ac7b8d` | -             |
+| `diagnostic.warning` | `amber`       | `#b4a075` | `#a08a61` | -             |
+| `diagnostic.info`    | `blue`        | `#8198b5` | `#7b8da5` | -             |
+| `diagnostic.hint`    | `subtext`     | `#8d8279` | `#928579` | -             |
+| `diagnostic.ok`      | `green`       | `#89a17e` | `#7d9068` | -             |
+| `diff.added`         | `green`       | `#89a17e` | `#7d9068` | -             |
+| `diff.removed`       | `pink`        | `#b77f94` | `#ac7b8d` | -             |
+| `diff.changed`       | `yellow`      | `#acaa70` | `#989363` | -             |
 <!-- END GENERATED: roles -->
 
 ## Why these assignments
@@ -93,12 +93,10 @@ semicolons are structural noise that the eye already parses from shape.
 Dimming them slightly makes the identifiers and keywords between them read
 more clearly.
 
-### Comments are italic and 6:1
+### Comments are muted and italic
 
-Comments get `subtext` plus italic. The contrast is deliberately in the
-middle of the range — around 6:1, clearing AA with margin but visibly
-quieter than body text. A comment nobody can read is worse than no comment,
-and a comment as loud as the code is noise.
+Comments use `subtext` plus italic. Their softer tone keeps them behind the
+main code. The palette is tuned visually, without a minimum contrast target.
 
 ### There is no red
 
@@ -112,7 +110,7 @@ roles that conventionally want red map to `pink`:
 | `regex` | `pink` | regexes are where syntax errors hide, so the association is useful |
 | `diagnostic.warning` | `amber` | already the brand's caution color |
 
-Pink is checked to be ΔE ≥ 10 from `orange` in both variants, so "something
+Pink is checked to be ΔE ≥ 8 from `orange` in both variants, so "something
 is wrong" never reads as "this is a keyword".
 
 The one place the absence leaks through is Herdr, whose theme token

@@ -1,7 +1,7 @@
 {
   "name": "grafana-color-scheme",
   "displayName": "Grafana Color Scheme",
-  "description": "Grafana, a dim color scheme derived from the Grafana Labs brand palette. Every syntax token clears WCAG AA.",
+  "description": "Grafana, a dim color scheme derived from the Grafana Labs brand palette, with warm gray surfaces and muted accents.",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.90.0"

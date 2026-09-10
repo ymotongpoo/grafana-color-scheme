@@ -1,7 +1,7 @@
 """Load palette.toml and resolve token references.
 
 A `Variant` is the unit every emitter works with: it knows its surfaces, text
-tones, accents, resolved semantic roles and its two ANSI tables. Token
+tones, accents, resolved semantic roles and ANSI table for one flavor. Token
 references like "accents.pink" or "surfaces.base" are resolved here so no
 emitter ever parses a string.
 """
@@ -9,13 +9,10 @@ emitter ever parses a string.
 from __future__ import annotations
 
 import tomllib
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 ANSI_SLOTS = tuple(range(16))
-# Slots the vivid flavor is allowed to override. Everything else is shared
-# with dim, which is what makes "vivid" a six-color delta.
-VIVID_SLOTS = (9, 10, 11, 12, 13, 14)
 
 
 @dataclass(frozen=True)
@@ -47,19 +44,18 @@ class Role:
 @dataclass(frozen=True)
 class Variant:
     name: str  # "dark" | "light"
+    flavor: str  # "dim" | "vivid"
     id: str  # "grafana-dark"
     label: str  # "Grafana Dark"
     appearance: str  # "dark" | "light"
     surfaces: dict[str, str]
     text: dict[str, str]
     accents: dict[str, str]
-    accents_vivid: dict[str, str]
     browser: dict[str, str]
     roles: dict[str, Role]
     diagnostic: dict[str, Role]
     diff: dict[str, Role]
-    ansi_dim: dict[int, str]
-    ansi_vivid: dict[int, str]
+    ansi_colors: dict[int, str]
     terminal: dict[str, str]
     derivation: dict[str, str]
 
@@ -78,8 +74,8 @@ class Variant:
         """Shorthand: the hex color of a role."""
         return self.roles[name].color
 
-    def ansi(self, flavor: str) -> dict[int, str]:
-        return self.ansi_dim if flavor == "dim" else self.ansi_vivid
+    def ansi(self) -> dict[int, str]:
+        return self.ansi_colors
 
     def contrast_on_base(self, hex_color: str) -> float:
         from . import color as C
@@ -91,7 +87,7 @@ class Variant:
 class Palette:
     scheme: dict
     brand: dict
-    variants: dict[str, Variant]
+    variants: dict[tuple[str, str], Variant]
     contrast_rules: list[dict]
     separation: dict
     ansi_constraints: dict
@@ -111,13 +107,13 @@ class Palette:
     def flavors(self) -> list[str]:
         return list(self.scheme["flavors"])
 
-    def variant(self, name: str) -> Variant:
-        return self.variants[name]
+    def variant(self, name: str, flavor: str = "dim") -> Variant:
+        return self.variants[name, flavor]
 
-    def each(self):
+    def each(self, flavor: str = "dim"):
         """(variant_name, Variant) in declared order."""
         for name in self.scheme["variants"]:
-            yield name, self.variants[name]
+            yield name, self.variant(name, flavor)
 
     def brand_hex(self, name: str) -> str:
         return self.brand["colors"][name]["hex"]
@@ -126,7 +122,7 @@ class Palette:
         return self.targets.get(slug, {}).get(key, default)
 
 
-_GROUPS = ("accents", "accents_vivid", "surfaces", "text", "browser")
+_GROUPS = ("accents", "surfaces", "text", "browser")
 
 
 def _resolve(ref: str, v: Variant) -> str:
@@ -161,11 +157,8 @@ def _build_roles(spec: dict, v_partial: Variant) -> dict[str, Role]:
     return out
 
 
-def _ansi_table(raw: dict, v_partial: Variant, base: dict[int, str] | None) -> dict[int, str]:
-    table: dict[int, str] = dict(base or {})
-    for key, ref in raw.items():
-        table[int(key)] = _resolve(ref, v_partial)
-    return table
+def _ansi_table(raw: dict, v_partial: Variant) -> dict[int, str]:
+    return {int(key): _resolve(ref, v_partial) for key, ref in raw.items()}
 
 
 def load(path: Path | str = "palette.toml") -> Palette:
@@ -173,57 +166,34 @@ def load(path: Path | str = "palette.toml") -> Palette:
     with path.open("rb") as fh:
         raw = tomllib.load(fh)
 
-    variants: dict[str, Variant] = {}
+    variants: dict[tuple[str, str], Variant] = {}
     for name in raw["scheme"]["variants"]:
         vraw = raw["variants"][name]
-        # Built in two passes: roles and ANSI tables need a Variant to resolve
-        # token references against, so the color tables land first.
-        stub = Variant(
-            name=name,
-            id=vraw["id"],
-            label=vraw["label"],
-            appearance=vraw["appearance"],
-            surfaces=dict(vraw["surfaces"]),
-            text=dict(vraw["text"]),
-            accents=dict(vraw["accents"]),
-            accents_vivid=dict(vraw["accents_vivid"]),
-            browser=dict(vraw["browser"]),
-            roles={},
-            diagnostic={},
-            diff={},
-            ansi_dim={},
-            ansi_vivid={},
-            terminal={},
-            derivation=dict(vraw.get("derivation", {})),
-        )
-
-        roles_raw = raw["roles"]
-        roles = _build_roles(roles_raw, stub)
-        diagnostic = _build_roles(roles_raw.get("diagnostic", {}), stub)
-        diff = _build_roles(roles_raw.get("diff", {}), stub)
-
-        ansi_dim = _ansi_table(raw["ansi"][name]["dim"], stub, None)
-        ansi_vivid = _ansi_table(raw["ansi"][name]["vivid"], stub, ansi_dim)
-        terminal = {k: _resolve(ref, stub) for k, ref in raw["terminal"].items()}
-
-        variants[name] = Variant(
-            name=name,
-            id=stub.id,
-            label=stub.label,
-            appearance=stub.appearance,
-            surfaces=stub.surfaces,
-            text=stub.text,
-            accents=stub.accents,
-            accents_vivid=stub.accents_vivid,
-            browser=stub.browser,
-            roles=roles,
-            diagnostic=diagnostic,
-            diff=diff,
-            ansi_dim=ansi_dim,
-            ansi_vivid=ansi_vivid,
-            terminal=terminal,
-            derivation=stub.derivation,
-        )
+        for flavor in raw["scheme"]["flavors"]:
+            # Vivid is a complete snapshot: no reading colors fall back to dim.
+            colors = vraw if flavor == "dim" else vraw[flavor]
+            stub = Variant(
+                name=name,
+                flavor=flavor,
+                id=vraw["id"],
+                label=vraw["label"],
+                appearance=vraw["appearance"],
+                surfaces=dict(colors["surfaces"]),
+                text=dict(colors["text"]),
+                accents=dict(colors["accents"]),
+                browser=dict(vraw["browser"]),
+                roles={}, diagnostic={}, diff={}, ansi_colors={}, terminal={},
+                derivation=dict(colors.get("derivation", {})),
+            )
+            roles_raw = raw["roles"]
+            variants[name, flavor] = replace(
+                stub,
+                roles=_build_roles(roles_raw, stub),
+                diagnostic=_build_roles(roles_raw.get("diagnostic", {}), stub),
+                diff=_build_roles(roles_raw.get("diff", {}), stub),
+                ansi_colors=_ansi_table(raw["ansi"][name][flavor], stub),
+                terminal={k: _resolve(ref, stub) for k, ref in raw["terminal"].items()},
+            )
 
     return Palette(
         scheme=raw["scheme"],

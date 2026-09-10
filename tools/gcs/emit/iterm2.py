@@ -36,8 +36,8 @@ def _entry(hex_color: str, alpha: float = 1.0) -> dict[str, object]:
     }
 
 
-def _preset(v: Variant, flavor: str) -> bytes:
-    ansi = v.ansi(flavor)
+def _preset(v: Variant) -> bytes:
+    ansi = v.ansi()
     t = v.terminal
 
     body: dict[str, object] = {}
@@ -62,10 +62,10 @@ def _preset(v: Variant, flavor: str) -> bytes:
 
 def emit(p: Palette) -> dict[str, str]:
     files: dict[str, str] = {}
-    for _name, v in p.each():
-        for flavor in p.flavors:
+    for flavor in p.flavors:
+        for _name, v in p.each(flavor):
             suffix = "" if flavor == p.scheme["default_flavor"] else f"-{flavor}"
-            raw = _preset(v, flavor).decode("utf-8")
+            raw = _preset(v).decode("utf-8")
             if not raw.endswith("\n"):
                 raw += "\n"
             files[f"{v.id}{suffix}.itermcolors"] = raw

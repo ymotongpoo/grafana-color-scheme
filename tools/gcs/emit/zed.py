@@ -209,7 +209,7 @@ def _style(v: Variant) -> dict[str, object]:
         "terminal.ansi.background": s["base"],
     }
 
-    ansi = v.ansi("dim")
+    ansi = v.ansi()
     names = ("black", "red", "green", "yellow", "blue", "magenta", "cyan", "white")
     for i, name in enumerate(names):
         style[f"terminal.ansi.{name}"] = ansi[i]

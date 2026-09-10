@@ -210,7 +210,7 @@ def _theme(p: Palette, v: Variant) -> str:
     for face, attrs in _faces(v):
         face_lines.append(f"   `({face} ((,class ({attrs}))))")
 
-    ansi = v.ansi("dim")
+    ansi = v.ansi()
     vector = " ".join(f'"{ansi[i]}"' for i in (0, 1, 2, 3, 4, 5, 6, 7))
 
     return f"""\
@@ -227,9 +227,8 @@ def _theme(p: Palette, v: Variant) -> str:
 
 ;;; Commentary:
 
-;; {v.label}, derived from the Grafana Labs brand palette.  Every syntax
-;; token clears WCAG AA (4.5:1) against the background, and comments are
-;; kept clear of the threshold so they read as prose rather than as noise.
+;; {v.label}, derived from the Grafana Labs brand palette.
+;; Warm gray surfaces and muted accents, with quieter comments.
 ;;
 ;; {HEADER}
 ;; This is not an official Grafana Labs project.

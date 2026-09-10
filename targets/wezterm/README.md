@@ -1,7 +1,10 @@
 # WezTerm
 
 Four schemes: `grafana-dark`, `grafana-light`, and a `-vivid` flavor of each
-that brightens ANSI slots 9–14 to the undimmed brand colors.
+that preserves the previous default palette in full: background, text,
+ANSI, cursor, selection, and UI colors. The unsuffixed schemes now use
+warm gray backgrounds and softer Grafana accents. The former Vivid colors
+are replaced; existing theme names and filenames stay the same.
 
 ## Install
 

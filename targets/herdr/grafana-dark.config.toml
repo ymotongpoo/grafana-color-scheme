@@ -13,25 +13,25 @@ name = "terminal"
 auto_switch = false
 
 [theme.custom]
-accent        = "#e47534"
-panel_bg      = "#1e1e1e"
-sidebar_bg    = "#191919"
-active_row_bg = "#252525"
-selection_bg  = "#303030"
-surface0      = "#252525"
-surface1      = "#303030"
-surface_dim   = "#141414"
-overlay0      = "#3a3a3a"
-overlay1      = "#8c8c8c"
-text          = "#c9c9c9"
-subtext0      = "#9e9e9e"
-mauve         = "#c48ed0"   # our purple
-green         = "#7ab03a"
-yellow        = "#d28f27"   # our amber; the brand yellow is reserved for diff-changed
-red           = "#e2548e"   # the Grafana brand has no red, so pink carries it
-blue          = "#77a0d2"
-teal          = "#48aa78"   # our light-green
-peach         = "#e47534"   # our orange, same as accent
+accent        = "#c18c68"
+panel_bg      = "#241f1c"
+sidebar_bg    = "#1e1916"
+active_row_bg = "#2c2622"
+selection_bg  = "#362f2a"
+surface0      = "#2c2622"
+surface1      = "#362f2a"
+surface_dim   = "#181411"
+overlay0      = "#423932"
+overlay1      = "#786d63"
+text          = "#b9b1a9"
+subtext0      = "#8d8279"
+mauve         = "#ad8eaf"   # our purple
+green         = "#89a17e"
+yellow        = "#b4a075"   # our amber; the brand yellow is reserved for diff-changed
+red           = "#b77f94"   # the Grafana brand has no red, so pink carries it
+blue          = "#8198b5"
+teal          = "#79a08a"   # our light-green
+peach         = "#c18c68"   # our orange, same as accent
 
 # With auto_switch = true, Herdr layers [theme.custom.light] and
 # [theme.custom.dark] on top of [theme.custom]. See grafana-light
