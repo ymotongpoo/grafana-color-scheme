@@ -1,0 +1,18 @@
+targets/chatgpt/family.json
+  h_bf0ada3931f770 27
+targets/chatgpt/unified-theme.json
+  h_bf0ada3931f770 14,16,84,86,94,118,120
+tools/gcs/emit/chatgpt.py
+  h_bf0ada3931f770 32,34,42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1d9f2010201caf851c4103545e78089777dd6607",
+  "prompts": {},
+  "humans": {
+    "h_bf0ada3931f770": {
+      "author": "Yoshi Yamaguchi <ymotongpoo@gmail.com>"
+    }
+  }
+}
