@@ -1,0 +1,41 @@
+{
+  "kind": "cc-theme.theme-family-package",
+  "schemaVersion": 1,
+  "id": "grafana",
+  "version": "1.0.0",
+  "minimumManagerVersion": "0.1.0",
+  "metadata": {
+    "author": "Yoshi Yamaguchi",
+    "defaultLocale": "en-US",
+    "locales": {
+      "zh-CN": {
+        "name": "Grafana",
+        "description": "Grafanaブランドカラーに基づくChatGPT macOSアプリ用テーマ。"
+      },
+      "en-US": {
+        "name": "Grafana",
+        "description": "A ChatGPT macOS theme derived from the Grafana brand palette."
+      }
+    },
+    "previewAsset": "grafana.webp",
+    "license": "Apache-2.0",
+    "assetLicense": "Apache-2.0"
+  },
+  "source": {
+    "path": "unified-theme.json",
+    "bytes": 4360,
+    "sha256": "e5afa3cdf9f4dee47415dab2a22549f93993b83ea63252a5cff9ead8c3f4a471"
+  },
+  "assets": [
+    {
+      "path": "assets/grafana.webp",
+      "bytes": 44,
+      "sha256": "25de1cf35099334d6ff04c1c06e65e30806d77860fa8d09bc0f39853c40b8790",
+      "contentType": "image/webp",
+      "roles": [
+        "background",
+        "preview"
+      ]
+    }
+  ]
+}

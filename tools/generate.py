@@ -32,7 +32,7 @@ NOT_GENERATED = {"README.md"}
 # Directories of hand-managed binary assets. They are referenced by generated
 # manifests but are not themselves derived from the palette, so orphan
 # detection must leave them alone.
-NOT_GENERATED_DIRS = {"images"}
+NOT_GENERATED_DIRS = {"images", "assets"}
 
 
 def _render(pal, slugs: list[str]) -> dict[Path, str]:

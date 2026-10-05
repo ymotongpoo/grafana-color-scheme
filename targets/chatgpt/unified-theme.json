@@ -1,0 +1,151 @@
+{
+  "kind": "cc-theme.unified-theme",
+  "schemaVersion": 1,
+  "id": "grafana",
+  "name": "Grafana",
+  "version": "1.0.0",
+  "sharedCore": {
+    "tokens": {
+      "colors": {
+        "surfaceBase": "#1e1e1e",
+        "surfaceRaised": "#252525",
+        "surfaceElevated": "#303030",
+        "surfaceCode": "#191919",
+        "text": "#c9c9c9",
+        "textStrong": "#f4f4f4",
+        "textMuted": "#9e9e9e",
+        "placeholder": "#8c8c8c",
+        "borderSubtle": "#8c8c8c",
+        "borderDefault": "#3a3a3a",
+        "borderStrong": "#77a0d2",
+        "action": "#e47534",
+        "actionHover": "#e47534",
+        "actionPressed": "#e47534",
+        "actionForeground": "#171717",
+        "hoverSurface": "#303030",
+        "pressedSurface": "#3a3a3a",
+        "selectedSurface": "#3a3a3a",
+        "selectedHoverSurface": "#e47534",
+        "focusRing": "#77a0d2",
+        "link": "#38a4c2",
+        "danger": "#e2548e",
+        "success": "#7ab03a",
+        "warning": "#d28f27",
+        "sidebarSurface": "#191919",
+        "headerSurface": "#252525",
+        "mainScrimStart": "#1e1e1e",
+        "mainScrimMid": "#252525",
+        "mainScrimEnd": "#303030",
+        "composerSurface": "#252525"
+      },
+      "fonts": {
+        "ui": [
+          "SF Pro Text",
+          "system-ui"
+        ],
+        "display": [
+          "SF Pro Display",
+          "system-ui"
+        ],
+        "code": [
+          "SFMono-Regular",
+          "monospace"
+        ]
+      },
+      "appearance": {
+        "shellMode": "auto",
+        "backdropBlurPx": 0,
+        "backdropSaturation": 1,
+        "radiusScale": 1
+      }
+    },
+    "background": {
+      "mode": "media",
+      "image": "grafana.webp",
+      "position": {
+        "xPercent": 50,
+        "yPercent": 50
+      }
+    },
+    "accessibility": {
+      "reducedMotion": "static",
+      "minimumTextContrast": 4.5,
+      "minimumLargeTextContrast": 3,
+      "preserveSystemFocusRing": true,
+      "transparencyFallback": "opaque"
+    },
+    "appearanceVariants": {
+      "light": {
+        "colors": {
+          "surfaceBase": "#f7f7f7",
+          "surfaceRaised": "#ececec",
+          "surfaceElevated": "#dcdcdc",
+          "surfaceCode": "#f0f0f0",
+          "text": "#3a3a3a",
+          "textStrong": "#171717",
+          "textMuted": "#5e5e5e",
+          "placeholder": "#6a6a6a",
+          "borderSubtle": "#6a6a6a",
+          "borderDefault": "#c9c9c9",
+          "borderStrong": "#1540e0",
+          "action": "#c72f07",
+          "actionHover": "#c72f07",
+          "actionPressed": "#c72f07",
+          "actionForeground": "#ffffff",
+          "hoverSurface": "#dcdcdc",
+          "pressedSurface": "#c9c9c9",
+          "selectedSurface": "#c9c9c9",
+          "selectedHoverSurface": "#c72f07",
+          "focusRing": "#1540e0",
+          "link": "#25708a",
+          "danger": "#a93c68",
+          "success": "#0b7347",
+          "warning": "#915d14",
+          "sidebarSurface": "#f0f0f0",
+          "headerSurface": "#ececec",
+          "mainScrimStart": "#f7f7f7",
+          "mainScrimMid": "#ececec",
+          "mainScrimEnd": "#dcdcdc",
+          "composerSurface": "#ececec"
+        }
+      },
+      "dark": {
+        "colors": {
+          "surfaceBase": "#1e1e1e",
+          "surfaceRaised": "#252525",
+          "surfaceElevated": "#303030",
+          "surfaceCode": "#191919",
+          "text": "#c9c9c9",
+          "textStrong": "#f4f4f4",
+          "textMuted": "#9e9e9e",
+          "placeholder": "#8c8c8c",
+          "borderSubtle": "#8c8c8c",
+          "borderDefault": "#3a3a3a",
+          "borderStrong": "#77a0d2",
+          "action": "#e47534",
+          "actionHover": "#e47534",
+          "actionPressed": "#e47534",
+          "actionForeground": "#171717",
+          "hoverSurface": "#303030",
+          "pressedSurface": "#3a3a3a",
+          "selectedSurface": "#3a3a3a",
+          "selectedHoverSurface": "#e47534",
+          "focusRing": "#77a0d2",
+          "link": "#38a4c2",
+          "danger": "#e2548e",
+          "success": "#7ab03a",
+          "warning": "#d28f27",
+          "sidebarSurface": "#191919",
+          "headerSurface": "#252525",
+          "mainScrimStart": "#1e1e1e",
+          "mainScrimMid": "#252525",
+          "mainScrimEnd": "#303030",
+          "composerSurface": "#252525"
+        }
+      }
+    }
+  },
+  "targets": [
+    "mac-codex"
+  ]
+}

@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from typing import Callable
 
 from .emit import (
+    chatgpt,
     chroma,
     chrome,
     emacs,
@@ -41,6 +42,14 @@ class Target:
 TARGETS: dict[str, Target] = {
     t.slug: t
     for t in (
+        Target(
+            slug="chatgpt",
+            display="ChatGPT macOS",
+            emit=chatgpt.emit,
+            artifacts="CC Theme source + integrity manifest",
+            install="zip `family.json`, `unified-theme.json` and `assets/` as a `.cctheme`, then import it in CC Theme",
+            upstream="https://github.com/quanzhankeji/cc-theme",
+        ),
         Target(
             slug="vscode",
             display="VS Code",
