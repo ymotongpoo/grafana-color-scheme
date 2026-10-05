@@ -10,7 +10,7 @@ subtree into place rather than copying files one by one.
 <!-- BEGIN GENERATED: targets-index -->
 | tool          | directory              | artifacts                                       | reference                                                                              |
 |---------------|------------------------|-------------------------------------------------|----------------------------------------------------------------------------------------|
-| ChatGPT macOS | [`chatgpt/`](chatgpt/) | CC Theme source + integrity manifest            | [format](https://github.com/quanzhankeji/cc-theme)                                     |
+| ChatGPT macOS | [`chatgpt/`](chatgpt/) | 2 Codex theme import strings + CC Theme package | [format](https://github.com/openai/codex)                                              |
 | VS Code       | [`vscode/`](vscode/)   | extension root with 2 theme files               | [format](https://code.visualstudio.com/api/references/theme-color)                     |
 | Zed           | [`zed/`](zed/)         | 1 theme family (both variants)                  | [format](https://zed.dev/docs/extensions/themes)                                       |
 | Emacs         | [`emacs/`](emacs/)     | 2 theme files                                   | [format](https://www.gnu.org/software/emacs/manual/html_node/elisp/Custom-Themes.html) |

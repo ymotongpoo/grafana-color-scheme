@@ -270,20 +270,20 @@ some separation after dimming. These rules live in `palette.toml`.
 ## Install
 
 <!-- BEGIN GENERATED: install -->
-| tool          | files                                | artifacts                                       | install                                                                                           |
-|---------------|--------------------------------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| ChatGPT macOS | [`targets/chatgpt`](targets/chatgpt) | CC Theme source + integrity manifest            | zip `family.json`, `unified-theme.json` and `assets/` as a `.cctheme`, then import it in CC Theme |
-| VS Code       | [`targets/vscode`](targets/vscode)   | extension root with 2 theme files               | symlink `targets/vscode` into `~/.vscode/extensions/`, restart, then pick the theme               |
-| Zed           | [`targets/zed`](targets/zed)         | 1 theme family (both variants)                  | copy `themes/grafana.json` to `~/.config/zed/themes/`                                             |
-| Emacs         | [`targets/emacs`](targets/emacs)     | 2 theme files                                   | add the directory to `custom-theme-load-path`, then `(load-theme 'grafana-dark t)`                |
-| Vim / Neovim  | [`targets/vim`](targets/vim)         | 2 colorschemes                                  | add `targets/vim` to `runtimepath`, then `:colorscheme grafana-dark`                              |
-| WezTerm       | [`targets/wezterm`](targets/wezterm) | 4 TOML schemes (+ vivid)                        | copy `colors/*.toml` to `~/.config/wezterm/colors/`, then set `color_scheme`                      |
-| iTerm2        | [`targets/iterm2`](targets/iterm2)   | 4 color presets (+ vivid)                       | Settings > Profiles > Colors > Color Presets > Import                                             |
-| tmux          | [`targets/tmux`](targets/tmux)       | 2 themes, optional status line, TPM entry point | `source-file` the conf from `~/.tmux.conf`, or install via TPM                                    |
-| Herdr         | [`targets/herdr`](targets/herdr)     | 2 config fragments                              | paste the `[theme.custom]` block into `~/.config/herdr/config.toml`                               |
-| Chroma / Hugo | [`targets/chroma`](targets/chroma)   | 2 XML styles, 3 stylesheets                     | Hugo: copy a CSS file and set `markup.highlight.noClasses = false`                                |
-| Slack         | [`targets/slack`](targets/slack)     | 2 sidebar strings                               | Preferences > Themes, paste the string into the custom theme field                                |
-| Chrome        | [`targets/chrome`](targets/chrome)   | 2 unpacked themes                               | `chrome://extensions` > Developer mode > Load unpacked                                            |
+| tool          | files                                | artifacts                                       | install                                                                                 |
+|---------------|--------------------------------------|-------------------------------------------------|-----------------------------------------------------------------------------------------|
+| ChatGPT macOS | [`targets/chatgpt`](targets/chatgpt) | 2 Codex theme import strings + CC Theme package | paste the matching `*.codex-theme.txt` string into Codex Settings > Appearance > Import |
+| VS Code       | [`targets/vscode`](targets/vscode)   | extension root with 2 theme files               | symlink `targets/vscode` into `~/.vscode/extensions/`, restart, then pick the theme     |
+| Zed           | [`targets/zed`](targets/zed)         | 1 theme family (both variants)                  | copy `themes/grafana.json` to `~/.config/zed/themes/`                                   |
+| Emacs         | [`targets/emacs`](targets/emacs)     | 2 theme files                                   | add the directory to `custom-theme-load-path`, then `(load-theme 'grafana-dark t)`      |
+| Vim / Neovim  | [`targets/vim`](targets/vim)         | 2 colorschemes                                  | add `targets/vim` to `runtimepath`, then `:colorscheme grafana-dark`                    |
+| WezTerm       | [`targets/wezterm`](targets/wezterm) | 4 TOML schemes (+ vivid)                        | copy `colors/*.toml` to `~/.config/wezterm/colors/`, then set `color_scheme`            |
+| iTerm2        | [`targets/iterm2`](targets/iterm2)   | 4 color presets (+ vivid)                       | Settings > Profiles > Colors > Color Presets > Import                                   |
+| tmux          | [`targets/tmux`](targets/tmux)       | 2 themes, optional status line, TPM entry point | `source-file` the conf from `~/.tmux.conf`, or install via TPM                          |
+| Herdr         | [`targets/herdr`](targets/herdr)     | 2 config fragments                              | paste the `[theme.custom]` block into `~/.config/herdr/config.toml`                     |
+| Chroma / Hugo | [`targets/chroma`](targets/chroma)   | 2 XML styles, 3 stylesheets                     | Hugo: copy a CSS file and set `markup.highlight.noClasses = false`                      |
+| Slack         | [`targets/slack`](targets/slack)     | 2 sidebar strings                               | Preferences > Themes, paste the string into the custom theme field                      |
+| Chrome        | [`targets/chrome`](targets/chrome)   | 2 unpacked themes                               | `chrome://extensions` > Developer mode > Load unpacked                                  |
 <!-- END GENERATED: install -->
 
 Each directory has its own README with the full steps and any per-tool

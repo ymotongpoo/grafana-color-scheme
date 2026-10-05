@@ -46,9 +46,9 @@ TARGETS: dict[str, Target] = {
             slug="chatgpt",
             display="ChatGPT macOS",
             emit=chatgpt.emit,
-            artifacts="CC Theme source + integrity manifest",
-            install="zip `family.json`, `unified-theme.json` and `assets/` as a `.cctheme`, then import it in CC Theme",
-            upstream="https://github.com/quanzhankeji/cc-theme",
+            artifacts="2 Codex theme import strings + CC Theme package",
+            install="paste the matching `*.codex-theme.txt` string into Codex Settings > Appearance > Import",
+            upstream="https://github.com/openai/codex",
         ),
         Target(
             slug="vscode",

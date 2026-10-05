@@ -1,39 +1,36 @@
-# ChatGPT for macOS
+# ChatGPT / Codex for macOS
 
-A [CC Theme](https://github.com/quanzhankeji/cc-theme) package for the ChatGPT
-macOS desktop app, applied through CC Theme's `mac-codex` adapter. It uses the
-same Grafana palette as the other targets and includes separate light and dark
-semantic color sets.
+Codex Theme v1 import strings for the ChatGPT/Codex macOS desktop app. The
+files ending in `.codex-theme.txt` are the values to paste into the app's
+theme import dialog.
 
 The files under this directory are generated from
 [`../../palette.toml`](../../palette.toml). The `assets/grafana.webp` file is a
 small hand-managed solid-color preview/background asset and is not generated.
 
-## Install
+## Direct import
 
-1. Install [CC Theme](https://github.com/quanzhankeji/cc-theme) and confirm
-   that its ChatGPT macOS (`mac-codex`) adapter supports your app version.
-2. Create the package from this directory:
+1. Open **Settings > Appearance** in the macOS app.
+2. In the **Dark** row, click **Import** and paste the complete contents of
+   `grafana-dark.codex-theme.txt`.
+3. In the **Light** row, click **Import** and paste the complete contents of
+   `grafana-light.codex-theme.txt`.
 
-   ```sh
-   cd targets/chatgpt
-   zip -r grafana-1.0.0.cctheme family.json unified-theme.json assets
-   ```
+Do not paste the Markdown fences or the filename. The value must start with
+`codex-theme-v1:`. The variant must match the row: dark into Dark, light into
+Light.
 
-3. In CC Theme, choose **Import local theme** and select
-   `grafana-1.0.0.cctheme`.
-4. Apply the imported theme to ChatGPT Desktop.
+## CC Theme package
 
-The package contains no JavaScript, CSS, selectors, or host paths. CC Theme
-validates the manifest, source digest, and asset digest before applying it.
-This repository does not modify or re-sign the ChatGPT application.
+`family.json`, `unified-theme.json`, and `assets/` also form a CC Theme package
+for users of the CC Theme adapter. That is a separate installation path from
+the direct Codex Theme v1 import above.
 
 ## Compatibility
 
-The target is for ChatGPT Desktop on macOS via CC Theme's `mac-codex` adapter,
-not for the ChatGPT website or iOS app. CC Theme's adapter support is versioned;
-check its compatibility report when ChatGPT updates.
+The direct import target is for the macOS desktop app, not the ChatGPT website
+or iOS app. The import format is the app's `codex-theme-v1` format and is
+separate from CLI TextMate themes.
 
-`family.json` and `unified-theme.json` are generated. Do not edit them by hand;
-run `python3 tools/generate.py --target chatgpt` after changing
-`palette.toml`.
+All JSON and `.codex-theme.txt` files are generated. Do not edit them by hand;
+run `python3 tools/generate.py --target chatgpt` after changing `palette.toml`.

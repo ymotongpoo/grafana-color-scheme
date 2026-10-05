@@ -105,6 +105,27 @@ def _theme(p: Palette) -> dict:
     }
 
 
+def _import_string(v: Variant) -> str:
+    payload = {
+        "codeThemeId": "codex",
+        "theme": {
+            "accent": v.color("orange"),
+            "contrast": 50,
+            "fonts": {"code": None, "ui": None},
+            "ink": v.text["bright"],
+            "opaqueWindows": True,
+            "semanticColors": {
+                "diffAdded": v.diagnostic["ok"].color,
+                "diffRemoved": v.diagnostic["error"].color,
+                "skill": v.color("purple"),
+            },
+            "surface": v.surfaces["base"],
+        },
+        "variant": v.appearance,
+    }
+    return "codex-theme-v1:" + json.dumps(payload, separators=(",", ":")) + "\n"
+
+
 def emit(p: Palette) -> dict[str, str]:
     theme = _theme(p)
     source = _dump(theme).encode("utf-8")
@@ -147,7 +168,9 @@ def emit(p: Palette) -> dict[str, str]:
             }
         ],
     }
-    return {
+    out = {
         "unified-theme.json": source.decode("utf-8"),
         "family.json": _dump(family),
     }
+    out.update({f"{v.id}.codex-theme.txt": _import_string(v) for _name, v in p.each()})
+    return out
