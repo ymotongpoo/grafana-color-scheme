@@ -1,0 +1,26 @@
+README.md
+  h_bf0ada3931f770 273-286
+targets/README.md
+  h_bf0ada3931f770 13
+targets/chatgpt/README.md
+  h_bf0ada3931f770 1,3-5,11,13-17,19-21,23,25-27,31-33,35-36
+targets/chatgpt/grafana-dark.codex-theme.txt
+  h_bf0ada3931f770 1
+targets/chatgpt/grafana-light.codex-theme.txt
+  h_bf0ada3931f770 1
+tools/gcs/emit/chatgpt.py
+  h_bf0ada3931f770 108-128,171,175-176
+tools/gcs/registry.py
+  h_bf0ada3931f770 49-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d66a76f935ab5cc7b971b14623d8380036bec1ad",
+  "prompts": {},
+  "humans": {
+    "h_bf0ada3931f770": {
+      "author": "Yoshi Yamaguchi <ymotongpoo@gmail.com>"
+    }
+  }
+}
