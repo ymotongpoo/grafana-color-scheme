@@ -1,0 +1,28 @@
+README.md
+  h_bf0ada3931f770 273-286
+targets/README.md
+  h_bf0ada3931f770 13
+targets/chatgpt/README.md
+  h_bf0ada3931f770 1-39
+targets/chatgpt/family.json
+  h_bf0ada3931f770 1-41
+targets/chatgpt/unified-theme.json
+  h_bf0ada3931f770 1-151
+tools/gcs/emit/chatgpt.py
+  h_bf0ada3931f770 1-153
+tools/gcs/registry.py
+  h_bf0ada3931f770 15,45-52
+tools/generate.py
+  h_bf0ada3931f770 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "009db89f8e7348d7c82fdd56ab5614b112a26816",
+  "prompts": {},
+  "humans": {
+    "h_bf0ada3931f770": {
+      "author": "Yoshi Yamaguchi <ymotongpoo@gmail.com>"
+    }
+  }
+}
