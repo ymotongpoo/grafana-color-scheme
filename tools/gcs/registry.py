@@ -19,6 +19,7 @@ from .emit import (
     herdr,
     iterm2,
     slack,
+    t3code,
     tmux,
     vim,
     vscode,
@@ -65,6 +66,15 @@ TARGETS: dict[str, Target] = {
             artifacts="1 theme family (both variants)",
             install="copy `themes/grafana.json` to `~/.config/zed/themes/`",
             upstream="https://zed.dev/docs/extensions/themes",
+        ),
+        Target(
+            slug="t3code",
+            display="T3 Code",
+            emit=t3code.emit,
+            artifacts="2 importable theme files per flavor (light and dark appearances)",
+            install="Settings → Appearance → Import theme, then choose `grafana.json` or `grafana-vivid.json`",
+            upstream="https://github.com/pingdotgg/t3code/blob/main/docs/user/appearance.md#custom-themes",
+            flavors=True,
         ),
         Target(
             slug="emacs",
