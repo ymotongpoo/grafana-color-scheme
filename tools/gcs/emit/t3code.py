@@ -79,10 +79,8 @@ def _colors(v: Variant) -> dict[str, str]:
         "messageActionHover": link,
         "codeBackground": s["base"],
         "codeForeground": t["fg"],
-        "searchMatchBackground": _tint(v, warning, 0.25),
-        "searchMatchForeground": t["fg"],
-        "searchMatchActiveBackground": warning,
-        "searchMatchActiveForeground": _on_color(warning),
+        # Stable v0.0.45 does not recognize searchMatch* roles yet and rejects
+        # an imported theme when it encounters any unknown role.
         "sidebar": sidebar,
         "sidebarForeground": t["fg"],
         "sidebarMutedForeground": t["subtext"],
