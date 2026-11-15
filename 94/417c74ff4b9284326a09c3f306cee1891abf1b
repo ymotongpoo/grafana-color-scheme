@@ -1,0 +1,211 @@
+palette.toml
+  s_04a628ab2ea17a::t_253fbd42a424ad 11-12,25,66-80,88-89,94-99,102-105,108-126,128,130-148,195-197,199-200,204-209,212-215,218-258,276-285,299-307,310,312,339-343,348-349,352,358-363,366-367,370,374,376-385,388,394-399,402-403,406,410,412-417
+  s_04a628ab2ea17a::t_d41c9d6951f24b 13,168-169
+  s_04a628ab2ea17a::t_9417d00ff18ecd 24
+tools/tests/fixtures/chrome-manifests.json
+  s_04a628ab2ea17a::t_d891d1b34d7ce5 1-8
+tools/gcs/emit/chatgpt.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 175
+docs/roles.md
+  s_04a628ab2ea17a::t_cb497e0f0e4f9b 86-88
+  s_04a628ab2ea17a::t_1d49edef57e85a 10-51
+  s_04a628ab2ea17a::t_685efdd1830d25 56-84,109-110,124
+  s_04a628ab2ea17a::t_d37fce67afc6f3 5
+tools/gcs/emit/t3code.py
+  s_04a628ab2ea17a::t_d37fce67afc6f3 4-5,114,116
+tools/gcs/emit/iterm2.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 65-69
+tools/gcs/emit/wezterm.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 23,101-102
+docs/derivation.md
+  s_04a628ab2ea17a::t_cb497e0f0e4f9b 3,5-6,8-12,14-55,69,71-77,81-82
+tools/gcs/emit/tmux.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 153,170-180,184,191
+tools/gcs/emit/emacs.py
+  s_04a628ab2ea17a::t_c18b12fa1a144a 198-203,237
+  s_04a628ab2ea17a::t_0ed129c3e752fb 245,270
+README.md
+  s_04a628ab2ea17a::t_d37fce67afc6f3 3,174,296-310
+  s_04a628ab2ea17a::t_d63a8a8cff612b 4-6,12-15,24-26,88-98,100-101,103-109,114-125,131-142,157-168,178-219,232-249,255-258,318-320,322-325,327-329,331-332
+tools/gcs/emit/chroma.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 186,188
+  s_04a628ab2ea17a::t_356e95e1f1bcaf 199-207,223
+tools/gcs/palette.py
+  s_04a628ab2ea17a::t_d41c9d6951f24b 47-49,110-115,117-118,122-126,179,183-187,191-192
+tools/gcs/registry.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 40,50,58,66,82,90,114,138,149
+  s_04a628ab2ea17a::t_356e95e1f1bcaf 122,130
+  s_04a628ab2ea17a::t_d37fce67afc6f3 74-75
+tools/generate.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 80
+tools/gcs/emit/vscode.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 455,469-471,486
+tools/gcs/emit/zed.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 239,247
+tools/gcs/svg.py
+  s_04a628ab2ea17a::t_356e95e1f1bcaf 129-132
+  s_04a628ab2ea17a::t_8b6a23a01d805b 70,82
+tools/tests/test_palette.py
+  s_04a628ab2ea17a::t_d891d1b34d7ce5 1,14,17-19,25,32-38,41-46,50-78,81-102,105-106,108-109,112,115,117-119,121-122,124,127,129-131,141
+tools/gcs/emit/herdr.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 86,123
+  s_04a628ab2ea17a::t_356e95e1f1bcaf 92-94,124-126
+tools/gcs/docs.py
+  s_04a628ab2ea17a::t_8b6a23a01d805b 31-43,87-90,92,95,97,99-100,103,107,110,113-115,117,121-124,126-134,138,143-144,154,172-173
+tools/gcs/emit/slack.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 57
+tools/gcs/emit/vim.py
+  s_04a628ab2ea17a::t_0ed129c3e752fb 324
+docs/ansi-dark.svg
+  s_04a628ab2ea17a::t_074ed17ac0e812 2-4,6-8,10-12,14-16,18-20,22-24,26-28,30-32,34-36,38-40,42-44,46-48,50-52,54-56,58-60,62-64,66-67,69-70,72-74,76-78,80-82,84-86,88-90,92-94,96-98,100-106,108-110,112-114,116-118,120-122,124-126,128-130,132-133
+docs/ansi-light.svg
+  s_04a628ab2ea17a::t_57c2af66486a39 2-4,6-8,10-12,14-16,18-20,22-24,26-28,30-32,34-64,66-70,72-86,88-98,100-102,104-106,108-110,112-114,116-118,120-122,124-126,128-129,133
+docs/palette-dark-dim.svg
+  s_04a628ab2ea17a::t_c73170978dce9a 1-152
+docs/palette-dark.svg
+  s_04a628ab2ea17a::t_e8a0ec99eb17b1 2-5,7,9,11,13,15,17,19,21,23,25,27,29-30,32-34,36-38,40-42,44-47,49-83,85-88,90-92,94-96,98-100,102-104,106-108,110-112,114-116,118-120,122-124,126-128,130-132,134-136,138-140,142-144,146-148,150-151
+docs/palette-light-dim.svg
+  s_04a628ab2ea17a::t_4331aac7f8e654 1-152
+docs/palette-light.svg
+  s_04a628ab2ea17a::t_4a4957f609d2eb 2-5,7,9,11,13,15,17,19,21,23,25,27,29-30,32-34,36-42,44-47,49-83,85-88,90-92,94-96,98-100,102-104,106-108,110-112,114-116,118-148,150-151
+targets/README.md
+  s_04a628ab2ea17a::t_424ddc7435e6dd 11-25
+targets/chatgpt/family.json
+  s_04a628ab2ea17a::t_c268ec2021310e 27
+targets/chatgpt/grafana-dark-dim.codex-theme.txt
+  s_04a628ab2ea17a::t_1d79230321251b 1
+targets/chatgpt/grafana-dark.codex-theme.txt
+  s_04a628ab2ea17a::t_164c8a58ea9e99 1
+targets/chatgpt/grafana-light-dim.codex-theme.txt
+  s_04a628ab2ea17a::t_e976e18b8341d5 1
+targets/chatgpt/grafana-light.codex-theme.txt
+  s_04a628ab2ea17a::t_870c0bc2289e3f 1
+targets/chatgpt/unified-theme.json
+  s_04a628ab2ea17a::t_521823c4ab06af 10-23,25-39,80-93,95-109,114-127,129-143
+targets/chroma/css/grafana-auto-dim.css
+  s_04a628ab2ea17a::t_ad26444d86da6a 1-337
+targets/chroma/css/grafana-auto.css
+  s_04a628ab2ea17a::t_254710b28493bb 5-6,11-75,77-81,83-84,86,89-90,95-159,161-165,167-168,170,173-174,179-243,245-249,251-252,254,256-257,262-326,328-332,334-335,337
+targets/chroma/css/grafana-dark-dim.css
+  s_04a628ab2ea17a::t_4f6a6b79682f85 1-85
+targets/chroma/css/grafana-dark.css
+  s_04a628ab2ea17a::t_f169142fb6bc99 4-5,10-74,76-80,82-83,85
+targets/chroma/css/grafana-light-dim.css
+  s_04a628ab2ea17a::t_d18800b56ae43e 1-85
+targets/chroma/css/grafana-light.css
+  s_04a628ab2ea17a::t_5d286e0de232f6 4-5,10-74,76-80,82-83,85
+targets/chroma/styles/grafana-dark-dim.xml
+  s_04a628ab2ea17a::t_78794258bd9496 1-80
+targets/chroma/styles/grafana-dark.xml
+  s_04a628ab2ea17a::t_4fed62b50c1e2d 3-68,70-74,76-77,79
+targets/chroma/styles/grafana-light-dim.xml
+  s_04a628ab2ea17a::t_93352ff4c42b3e 1-80
+targets/chroma/styles/grafana-light.xml
+  s_04a628ab2ea17a::t_f1dbe93504a71d 3-68,70-74,76-77,79
+targets/emacs/grafana-dark-dim-theme.el
+  s_04a628ab2ea17a::t_afafa5c3ca6553 1-202
+targets/emacs/grafana-dark-theme.el
+  s_04a628ab2ea17a::t_17d2bc981e71c8 15,23,26-45,63,77,81,90,101-104,107,110-111,120,136,138-139,152-153,155,163,168,171,186-188,193
+targets/emacs/grafana-light-dim-theme.el
+  s_04a628ab2ea17a::t_d5b9cddedf0ade 1-202
+targets/emacs/grafana-light-theme.el
+  s_04a628ab2ea17a::t_7d4a84561748d7 15,23,26-45,63,77,81,90,101-104,107,110-111,120,136,138-139,152-153,155,163,168,171,186-188,193
+targets/herdr/grafana-auto-dim.config.toml
+  s_04a628ab2ea17a::t_9369945f068990 1-74
+targets/herdr/grafana-auto.config.toml
+  s_04a628ab2ea17a::t_edbe2caf74cafd 14-32,35-53,56-74
+targets/herdr/grafana-dark-dim.config.toml
+  s_04a628ab2ea17a::t_0efb21884f9ec5 1-38
+targets/herdr/grafana-dark.config.toml
+  s_04a628ab2ea17a::t_ad092a4b781646 16-34
+targets/herdr/grafana-light-dim.config.toml
+  s_04a628ab2ea17a::t_fca1b45bc8d0c4 1-38
+targets/herdr/grafana-light.config.toml
+  s_04a628ab2ea17a::t_32b88ad7231502 16-34
+targets/iterm2/grafana-dark-dim.itermcolors
+  s_04a628ab2ea17a::t_1f6963d18a37ed 10,14,16,23,27,29,36,40,42,49,53,55,62,66,68,75,79,81,88,92,94,101,105,107,114,118,120,127,131,133,140,144,146,153,157,159,166,170,172,179,183,185,192,196,198,205,209,211,231,235,237,244,248,250,257,261,296,300,302,309,313,315,322,326,328,335,339,341,348,352,354
+targets/iterm2/grafana-dark.itermcolors
+  s_04a628ab2ea17a::t_a245276853bece 10,14,16,23,27,29,36,40,42,49,53,55,62,66,68,75,79,81,88,92,94,101,105,107,114,118,120,127,131,133,140,144,146,153,157,159,166,170,172,179,183,185,192,196,198,205,209,211,218,222,224,231,235,237,244,248,250,257,261,263,270,274,276,283,287,289,296,300,302,309,313,315,322,326,328,335,339,341,348,352,354
+targets/iterm2/grafana-light-dim.itermcolors
+  s_04a628ab2ea17a::t_040f49ad4b6711 10,14,16,23,27,29,36,40,42,49,53,55,62,66,68,75,79,81,88,92,94,114,118,120,127,131,133,140,144,146,153,157,159,166,170,172,179,183,185,192,196,198,205,209,211,218,222,224,231,235,237,257,261,263,270,274,276,283,287,289,309,313,315,335,339,341,348,352,354
+targets/iterm2/grafana-light.itermcolors
+  s_04a628ab2ea17a::t_ef0e367bd7e2a6 10,14,16,23,27,29,36,40,42,49,53,55,62,66,68,75,79,81,88,92,94,101,105,107,114,120,127,131,133,140,144,146,153,157,159,166,170,172,179,183,185,192,196,198,205,209,211,218,222,224,231,235,237,244,248,250,257,261,263,270,274,276,283,287,289,296,300,302,309,313,315,322,326,328,335,339,341,348,352,354
+targets/slack/grafana-dark-dim.txt
+  s_04a628ab2ea17a::t_aca46e2480f863 1
+targets/slack/grafana-dark.txt
+  s_04a628ab2ea17a::t_83949d96c16f1f 1
+targets/slack/grafana-light-dim.txt
+  s_04a628ab2ea17a::t_9e95358b5bab76 1
+targets/slack/grafana-light.txt
+  s_04a628ab2ea17a::t_608dce1772c694 1
+targets/slack/themes.json
+  s_04a628ab2ea17a::t_b032209151a5d9 17-18,20-27,32-33,35-72
+targets/t3code/grafana-dim.json
+  s_04a628ab2ea17a::t_180ce57293f51d 3-4,7-9,11-12,14-17,19-25,27-41,43,45-48,50,52-58,60-63,68,70,72-73,76,78-79,81-83,85-105,107,109-113,116,119-121,123
+targets/t3code/grafana.json
+  s_04a628ab2ea17a::t_71e8575891cdea 7-23,25-45,47-63,67-83,85-105,107-123
+targets/tmux/grafana.tmux
+  s_04a628ab2ea17a::t_8179d328615f1d 9,26-36,40
+targets/tmux/src/grafana-dark-dim-status.conf
+  s_04a628ab2ea17a::t_ee64ffec7a9a92 1-18
+targets/tmux/src/grafana-dark-dim.conf
+  s_04a628ab2ea17a::t_bc70ea348dc640 1-79
+targets/tmux/src/grafana-dark-status.conf
+  s_04a628ab2ea17a::t_b46d3b9b87f434 13-14
+targets/tmux/src/grafana-dark.conf
+  s_04a628ab2ea17a::t_dfac2069e86501 12-29,35,40-44,47-52,55-56,59-63,66,71-75,78-79
+targets/tmux/src/grafana-light-dim-status.conf
+  s_04a628ab2ea17a::t_3c5c02d59a8bf4 1-18
+targets/tmux/src/grafana-light-dim.conf
+  s_04a628ab2ea17a::t_b7f672434c943a 1-79
+targets/tmux/src/grafana-light-status.conf
+  s_04a628ab2ea17a::t_24eb455d709109 13-14
+targets/tmux/src/grafana-light.conf
+  s_04a628ab2ea17a::t_cbfb6820eea77e 12-29,35,40-44,47-52,55-56,59-63,66,71-75,78-79
+targets/vim/colors/grafana-dark-dim.vim
+  s_04a628ab2ea17a::t_1267d170d699d3 1-269
+targets/vim/colors/grafana-dark.vim
+  s_04a628ab2ea17a::t_477d16a569f64b 24-43,82,88,110,126,129-131,133,146,148-149,186-189,192,194-196,198,210,212,214,217,219,245-248,251-266
+targets/vim/colors/grafana-light-dim.vim
+  s_04a628ab2ea17a::t_e5436494127977 1-269
+targets/vim/colors/grafana-light.vim
+  s_04a628ab2ea17a::t_fe4d46e56c9656 24-43,82,88,110,126,129-131,133,146,148-149,186-189,192,194-196,198,210,212,214,217,219,245-248,251-266
+targets/vscode/package.json
+  s_04a628ab2ea17a::t_2a0d6522d89d6a 4,38-49
+targets/vscode/themes/grafana-dark-color-theme.json
+  s_04a628ab2ea17a::t_ccda2401125f30 6-272,282,293,305,315,324,333,344,355,366,376,386,395,408,419,430,439,450,461,471,482,493,504,513,525,535,544,553,564,574,583,594,623,634,644,653,663,672,681,690,699,710,719,728,733-753,755,758-762
+targets/vscode/themes/grafana-dark-dim-color-theme.json
+  s_04a628ab2ea17a::t_2682edbef2e7be 1-770
+targets/vscode/themes/grafana-light-color-theme.json
+  s_04a628ab2ea17a::t_2ea664c82b60d7 6-272,282,293,305,315,324,333,344,355,366,376,386,395,408,419,430,439,450,461,471,482,493,504,513,525,535,544,553,564,574,583,594,623,634,644,653,663,672,681,690,699,710,719,728,733-753,755,758-762
+targets/vscode/themes/grafana-light-dim-color-theme.json
+  s_04a628ab2ea17a::t_d62e71bd38ec85 1-770
+targets/wezterm/colors/grafana-dark-dim.toml
+  s_04a628ab2ea17a::t_f3f1cce775c54d 3,5,8,13,16,18,20-21,25,28,30,32,35-36,38,42,47,54-55,58-59,63-64,67-68
+targets/wezterm/colors/grafana-dark.toml
+  s_04a628ab2ea17a::t_c21486a7d02d85 13-14,16-18,20-21,23-25,28,30,32-39,42-43,46-47,54-55,58-59,63-64,67-68
+targets/wezterm/colors/grafana-light-dim.toml
+  s_04a628ab2ea17a::t_3c8f4e39fa70f3 3,5,8,14,16-18,20,23-25,28,30,32-34,36-39,42-43,46,54-55,58,63-64,67
+targets/wezterm/colors/grafana-light.toml
+  s_04a628ab2ea17a::t_3713b212e61c75 13-14,16-18,20-21,23-25,28,30,32-39,42-43,46-47,54-55,58-59,63-64,67-68
+targets/zed/extension.toml
+  s_04a628ab2ea17a::t_cdc13a5ae2c98a 6
+targets/zed/themes/grafana.json
+  s_04a628ab2ea17a::t_43510765a8d706 10,12-16,18-26,28-30,32-58,61-106,108-109,111-112,114-115,117-146,149-151,154-156,159-161,164-166,169-171,174-176,179-181,184-186,191,195,199,202,205,208,211,214,217,220,223,226,229,232,235,238,241,244,247,250,253,256,259,262,265,268,271,274,277,280,283,286,289,292,295,298,301,304,308,311,315,319,323,327,336,338-342,344-352,354-356,358-384,387-432,434-435,437-438,440-441,443-472,475-477,480-482,485-487,490-492,495-497,500-502,505-507,510-512,517,521,525,528,531,534,537,540,543,546,549,552,555,558,561,564,567,570,573,576,579,582,585,588,591,594,597,600,603,606,609,612,615,618,621,624,627,630,634,637,641,645,649,653-1305
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "94417c74ff4b9284326a09c3f306cee1891abf1b",
+  "prompts": {},
+  "sessions": {
+    "s_04a628ab2ea17a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "845e5c88-9430-4b9a-b58b-6f12112506dc",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Yoshi Yamaguchi <ymotongpoo@gmail.com>"
+    }
+  }
+}
