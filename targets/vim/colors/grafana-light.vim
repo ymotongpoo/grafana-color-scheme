@@ -21,26 +21,26 @@ let s:italic = get(g:, 'grafana_italic', 1) ? 'italic' : 'NONE'
 let s:bold = get(g:, 'grafana_bold', 1) ? 'bold' : 'NONE'
 
 " Palette: [gui, cterm]
-let s:crust       = ['#d2c8bd', '251']
-let s:mantle      = ['#e0d7cd', '188']
-let s:base        = ['#e8e1d9', '254']
-let s:surface0    = ['#e0d5ca', '188']
-let s:surface1    = ['#d3c5b8', '251']
-let s:surface2    = ['#c4b2a2', '249']
-let s:bright      = ['#574e47', '239']
-let s:fg          = ['#6b625b', '241']
-let s:subtext     = ['#928579', '102']
-let s:faint       = ['#a89b8e', '247']
-let s:orange      = ['#ac795a', '137']
-let s:amber       = ['#a08a61', '137']
-let s:yellow      = ['#989363', '101']
-let s:green       = ['#7d9068', '101']
-let s:light_green = ['#6f9381', '66']
-let s:light_blue  = ['#719399', '66']
-let s:blue        = ['#7b8da5', '67']
-let s:indigo      = ['#8a80aa', '103']
-let s:purple      = ['#a183a2', '139']
-let s:pink        = ['#ac7b8d', '138']
+let s:crust       = ['#e9e9e9', '255']
+let s:mantle      = ['#f4f4f4', '255']
+let s:base        = ['#ffffff', '231']
+let s:surface0    = ['#f2f2f2', '255']
+let s:surface1    = ['#e6e6e6', '254']
+let s:surface2    = ['#d6d6d6', '188']
+let s:bright      = ['#000000', '16']
+let s:fg          = ['#171717', '233']
+let s:subtext     = ['#696969', '242']
+let s:faint       = ['#afafaf', '145']
+let s:orange      = ['#f04205', '202']
+let s:yellow      = ['#aa710e', '94']
+let s:green       = ['#0c9065', '29']
+let s:blue        = ['#2970ff', '27']
+let s:purple      = ['#d444f1', '171']
+let s:amber       = ['#d6760b', '172']
+let s:light_green = ['#5f940e', '64']
+let s:light_blue  = ['#0a92b1', '31']
+let s:indigo      = ['#7d64ff', '99']
+let s:pink        = ['#e14889', '205']
 let s:none = ['NONE', 'NONE']
 
 function! s:hi(group, fg, bg, attr, sp) abort
@@ -79,13 +79,13 @@ call s:hi('Search', s:base, s:amber, 'NONE', '')
 call s:hi('IncSearch', s:base, s:orange, 'NONE', '')
 call s:hi('CurSearch', s:base, s:orange, s:bold, '')
 call s:hi('Substitute', s:base, s:pink, 'NONE', '')
-call s:hi('MatchParen', s:purple, s:surface1, s:bold, '')
+call s:hi('MatchParen', s:blue, s:surface1, s:bold, '')
 call s:hi('NonText', s:surface2, s:none, 'NONE', '')
 call s:hi('Whitespace', s:surface2, s:none, 'NONE', '')
 call s:hi('SpecialKey', s:surface2, s:none, 'NONE', '')
 call s:hi('EndOfBuffer', s:surface1, s:none, 'NONE', '')
 call s:hi('Conceal', s:faint, s:none, 'NONE', '')
-call s:hi('Directory', s:blue, s:none, s:bold, '')
+call s:hi('Directory', s:yellow, s:none, s:bold, '')
 call s:hi('Title', s:orange, s:none, s:bold, '')
 call s:hi('ErrorMsg', s:pink, s:none, s:bold, '')
 call s:hi('WarningMsg', s:amber, s:none, 'NONE', '')
@@ -107,7 +107,7 @@ call s:hi('Pmenu', s:fg, s:mantle, 'NONE', '')
 call s:hi('PmenuSel', s:bright, s:surface1, s:bold, '')
 call s:hi('PmenuSbar', s:none, s:surface0, 'NONE', '')
 call s:hi('PmenuThumb', s:none, s:surface2, 'NONE', '')
-call s:hi('PmenuKind', s:blue, s:mantle, 'NONE', '')
+call s:hi('PmenuKind', s:yellow, s:mantle, 'NONE', '')
 call s:hi('PmenuExtra', s:faint, s:mantle, 'NONE', '')
 call s:hi('WildMenu', s:base, s:orange, 'NONE', '')
 call s:hi('QuickFixLine', s:none, s:surface1, 'NONE', '')
@@ -123,14 +123,14 @@ call s:hi('Added', s:green, s:none, 'NONE', '')
 call s:hi('Changed', s:yellow, s:none, 'NONE', '')
 call s:hi('Removed', s:pink, s:none, 'NONE', '')
 call s:hi('Comment', s:subtext, s:none, s:italic, '')
-call s:hi('Constant', s:light_blue, s:none, 'NONE', '')
+call s:hi('Constant', s:purple, s:none, 'NONE', '')
 call s:hi('String', s:green, s:none, 'NONE', '')
 call s:hi('Character', s:green, s:none, 'NONE', '')
-call s:hi('Number', s:light_blue, s:none, 'NONE', '')
-call s:hi('Float', s:light_blue, s:none, 'NONE', '')
-call s:hi('Boolean', s:light_blue, s:none, 'NONE', '')
+call s:hi('Number', s:purple, s:none, 'NONE', '')
+call s:hi('Float', s:purple, s:none, 'NONE', '')
+call s:hi('Boolean', s:purple, s:none, 'NONE', '')
 call s:hi('Identifier', s:fg, s:none, 'NONE', '')
-call s:hi('Function', s:purple, s:none, 'NONE', '')
+call s:hi('Function', s:blue, s:none, 'NONE', '')
 call s:hi('Statement', s:orange, s:none, 'NONE', '')
 call s:hi('Conditional', s:orange, s:none, 'NONE', '')
 call s:hi('Repeat', s:orange, s:none, 'NONE', '')
@@ -143,10 +143,10 @@ call s:hi('Include', s:indigo, s:none, 'NONE', '')
 call s:hi('Define', s:indigo, s:none, 'NONE', '')
 call s:hi('Macro', s:indigo, s:none, 'NONE', '')
 call s:hi('PreCondit', s:indigo, s:none, 'NONE', '')
-call s:hi('Type', s:blue, s:none, 'NONE', '')
+call s:hi('Type', s:yellow, s:none, 'NONE', '')
 call s:hi('StorageClass', s:orange, s:none, 'NONE', '')
-call s:hi('Structure', s:blue, s:none, 'NONE', '')
-call s:hi('Typedef', s:blue, s:none, 'NONE', '')
+call s:hi('Structure', s:yellow, s:none, 'NONE', '')
+call s:hi('Typedef', s:yellow, s:none, 'NONE', '')
 call s:hi('Special', s:amber, s:none, 'NONE', '')
 call s:hi('SpecialChar', s:amber, s:none, 'NONE', '')
 call s:hi('Tag', s:orange, s:none, 'NONE', '')
@@ -183,19 +183,19 @@ call s:hi('@string.escape', s:amber, s:none, 'NONE', '')
 call s:hi('@string.regexp', s:pink, s:none, 'NONE', '')
 call s:hi('@string.special', s:amber, s:none, 'NONE', '')
 call s:hi('@character', s:green, s:none, 'NONE', '')
-call s:hi('@number', s:light_blue, s:none, 'NONE', '')
-call s:hi('@number.float', s:light_blue, s:none, 'NONE', '')
-call s:hi('@boolean', s:light_blue, s:none, 'NONE', '')
-call s:hi('@constant', s:light_blue, s:none, 'NONE', '')
+call s:hi('@number', s:purple, s:none, 'NONE', '')
+call s:hi('@number.float', s:purple, s:none, 'NONE', '')
+call s:hi('@boolean', s:purple, s:none, 'NONE', '')
+call s:hi('@constant', s:purple, s:none, 'NONE', '')
 call s:hi('@constant.builtin', s:amber, s:none, 'NONE', '')
 call s:hi('@constant.macro', s:indigo, s:none, 'NONE', '')
-call s:hi('@function', s:purple, s:none, 'NONE', '')
+call s:hi('@function', s:blue, s:none, 'NONE', '')
 call s:hi('@function.builtin', s:amber, s:none, 'NONE', '')
-call s:hi('@function.call', s:purple, s:none, 'NONE', '')
-call s:hi('@function.method', s:purple, s:none, 'NONE', '')
-call s:hi('@function.method.call', s:purple, s:none, 'NONE', '')
+call s:hi('@function.call', s:blue, s:none, 'NONE', '')
+call s:hi('@function.method', s:blue, s:none, 'NONE', '')
+call s:hi('@function.method.call', s:blue, s:none, 'NONE', '')
 call s:hi('@function.macro', s:indigo, s:none, 'NONE', '')
-call s:hi('@constructor', s:blue, s:none, 'NONE', '')
+call s:hi('@constructor', s:yellow, s:none, 'NONE', '')
 call s:hi('@keyword', s:orange, s:none, 'NONE', '')
 call s:hi('@keyword.conditional', s:orange, s:none, 'NONE', '')
 call s:hi('@keyword.repeat', s:orange, s:none, 'NONE', '')
@@ -207,16 +207,16 @@ call s:hi('@keyword.function', s:orange, s:none, 'NONE', '')
 call s:hi('@keyword.type', s:orange, s:none, 'NONE', '')
 call s:hi('@keyword.modifier', s:orange, s:none, 'NONE', '')
 call s:hi('@keyword.directive', s:indigo, s:none, 'NONE', '')
-call s:hi('@type', s:blue, s:none, 'NONE', '')
+call s:hi('@type', s:yellow, s:none, 'NONE', '')
 call s:hi('@type.builtin', s:amber, s:none, 'NONE', '')
-call s:hi('@type.definition', s:blue, s:none, 'NONE', '')
+call s:hi('@type.definition', s:yellow, s:none, 'NONE', '')
 call s:hi('@attribute', s:amber, s:none, 'NONE', '')
-call s:hi('@property', s:light_green, s:none, 'NONE', '')
+call s:hi('@property', s:light_blue, s:none, 'NONE', '')
 call s:hi('@variable', s:fg, s:none, 'NONE', '')
 call s:hi('@variable.builtin', s:amber, s:none, 'NONE', '')
-call s:hi('@variable.member', s:light_green, s:none, 'NONE', '')
+call s:hi('@variable.member', s:light_blue, s:none, 'NONE', '')
 call s:hi('@variable.parameter', s:fg, s:none, 'NONE', '')
-call s:hi('@module', s:blue, s:none, 'NONE', '')
+call s:hi('@module', s:yellow, s:none, 'NONE', '')
 call s:hi('@label', s:amber, s:none, 'NONE', '')
 call s:hi('@operator', s:orange, s:none, 'NONE', '')
 call s:hi('@punctuation.bracket', s:subtext, s:none, 'NONE', '')
@@ -242,28 +242,28 @@ call s:hi('@comment.note', s:blue, s:none, 'NONE', '')
 
 " Terminal palette
 let g:terminal_ansi_colors = [
-      \ '#574e47', '#ac7b8d', '#7d9068', '#a08a61',
-      \ '#7b8da5', '#a183a2', '#719399', '#d3c5b8',
-      \ '#928579', '#a77989', '#7c8c67', '#9c8761',
-      \ '#7a8a9f', '#9d809c', '#718f94', '#efe8e0'
+      \ '#171717', '#e14889', '#0c9065', '#aa710e',
+      \ '#2970ff', '#d444f1', '#0a92b1', '#d6d6d6',
+      \ '#696969', '#c82e74', '#0b7347', '#915d14',
+      \ '#1b55f5', '#bb23d5', '#077b96', '#f4f4f4'
       \ ]
 if has('nvim')
-  let g:terminal_color_0 = '#574e47'
-  let g:terminal_color_1 = '#ac7b8d'
-  let g:terminal_color_2 = '#7d9068'
-  let g:terminal_color_3 = '#a08a61'
-  let g:terminal_color_4 = '#7b8da5'
-  let g:terminal_color_5 = '#a183a2'
-  let g:terminal_color_6 = '#719399'
-  let g:terminal_color_7 = '#d3c5b8'
-  let g:terminal_color_8 = '#928579'
-  let g:terminal_color_9 = '#a77989'
-  let g:terminal_color_10 = '#7c8c67'
-  let g:terminal_color_11 = '#9c8761'
-  let g:terminal_color_12 = '#7a8a9f'
-  let g:terminal_color_13 = '#9d809c'
-  let g:terminal_color_14 = '#718f94'
-  let g:terminal_color_15 = '#efe8e0'
+  let g:terminal_color_0 = '#171717'
+  let g:terminal_color_1 = '#e14889'
+  let g:terminal_color_2 = '#0c9065'
+  let g:terminal_color_3 = '#aa710e'
+  let g:terminal_color_4 = '#2970ff'
+  let g:terminal_color_5 = '#d444f1'
+  let g:terminal_color_6 = '#0a92b1'
+  let g:terminal_color_7 = '#d6d6d6'
+  let g:terminal_color_8 = '#696969'
+  let g:terminal_color_9 = '#c82e74'
+  let g:terminal_color_10 = '#0b7347'
+  let g:terminal_color_11 = '#915d14'
+  let g:terminal_color_12 = '#1b55f5'
+  let g:terminal_color_13 = '#bb23d5'
+  let g:terminal_color_14 = '#077b96'
+  let g:terminal_color_15 = '#f4f4f4'
 endif
 
 delfunction s:hi

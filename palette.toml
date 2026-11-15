@@ -8,8 +8,9 @@
 # these values by `tools/generate.py --verify` and by README generation, so
 # they can never go stale.
 #
-# Brand colors come from the Grafana Labs brand guide; reading colors are hand-tuned. This is not an official
-# Grafana Labs project; see NOTICE.
+# Brand colors come from the Grafana Labs brand guide. The default `brand`
+# flavor uses them verbatim wherever they read on the background; `dim` is
+# derived from it. This is not an official Grafana Labs project; see NOTICE.
 
 schema_version = 1
 
@@ -20,8 +21,8 @@ homepage       = "https://github.com/ymotongpoo/grafana-color-scheme"
 author         = "Yoshi Yamaguchi"
 license        = "Apache-2.0"
 variants       = ["dark", "light"]
-flavors        = ["dim", "vivid"]
-default_flavor = "dim"
+flavors        = ["brand", "dim"]
+default_flavor = "brand"
 
 # ─── Layer 1: brand ──────────────────────────────────────────────────────────
 #
@@ -62,6 +63,21 @@ blue   = { "20" = "#d9e7ff", "40" = "#bbd8ff", "60" = "#8dc0ff", "80" = "#599bff
 purple = { "20" = "#f9e8fe", "40" = "#f3ceff", "60" = "#eeaafd", "80" = "#e477fb", "100" = "#d444f0", "120" = "#bb23d5", "140" = "#9d1ab1", "160" = "#831790", "180" = "#6e1976" }
 
 # ─── Layer 2: dark variant ───────────────────────────────────────────────────
+#
+# Two flavors per variant:
+#
+#   brand  (default, unsuffixed ids) -- the brand guide's own colors on the
+#          brand's own canvas. Primary orange and the secondary yellow, green,
+#          blue and purple carry the most frequent syntax roles; the support
+#          colors carry the rest. Dark uses every brand color VERBATIM.
+#   dim    (`-dim` ids) -- derived from brand in OKLCH, per accent:
+#            L' = c + (L - c) * 0.45   lightness pulled toward c
+#            C' = C * 0.6              chroma reduced to 60%
+#            hue unchanged
+#          with c = 0.74 for dark and c = 0.56 for light. Surfaces and text
+#          move one step off the brand extremes.
+#
+# The stored hex values are authoritative; nothing recomputes them.
 
 [variants.dark]
 id         = "grafana-dark"
@@ -69,63 +85,67 @@ appearance = "dark"
 label      = "Grafana Dark"
 
 [variants.dark.derivation]
-background     = "warm gray, hand-tuned to #241f1c"
-accents        = "muted Grafana hues, inspired by Nord pastel colors; no minimum contrast target"
+background     = "neutral-5 (#171717), the brand's dark canvas"
+accents        = "primary, secondary and support colors verbatim"
 reference      = "docs/derivation.md"
 
 # Shadow: base -> mantle -> crust. Elevation: base -> surface0 -> surface1 -> surface2.
 [variants.dark.surfaces]
-crust          = "#181411"
-mantle         = "#1e1916"
-base           = "#241f1c"
-surface0       = "#2c2622"
-surface1       = "#362f2a"
-surface2       = "#423932"
+crust          = "#0b0b0b"
+mantle         = "#111111"
+base           = "#171717"   # neutral-5
+surface0       = "#212121"
+surface1       = "#2c2c2c"
+surface2       = "#3a3a3a"   # neutral-4
 
 [variants.dark.text]
-bright         = "#cbc3ba"
-fg             = "#b9b1a9"
-subtext        = "#8d8279"
-faint          = "#786d63"
+bright         = "#ffffff"   # white
+fg             = "#f4f4f4"   # neutral-1
+subtext        = "#afafaf"   # neutral-2
+faint          = "#696969"   # neutral-3
 
 [variants.dark.accents]
-orange         = "#c18c68"
-amber          = "#b4a075"
-yellow         = "#acaa70"
-green          = "#89a17e"
-light-green    = "#79a08a"
-light-blue     = "#789fa6"
-blue           = "#8198b5"
-indigo         = "#8d86b1"
-purple         = "#ad8eaf"
-pink           = "#b77f94"
+orange         = "#ff671d"   # primary
+yellow         = "#ffed23"   # secondary
+green          = "#04bc4c"   # secondary
+blue           = "#2970ff"   # secondary
+purple         = "#d444f1"   # secondary
+amber          = "#ffab29"   # support
+light-green    = "#91d441"   # support
+light-blue     = "#3fc6eb"   # support
+indigo         = "#7d64ff"   # support
+pink           = "#f35998"   # support
 
-# Vivid preserves the previous default palette, including all UI colors.
-[variants.dark.vivid.surfaces]
-crust          = "#141414"
-mantle         = "#191919"
+[variants.dark.dim.derivation]
+background     = "one step lighter than neutral-5"
+accents        = "brand accents in OKLCH: L toward 0.74 by 55%, chroma x0.6"
+reference      = "docs/derivation.md"
+
+[variants.dark.dim.surfaces]
+crust          = "#121212"
+mantle         = "#181818"
 base           = "#1e1e1e"
-surface0       = "#252525"
+surface0       = "#262626"
 surface1       = "#303030"
-surface2       = "#3a3a3a"
+surface2       = "#3d3d3d"
 
-[variants.dark.vivid.text]
-bright         = "#f4f4f4"
-fg             = "#c9c9c9"
-subtext        = "#9e9e9e"
-faint          = "#8c8c8c"
+[variants.dark.dim.text]
+bright         = "#e8e8e8"
+fg             = "#cccccc"
+subtext        = "#8f8f8f"
+faint          = "#666666"
 
-[variants.dark.vivid.accents]
-orange         = "#e47534"
-amber          = "#d28f27"
-yellow         = "#bdaa2f"
-green          = "#7ab03a"
-light-green    = "#48aa78"
-light-blue     = "#38a4c2"
-blue           = "#77a0d2"
-indigo         = "#9084d7"
-purple         = "#c48ed0"
-pink           = "#e2548e"
+[variants.dark.dim.accents]
+orange         = "#e48a67"
+yellow         = "#d3ca6e"
+green          = "#6db979"
+blue           = "#6794e8"
+purple         = "#ca7cdb"
+amber          = "#dbaa6d"
+light-green    = "#9ac274"
+light-blue     = "#78bad0"
+indigo         = "#928ce7"
+pink           = "#de82a2"
 
 # Browser chrome is a branding surface, not a reading surface. A browser
 # theme that leaves the frame neutral and only tints the icons reads as "grey
@@ -145,8 +165,8 @@ pink           = "#e2548e"
 # `on_key` and `key_accent` are identical to the light variant, and only the
 # content surfaces below them flip. An earlier version used orange-140 here,
 # which read as a duller, browner orange rather than as Grafana's.
-# These browser tokens are independent of the palette redesign above and
-# retain their values through it.
+# These browser tokens are independent of the reading palettes above, and
+# the Chrome theme ships the same frame for both flavors.
 [variants.dark.browser]
 key         = "#ff671d"   # brand orange, frame and UNSELECTED tabs -- same as light
 on_key      = "#171717"   # text and icons on key -- same as light
@@ -172,63 +192,70 @@ id         = "grafana-light"
 appearance = "light"
 label      = "Grafana Light"
 
+# Several brand colors are too pale to read on white. Where the brand guide
+# publishes a darker step of the same hue it is used as-is; otherwise the
+# brand color is darkened in OKLCH (lightness only, hue and chroma kept).
 [variants.light.derivation]
-background     = "warm gray, hand-tuned to #e8e1d9"
-accents        = "muted Grafana hues, inspired by Nord pastel colors; no minimum contrast target"
+background     = "white (#ffffff), the brand's light canvas"
+accents        = "blue, purple and indigo verbatim; orange 120%, green 120%, yellow 160%; amber, light green, light blue and pink darkened in OKLCH"
 reference      = "docs/derivation.md"
 
 [variants.light.surfaces]
-crust          = "#d2c8bd"
-mantle         = "#e0d7cd"
-base           = "#e8e1d9"
-surface0       = "#e0d5ca"
-surface1       = "#d3c5b8"
-surface2       = "#c4b2a2"
+crust          = "#e9e9e9"
+mantle         = "#f4f4f4"   # neutral-1
+base           = "#ffffff"   # white
+surface0       = "#f2f2f2"
+surface1       = "#e6e6e6"
+surface2       = "#d6d6d6"
 
 [variants.light.text]
-bright         = "#574e47"
-fg             = "#6b625b"
-subtext        = "#928579"
-faint          = "#a89b8e"
+bright         = "#000000"   # black
+fg             = "#171717"   # neutral-5
+subtext        = "#696969"   # neutral-3
+faint          = "#afafaf"   # neutral-2
 
 [variants.light.accents]
-orange         = "#ac795a"
-amber          = "#a08a61"
-yellow         = "#989363"
-green          = "#7d9068"
-light-green    = "#6f9381"
-light-blue     = "#719399"
-blue           = "#7b8da5"
-indigo         = "#8a80aa"
-purple         = "#a183a2"
-pink           = "#ac7b8d"
+orange         = "#f04205"   # orange 120%
+yellow         = "#aa710e"   # yellow 160%
+green          = "#0c9065"   # green 120%
+blue           = "#2970ff"   # secondary, verbatim
+purple         = "#d444f1"   # secondary, verbatim
+amber          = "#d6760b"   # amber, darkened and nudged toward orange to stay apart from yellow 160%
+light-green    = "#5f940e"   # light green, darkened
+light-blue     = "#0a92b1"   # light blue, darkened
+indigo         = "#7d64ff"   # support, verbatim
+pink           = "#e14889"   # pink, darkened
 
-# Vivid preserves the previous default palette, including all UI colors.
-[variants.light.vivid.surfaces]
-crust          = "#e4e4e4"
-mantle         = "#f0f0f0"
-base           = "#f7f7f7"
-surface0       = "#ececec"
-surface1       = "#dcdcdc"
-surface2       = "#c9c9c9"
+[variants.light.dim.derivation]
+background     = "neutral-1 (#f4f4f4)"
+accents        = "light brand accents in OKLCH: L toward 0.56 by 50%, chroma x0.6"
+reference      = "docs/derivation.md"
 
-[variants.light.vivid.text]
-bright         = "#171717"
-fg             = "#3a3a3a"
-subtext        = "#5e5e5e"
-faint          = "#6a6a6a"
+[variants.light.dim.surfaces]
+crust          = "#e2e2e2"
+mantle         = "#ececec"
+base           = "#f4f4f4"   # neutral-1
+surface0       = "#eaeaea"
+surface1       = "#dedede"
+surface2       = "#cfcfcf"
 
-[variants.light.vivid.accents]
-orange         = "#c72f07"
-amber          = "#915d14"
-yellow         = "#6f681c"
-green          = "#0b7347"
-light-green    = "#084b31"
-light-blue     = "#25708a"
-blue           = "#1540e0"
-indigo         = "#5240b8"
-purple         = "#9d1ab1"
-pink           = "#a93c68"
+[variants.light.dim.text]
+bright         = "#171717"   # neutral-5
+fg             = "#3a3a3a"   # neutral-4
+subtext        = "#6e6e6e"
+faint          = "#a0a0a0"
+
+[variants.light.dim.accents]
+orange         = "#c05f46"
+yellow         = "#947347"
+green          = "#4c856b"
+blue           = "#4b76c7"
+purple         = "#ac5fbc"
+amber          = "#ad7548"
+light-green    = "#678748"
+light-blue     = "#4c8597"
+indigo         = "#756ec6"
+pink           = "#b65f7e"
 
 [variants.light.browser]
 key         = "#ff671d"   # brand orange, frame and UNSELECTED tabs
@@ -246,8 +273,16 @@ ntp_image   = "images/grot.png"
 
 # ─── Layer 4: semantics ──────────────────────────────────────────────────────
 #
-# Roles reference TOKEN NAMES, resolved per variant against
-# accents u text u surfaces. Change a role here and all 11 targets follow.
+# Roles reference TOKEN NAMES, resolved per variant and flavor against
+# accents u text u surfaces. Change a role here and every target follows.
+#
+# The most frequent syntax goes to the primary and secondary colors:
+#   orange  keywords, operators, tags, headings     (primary)
+#   blue    functions and methods                   (secondary)
+#   green   strings                                 (secondary)
+#   yellow  types, classes, namespaces, interfaces  (secondary)
+#   purple  numbers, booleans, constants            (secondary)
+# Support colors take the rarer roles.
 
 [roles]
 keyword       = { color = "orange" }
@@ -261,20 +296,20 @@ string        = { color = "green" }
 string-doc    = { color = "green", style = "italic" }
 string-escape = { color = "amber" }
 regex         = { color = "pink" }
-number        = { color = "light-blue" }
-boolean       = { color = "light-blue" }
-constant      = { color = "light-blue" }
-type          = { color = "blue" }
-class         = { color = "blue" }
-namespace     = { color = "blue" }
-interface     = { color = "blue" }
-function      = { color = "purple" }
-method        = { color = "purple" }
+number        = { color = "purple" }
+boolean       = { color = "purple" }
+constant      = { color = "purple" }
+type          = { color = "yellow" }
+class         = { color = "yellow" }
+namespace     = { color = "yellow" }
+interface     = { color = "yellow" }
+function      = { color = "blue" }
+method        = { color = "blue" }
 variable      = { color = "fg" }
 parameter     = { color = "fg" }
-property      = { color = "light-green" }
+property      = { color = "light-blue" }
 tag           = { color = "orange" }
-label          = { color = "amber" }
+label         = { color = "amber" }
 preprocessor  = { color = "indigo" }
 punctuation   = { color = "subtext" }
 comment       = { color = "subtext", style = "italic" }
@@ -301,81 +336,85 @@ changed  = { color = "yellow" }
 # terminal.ansi*, Vim's g:terminal_ansi_colors, and Herdr's `terminal` mode.
 #
 # Each flavor has a complete ANSI table resolved against its own colors.
-# Dim brights 9-14 blend the normal color 8% toward text.fg (sRGB).
+# Brights 9-14: where the brand guide has a ladder for the hue, the next step
+# toward higher contrast (80% on dark, 120%-180% on light); pink and light
+# blue have no ladder, so their brights move OKLCH lightness by +0.08 (dark)
+# or -0.07 (light) at the same hue and chroma. Dim brights move dim accents
+# by +0.06 / -0.06 the same way.
 #
 # Slot 0 and 15 are the extremes of the variant, which means the dark and
 # light mappings are structurally mirrored, not identical.
 
-[ansi.dark.dim]
-0              = "surfaces.surface1"
+[ansi.dark.brand]
+0              = "surfaces.surface2"
 1              = "accents.pink"
 2              = "accents.green"
-3              = "accents.amber"
+3              = "accents.yellow"
 4              = "accents.blue"
 5              = "accents.purple"
 6              = "accents.light-blue"
 7              = "text.fg"
 8              = "text.faint"
-9              = "#b78396"
-10             = "#8da281"
-11             = "#b4a179"
-12             = "#859ab4"
-13             = "#ae91af"
-14             = "#7da0a6"
+9              = "#fe85b1"   # pink, OKLCH L +0.08
+10             = "#54d192"   # green 80%
+11             = "#fff86b"   # yellow 60%
+12             = "#599bff"   # blue 80%
+13             = "#e477fb"   # purple 80%
+14             = "#76defe"   # light blue, OKLCH L +0.08
+15             = "text.bright"
+
+[ansi.light.brand]
+0              = "text.fg"
+1              = "accents.pink"
+2              = "accents.green"
+3              = "accents.yellow"
+4              = "accents.blue"
+5              = "accents.purple"
+6              = "accents.light-blue"
+7              = "surfaces.surface2"
+8              = "text.subtext"
+9              = "#c82e74"   # pink, OKLCH L -0.07
+10             = "#0b7347"   # green 140%
+11             = "#915d14"   # yellow 180%
+12             = "#1b55f5"   # blue 120%
+13             = "#bb23d5"   # purple 120%
+14             = "#077b96"   # light blue, OKLCH L -0.07
+15             = "surfaces.mantle"
+
+[ansi.dark.dim]
+0              = "surfaces.surface2"
+1              = "accents.pink"
+2              = "accents.green"
+3              = "accents.yellow"
+4              = "accents.blue"
+5              = "accents.purple"
+6              = "accents.light-blue"
+7              = "text.fg"
+8              = "text.faint"
+9              = "#f395b5"
+10             = "#80cc8b"
+11             = "#e7de81"
+12             = "#79a7fd"
+13             = "#de8fef"
+14             = "#8bcde4"
 15             = "text.bright"
 
 [ansi.light.dim]
-0              = "text.bright"
+0              = "text.fg"
 1              = "accents.pink"
 2              = "accents.green"
-3              = "accents.amber"
+3              = "accents.yellow"
 4              = "accents.blue"
 5              = "accents.purple"
 6              = "accents.light-blue"
-7              = "surfaces.surface1"
+7              = "surfaces.surface2"
 8              = "text.subtext"
-9              = "#a77989"
-10             = "#7c8c67"
-11             = "#9c8761"
-12             = "#7a8a9f"
-13             = "#9d809c"
-14             = "#718f94"
-15             = "#efe8e0"
-
-[ansi.dark.vivid]
-0              = "surfaces.surface1"
-1              = "accents.pink"
-2              = "accents.green"
-3              = "accents.amber"
-4              = "accents.blue"
-5              = "accents.purple"
-6              = "accents.light-blue"
-7              = "text.fg"
-8              = "text.faint"
-9              = "#e56c9d"
-10             = "#8cba56"
-11             = "#d79e46"
-12             = "#8aadd7"
-13             = "#cb9dd5"
-14             = "#54b0ca"
-15             = "text.bright"
-
-[ansi.light.vivid]
-0              = "text.bright"
-1              = "accents.pink"
-2              = "accents.green"
-3              = "accents.amber"
-4              = "accents.blue"
-5              = "accents.purple"
-6              = "accents.light-blue"
-7              = "surfaces.surface1"
-8              = "text.subtext"
-9              = "#93365c"
-10             = "#0d6540"
-11             = "#7f5214"
-12             = "#153ac2"
-13             = "#891a9a"
-14             = "#236379"
+9              = "#a24d6d"
+10             = "#3a735a"
+11             = "#826236"
+12             = "#3a64b3"
+13             = "#994da9"
+14             = "#3a7385"
 15             = "#ffffff"
 
 [terminal]

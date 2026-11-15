@@ -1,8 +1,8 @@
 """T3 Code custom theme files.
 
 Each file is a ThemeFile v1 import with both light and dark appearances.
-The default and Vivid flavors are separate themes so they stay selectable in
-T3 Code's theme picker.
+The brand (default) and Dim flavors are separate themes so they stay
+selectable in T3 Code's theme picker.
 """
 
 from __future__ import annotations
@@ -111,9 +111,9 @@ def _theme(p: Palette, flavor: str, theme_id: str, theme_name: str) -> dict[str,
 
 
 def emit(p: Palette) -> dict[str, str]:
-    """Return the importable dim and Vivid T3 Code theme files."""
+    """Return one importable T3 Code theme file per flavor."""
     out: dict[str, str] = {}
-    default_flavor = p.scheme["default_flavor"]
+    default_flavor = p.default_flavor
     flavors = [default_flavor, *(flavor for flavor in p.flavors if flavor != default_flavor)]
     for flavor in flavors:
         suffix = "" if flavor == default_flavor else f"-{flavor}"

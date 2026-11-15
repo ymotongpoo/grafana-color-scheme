@@ -1,0 +1,1 @@
+codex-theme-v1:{"codeThemeId":"codex","theme":{"accent":"#c05f46","contrast":50,"fonts":{"code":null,"ui":null},"ink":"#171717","opaqueWindows":true,"semanticColors":{"diffAdded":"#4c856b","diffRemoved":"#b65f7e","skill":"#ac5fbc"},"surface":"#f4f4f4"},"variant":"light"}

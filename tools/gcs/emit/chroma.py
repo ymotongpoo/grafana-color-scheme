@@ -183,11 +183,9 @@ def _css(v: Variant, *, scope: str = ".chroma", prefix: str = "") -> list[str]:
 
 def emit(p: Palette) -> dict[str, str]:
     files: dict[str, str] = {}
-    ids = {name: v.id for name, v in p.each()}
-
-    for name, v in p.each():
+    for name, v in p.every():
         other = "light" if name == "dark" else "dark"
-        files[f"styles/{v.id}.xml"] = _xml(p, v, ids[other])
+        files[f"styles/{v.id}.xml"] = _xml(p, v, p.variant(other, v.flavor).id)
         body = "\n".join(
             [
                 f"/* {HEADER} */",
@@ -198,8 +196,15 @@ def emit(p: Palette) -> dict[str, str]:
         )
         files[f"css/{v.id}.css"] = body + "\n"
 
-    dark = p.variant("dark")
-    light = p.variant("light")
+    for flavor in p.flavors:
+        suffix = "" if flavor == p.default_flavor else f"-{flavor}"
+        files[f"css/grafana-auto{suffix}.css"] = _auto(p, flavor)
+    return files
+
+
+def _auto(p: Palette, flavor: str) -> str:
+    dark = p.variant("dark", flavor)
+    light = p.variant("light", flavor)
     auto = [
         f"/* {HEADER} */",
         "/* Both variants in one stylesheet. Follows the reader's system setting,",
@@ -215,5 +220,4 @@ def emit(p: Palette) -> dict[str, str]:
         "",
         *_css(light, prefix=":root[data-theme='light'] "),
     ]
-    files["css/grafana-auto.css"] = "\n".join(auto) + "\n"
-    return files
+    return "\n".join(auto) + "\n"

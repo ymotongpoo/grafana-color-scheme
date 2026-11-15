@@ -150,6 +150,7 @@ def _tpm(p: Palette) -> str:
 # TPM runs this file, which sources the theme selected by @grafana_variant.
 #
 #   set -g @grafana_variant 'dark'    # or 'light'
+#   set -g @grafana_flavor  'brand'   # or 'dim'
 #   set -g @grafana_status  'off'     # 'on' to also take the status layout
 
 set -euo pipefail
@@ -166,18 +167,28 @@ case "$variant" in
     ;;
 esac
 
-tmux source-file "$DIR/src/grafana-$variant.conf"
+flavor="$(tmux show-option -gqv '@grafana_flavor')"
+case "$flavor" in
+  ''|brand) theme="grafana-$variant" ;;
+  dim) theme="grafana-$variant-dim" ;;
+  *)
+    tmux display-message "grafana-color-scheme: unknown @grafana_flavor '$flavor', using brand"
+    theme="grafana-$variant"
+    ;;
+esac
+
+tmux source-file "$DIR/src/$theme.conf"
 
 status="$(tmux show-option -gqv '@grafana_status')"
 if [ "$status" = "on" ]; then
-  tmux source-file "$DIR/src/grafana-$variant-status.conf"
+  tmux source-file "$DIR/src/$theme-status.conf"
 fi
 """
 
 
 def emit(p: Palette) -> dict[str, str]:
     files: dict[str, str] = {"grafana.tmux": _tpm(p)}
-    for _name, v in p.each():
+    for _name, v in p.every():
         files[f"src/{v.id}.conf"] = _theme(v)
         files[f"src/{v.id}-status.conf"] = _status(v)
     return files

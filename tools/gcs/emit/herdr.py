@@ -83,15 +83,15 @@ def _fragment(p: Palette, v: Variant) -> str:
     lines += [
         "",
         "# With auto_switch = true, Herdr layers [theme.custom.light] and",
-        f"# [theme.custom.dark] on top of [theme.custom]. See {p.variant(other).id}",
+        f"# [theme.custom.dark] on top of [theme.custom]. See {p.variant(other, v.flavor).id}",
         "# in this directory for the other half.",
     ]
     return "\n".join(lines) + "\n"
 
 
-def _combined(p: Palette) -> str:
-    dark = p.variant("dark")
-    light = p.variant("light")
+def _combined(p: Palette, flavor: str) -> str:
+    dark = p.variant("dark", flavor)
+    light = p.variant("light", flavor)
     width = max(len(name) for name, _ in MAPPING)
     lines = [
         f"# {HEADER}",
@@ -120,6 +120,8 @@ def _combined(p: Palette) -> str:
 
 
 def emit(p: Palette) -> dict[str, str]:
-    files = {f"{v.id}.config.toml": _fragment(p, v) for _n, v in p.each()}
-    files["grafana-auto.config.toml"] = _combined(p)
+    files = {f"{v.id}.config.toml": _fragment(p, v) for _n, v in p.every()}
+    for flavor in p.flavors:
+        suffix = "" if flavor == p.default_flavor else f"-{flavor}"
+        files[f"grafana-auto{suffix}.config.toml"] = _combined(p, flavor)
     return files

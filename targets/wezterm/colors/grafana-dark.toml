@@ -10,60 +10,60 @@ author = "Yoshi Yamaguchi"
 origin_url = "https://github.com/ymotongpoo/grafana-color-scheme"
 
 [colors]
-foreground = "#b9b1a9"
-background = "#241f1c"
+foreground = "#f4f4f4"
+background = "#171717"
 
-cursor_bg = "#c18c68"
-cursor_fg = "#241f1c"
-cursor_border = "#c18c68"
+cursor_bg = "#ff671d"
+cursor_fg = "#171717"
+cursor_border = "#ff671d"
 
-selection_bg = "#423932"
-selection_fg = "#cbc3ba"
+selection_bg = "#3a3a3a"
+selection_fg = "#ffffff"
 
-scrollbar_thumb = "#362f2a"
-split = "#362f2a"
-compose_cursor = "#b4a075"
+scrollbar_thumb = "#2c2c2c"
+split = "#2c2c2c"
+compose_cursor = "#ffab29"
 
 # 0-7: black red green yellow blue magenta cyan white
-ansi = ["#362f2a", "#b77f94", "#89a17e", "#b4a075", "#8198b5", "#ad8eaf", "#789fa6", "#b9b1a9"]
+ansi = ["#3a3a3a", "#f35998", "#04bc4c", "#ffed23", "#2970ff", "#d444f1", "#3fc6eb", "#f4f4f4"]
 # 8-15: the bright variants
-brights = ["#786d63", "#b78396", "#8da281", "#b4a179", "#859ab4", "#ae91af", "#7da0a6", "#cbc3ba"]
+brights = ["#696969", "#fe85b1", "#54d192", "#fff86b", "#599bff", "#e477fb", "#76defe", "#ffffff"]
 
-copy_mode_active_highlight_bg = { Color = "#b4a075" }
-copy_mode_active_highlight_fg = { Color = "#241f1c" }
-copy_mode_inactive_highlight_bg = { Color = "#362f2a" }
-copy_mode_inactive_highlight_fg = { Color = "#b9b1a9" }
-quick_select_label_bg = { Color = "#c18c68" }
-quick_select_label_fg = { Color = "#241f1c" }
-quick_select_match_bg = { Color = "#ad8eaf" }
-quick_select_match_fg = { Color = "#241f1c" }
+copy_mode_active_highlight_bg = { Color = "#ffab29" }
+copy_mode_active_highlight_fg = { Color = "#171717" }
+copy_mode_inactive_highlight_bg = { Color = "#2c2c2c" }
+copy_mode_inactive_highlight_fg = { Color = "#f4f4f4" }
+quick_select_label_bg = { Color = "#ff671d" }
+quick_select_label_fg = { Color = "#171717" }
+quick_select_match_bg = { Color = "#2970ff" }
+quick_select_match_fg = { Color = "#171717" }
 
 [colors.tab_bar]
-background = "#181411"
-inactive_tab_edge = "#362f2a"
+background = "#0b0b0b"
+inactive_tab_edge = "#2c2c2c"
 
 [colors.tab_bar.active_tab]
-bg_color = "#241f1c"
-fg_color = "#cbc3ba"
+bg_color = "#171717"
+fg_color = "#ffffff"
 intensity = "Normal"
 underline = "None"
 italic = false
 strikethrough = false
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#1e1916"
-fg_color = "#786d63"
+bg_color = "#111111"
+fg_color = "#696969"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#2c2622"
-fg_color = "#b9b1a9"
+bg_color = "#212121"
+fg_color = "#f4f4f4"
 italic = true
 
 [colors.tab_bar.new_tab]
-bg_color = "#1e1916"
-fg_color = "#786d63"
+bg_color = "#111111"
+fg_color = "#696969"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "#2c2622"
-fg_color = "#cbc3ba"
+bg_color = "#212121"
+fg_color = "#ffffff"
 italic = true

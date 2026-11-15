@@ -1,7 +1,7 @@
 {
   "name": "grafana-color-scheme",
   "displayName": "Grafana Color Scheme",
-  "description": "Grafana, a dim color scheme derived from the Grafana Labs brand palette, with warm gray surfaces and muted accents.",
+  "description": "Grafana, a color scheme built on the Grafana Labs brand palette: primary orange and the secondary colors on neutral surfaces, plus a softer Dim flavor.",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.90.0"
@@ -35,6 +35,18 @@
         "label": "Grafana Light",
         "uiTheme": "vs",
         "path": "./themes/grafana-light-color-theme.json"
+      },
+      {
+        "id": "grafana-dark-dim",
+        "label": "Grafana Dark Dim",
+        "uiTheme": "vs-dark",
+        "path": "./themes/grafana-dark-dim-color-theme.json"
+      },
+      {
+        "id": "grafana-light-dim",
+        "label": "Grafana Light Dim",
+        "uiTheme": "vs",
+        "path": "./themes/grafana-light-dim-color-theme.json"
       }
     ]
   }

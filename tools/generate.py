@@ -77,7 +77,7 @@ def cmd_list(pal) -> int:
     print(f"{'slug'.ljust(width)}  {'name':<14}  artifacts")
     for slug in registry.TARGETS:
         t = registry.TARGETS[slug]
-        flav = " (+vivid)" if t.flavors else ""
+        flav = " (+dim)" if t.flavors else ""
         print(f"{slug.ljust(width)}  {t.display:<14}  {t.artifacts}{flav}")
     print(f"\n{len(registry.TARGETS)} targets, variants: {', '.join(pal.scheme['variants'])}")
     return 0

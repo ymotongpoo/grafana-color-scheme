@@ -37,7 +37,7 @@ class Target:
     artifacts: str  # what gets produced, for the README matrix
     install: str  # one-line install, for the README matrix
     upstream: str  # where the format is documented
-    flavors: bool = False  # True when it also ships -vivid files
+    flavors: bool = True  # False when it ships the default flavor only
 
 
 TARGETS: dict[str, Target] = {
@@ -47,7 +47,7 @@ TARGETS: dict[str, Target] = {
             slug="chatgpt",
             display="ChatGPT macOS",
             emit=chatgpt.emit,
-            artifacts="2 Codex theme import strings + CC Theme package",
+            artifacts="4 Codex theme import strings + CC Theme package",
             install="paste the matching `*.codex-theme.txt` string into Codex Settings > Appearance > Import",
             upstream="https://github.com/openai/codex",
         ),
@@ -55,7 +55,7 @@ TARGETS: dict[str, Target] = {
             slug="vscode",
             display="VS Code",
             emit=vscode.emit,
-            artifacts="extension root with 2 theme files",
+            artifacts="extension root with 4 theme files",
             install="symlink `targets/vscode` into `~/.vscode/extensions/`, restart, then pick the theme",
             upstream="https://code.visualstudio.com/api/references/theme-color",
         ),
@@ -63,7 +63,7 @@ TARGETS: dict[str, Target] = {
             slug="zed",
             display="Zed",
             emit=zed.emit,
-            artifacts="1 theme family (both variants)",
+            artifacts="1 theme family (4 themes)",
             install="copy `themes/grafana.json` to `~/.config/zed/themes/`",
             upstream="https://zed.dev/docs/extensions/themes",
         ),
@@ -71,16 +71,15 @@ TARGETS: dict[str, Target] = {
             slug="t3code",
             display="T3 Code",
             emit=t3code.emit,
-            artifacts="2 importable theme files per flavor (light and dark appearances)",
-            install="Settings → Appearance → Import theme, then choose `grafana.json` or `grafana-vivid.json`",
+            artifacts="2 importable theme files, each with light and dark appearances",
+            install="Settings → Appearance → Import theme, then choose `grafana.json` or `grafana-dim.json`",
             upstream="https://github.com/pingdotgg/t3code/blob/main/docs/user/appearance.md#custom-themes",
-            flavors=True,
         ),
         Target(
             slug="emacs",
             display="Emacs",
             emit=emacs.emit,
-            artifacts="2 theme files",
+            artifacts="4 theme files",
             install="add the directory to `custom-theme-load-path`, then `(load-theme 'grafana-dark t)`",
             upstream="https://www.gnu.org/software/emacs/manual/html_node/elisp/Custom-Themes.html",
         ),
@@ -88,7 +87,7 @@ TARGETS: dict[str, Target] = {
             slug="vim",
             display="Vim / Neovim",
             emit=vim.emit,
-            artifacts="2 colorschemes",
+            artifacts="4 colorschemes",
             install="add `targets/vim` to `runtimepath`, then `:colorscheme grafana-dark`",
             upstream="https://vimhelp.org/syntax.txt.html",
         ),
@@ -99,7 +98,6 @@ TARGETS: dict[str, Target] = {
             artifacts="4 TOML schemes",
             install="copy `colors/*.toml` to `~/.config/wezterm/colors/`, then set `color_scheme`",
             upstream="https://wezterm.org/config/appearance.html",
-            flavors=True,
         ),
         Target(
             slug="iterm2",
@@ -108,13 +106,12 @@ TARGETS: dict[str, Target] = {
             artifacts="4 color presets",
             install="Settings > Profiles > Colors > Color Presets > Import",
             upstream="https://iterm2.com/documentation-preferences-profiles-colors.html",
-            flavors=True,
         ),
         Target(
             slug="tmux",
             display="tmux",
             emit=tmux.emit,
-            artifacts="2 themes, optional status line, TPM entry point",
+            artifacts="4 themes, optional status lines, TPM entry point",
             install="`source-file` the conf from `~/.tmux.conf`, or install via TPM",
             upstream="https://man.openbsd.org/tmux#STYLES",
         ),
@@ -122,7 +119,7 @@ TARGETS: dict[str, Target] = {
             slug="herdr",
             display="Herdr",
             emit=herdr.emit,
-            artifacts="2 config fragments",
+            artifacts="6 config fragments (2 auto-switching)",
             install="paste the `[theme.custom]` block into `~/.config/herdr/config.toml`",
             upstream="https://herdr.dev/docs/config-reference/",
         ),
@@ -130,7 +127,7 @@ TARGETS: dict[str, Target] = {
             slug="chroma",
             display="Chroma / Hugo",
             emit=chroma.emit,
-            artifacts="2 XML styles, 3 stylesheets",
+            artifacts="4 XML styles, 6 stylesheets",
             install="Hugo: copy a CSS file and set `markup.highlight.noClasses = false`",
             upstream="https://github.com/alecthomas/chroma",
         ),
@@ -138,7 +135,7 @@ TARGETS: dict[str, Target] = {
             slug="slack",
             display="Slack",
             emit=slack.emit,
-            artifacts="2 sidebar strings",
+            artifacts="4 sidebar strings",
             install="Preferences > Themes, paste the string into the custom theme field",
             upstream="https://slack.com/help/articles/205166337",
         ),
@@ -149,6 +146,7 @@ TARGETS: dict[str, Target] = {
             artifacts="2 unpacked themes",
             install="`chrome://extensions` > Developer mode > Load unpacked",
             upstream="https://developer.chrome.com/docs/extensions/develop/ui/themes",
+            flavors=False,
         ),
     )
 }

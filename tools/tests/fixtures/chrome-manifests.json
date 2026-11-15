@@ -1,0 +1,8 @@
+{
+  "dark": {
+    "chrome_sha256": "85ee45f450fa89d3c1c0e310aeb45b7135652f35b60d8b767504bd61eaa72b8f"
+  },
+  "light": {
+    "chrome_sha256": "47addd02665159e063afb4f08019f23d0f7944759b3964688a108b18cda2848d"
+  }
+}

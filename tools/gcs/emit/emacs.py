@@ -195,6 +195,12 @@ def _faces(v: Variant) -> list[tuple[str, str]]:
     ]
 
 
+_BLURB = {
+    "brand": "Primary orange and the secondary brand colors on neutral surfaces.",
+    "dim": "The brand palette at lower saturation, for long reading sessions.",
+}
+
+
 def _theme(p: Palette, v: Variant) -> str:
     bindings = _let_bindings(v)
     width = max(len(name) for name, _ in bindings)
@@ -228,7 +234,7 @@ def _theme(p: Palette, v: Variant) -> str:
 ;;; Commentary:
 
 ;; {v.label}, derived from the Grafana Labs brand palette.
-;; Warm gray surfaces and muted accents, with quieter comments.
+;; {_BLURB[v.flavor]}
 ;;
 ;; {HEADER}
 ;; This is not an official Grafana Labs project.
@@ -236,7 +242,7 @@ def _theme(p: Palette, v: Variant) -> str:
 ;;; Code:
 
 (deftheme {v.id}
-  "{v.label}, a dim color scheme from the Grafana Labs brand palette.")
+  "{v.label}, a color scheme from the Grafana Labs brand palette.")
 
 {chr(10).join(let_lines)}
 
@@ -261,4 +267,4 @@ def _theme(p: Palette, v: Variant) -> str:
 
 
 def emit(p: Palette) -> dict[str, str]:
-    return {f"{v.id}-theme.el": _theme(p, v) for _n, v in p.each()}
+    return {f"{v.id}-theme.el": _theme(p, v) for _n, v in p.every()}

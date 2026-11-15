@@ -3,5 +3,5 @@ name = "Grafana"
 version = "1.0.0"
 schema_version = 1
 authors = ["Yoshi Yamaguchi"]
-description = "A dim color scheme derived from the Grafana Labs brand palette."
+description = "A color scheme built on the Grafana Labs brand palette, with a Dim flavor."
 repository = "https://github.com/ymotongpoo/grafana-color-scheme"

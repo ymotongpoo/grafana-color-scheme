@@ -67,7 +67,7 @@ def _board(v: Variant) -> str:
     ]
     text = [(name, v.text[name], ratio(v.text[name])) for name in ("bright", "fg", "subtext", "faint")]
     accents = [(name, hexv, ratio(hexv)) for name, hexv in v.accents.items()]
-    ansi_dim = [(f"ansi {i}", v.ansi()[i], ratio(v.ansi()[i])) for i in range(16)]
+    ansi = [(f"ansi {i}", v.ansi()[i], ratio(v.ansi()[i])) for i in range(16)]
 
     body: list[str] = []
     y = PAD + 16
@@ -79,7 +79,7 @@ def _board(v: Variant) -> str:
         ("surfaces", surfaces),
         ("text", text),
         ("accents", accents),
-        ("ansi 16 (dim)", ansi_dim),
+        ("ansi 16", ansi),
     ):
         chunk, y = _section(title, items, PAD, y, page_fg)
         body += chunk
@@ -126,7 +126,8 @@ def _ansi_board(p: Palette, name: str) -> str:
 
 def emit(p: Palette) -> dict[str, str]:
     files: dict[str, str] = {}
-    for _name, v in p.each():
-        files[f"palette-{v.name}.svg"] = _board(v)
-        files[f"ansi-{v.name}.svg"] = _ansi_board(p, v.name)
+    for _name, v in p.every():
+        files[f"palette-{v.id.removeprefix(p.slug + '-')}.svg"] = _board(v)
+    for name, _v in p.each():
+        files[f"ansi-{name}.svg"] = _ansi_board(p, name)
     return files

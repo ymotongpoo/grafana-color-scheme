@@ -452,7 +452,7 @@ def _theme(v: Variant) -> str:
 
 def _manifest(p: Palette) -> str:
     themes = []
-    for _name, v in p.each():
+    for _name, v in p.every():
         themes.append(
             {
                 "id": v.id,
@@ -466,8 +466,9 @@ def _manifest(p: Palette) -> str:
             "name": "grafana-color-scheme",
             "displayName": f"{p.name} Color Scheme",
             "description": (
-                f"{p.name}, a dim color scheme derived from the Grafana Labs brand "
-                "palette, with warm gray surfaces and muted accents."
+                f"{p.name}, a color scheme built on the Grafana Labs brand "
+                "palette: primary orange and the secondary colors on neutral "
+                "surfaces, plus a softer Dim flavor."
             ),
             "version": "1.0.0",
             "engines": {"vscode": p.target_pin("vscode", "engine", "^1.90.0")},
@@ -482,6 +483,6 @@ def _manifest(p: Palette) -> str:
 
 def emit(p: Palette) -> dict[str, str]:
     files = {"package.json": _manifest(p)}
-    for _name, v in p.each():
+    for _name, v in p.every():
         files[f"themes/{v.id}-color-theme.json"] = _theme(v)
     return files

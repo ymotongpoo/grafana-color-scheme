@@ -28,29 +28,19 @@ _BLOCK = re.compile(
 
 # Where each accent came from, for the README's provenance column. Kept here
 # rather than in palette.toml because it is documentation of documentation.
-_ORIGIN_DARK = {
-    "orange": "orange 80%",
-    "amber": "amber",
-    "yellow": "yellow 100%",
-    "green": "light green",
-    "light-green": "green 80%",
-    "light-blue": "light blue",
-    "blue": "blue 60%",
-    "indigo": "indigo",
-    "purple": "purple 60%",
-    "pink": "pink",
-}
-_ORIGIN_LIGHT = {
-    "orange": "orange 140%",
-    "amber": "yellow 180%",
-    "yellow": "yellow",
-    "green": "green 140%",
-    "light-green": "green 180%",
-    "light-blue": "light blue",
-    "blue": "blue 140%",
-    "indigo": "indigo",
-    "purple": "purple 140%",
-    "pink": "pink",
+_ORIGIN = {
+    ("dark", "brand"): {
+        "orange": "primary", "yellow": "secondary", "green": "secondary",
+        "blue": "secondary", "purple": "secondary", "amber": "support",
+        "light-green": "support", "light-blue": "support", "indigo": "support",
+        "pink": "support",
+    },
+    ("light", "brand"): {
+        "orange": "orange 120%", "yellow": "yellow 160%", "green": "green 120%",
+        "blue": "secondary", "purple": "secondary", "amber": "amber; darkened",
+        "light-green": "light green; darkened", "light-blue": "light blue; darkened",
+        "indigo": "support", "pink": "pink; darkened",
+    },
 }
 
 _ROLE_ORDER = (
@@ -94,85 +84,64 @@ def _ladder_block(p: Palette) -> str:
     return _table(rows, ["hue"] + [f"{s}%" for s in steps])
 
 
-def _variant_block(p: Palette, v: Variant) -> str:
-    base = v.surfaces["base"]
-    origins = _ORIGIN_DARK if v.is_dark else _ORIGIN_LIGHT
+def _variant_block(p: Palette, name: str) -> str:
+    v, d = p.variant(name), p.variant(name, "dim")
+    base, dbase = v.surfaces["base"], d.surfaces["base"]
+    origins = _ORIGIN[name, v.flavor]
     rows = []
-    for name, hexv in v.accents.items():
+    for token, hexv in v.accents.items():
         rows.append(
             [
-                f"`{name}`",
+                f"`{token}`",
                 f"`{hexv}`",
-                origins.get(name, "-") + "; hand-muted",
+                origins.get(token, "-"),
                 f"{C.contrast(hexv, base):.2f}:1",
+                f"`{d.accents[token]}`",
+                f"{C.contrast(d.accents[token], dbase):.2f}:1",
             ]
         )
-    return _table(rows, ["token", "hex", "brand origin", f"contrast on `{base}`"])
+    return _table(rows, ["token", "brand", "origin", f"on `{base}`", "dim", f"on `{dbase}`"])
 
 
 def _surfaces_block(p: Palette) -> str:
-    dark, light = p.variant("dark"), p.variant("light")
+    cols = [p.variant(n, f) for n in ("dark", "light") for f in p.flavors]
     rows = []
     for name in ("crust", "mantle", "base", "surface0", "surface1", "surface2"):
-        rows.append([f"`{name}`", f"`{dark.surfaces[name]}`", f"`{light.surfaces[name]}`"])
+        rows.append([f"`{name}`"] + [f"`{v.surfaces[name]}`" for v in cols])
     for name in ("bright", "fg", "subtext", "faint"):
         rows.append(
-            [
-                f"`{name}`",
-                f"`{dark.text[name]}` ({C.contrast(dark.text[name], dark.surfaces['base']):.2f}:1)",
-                f"`{light.text[name]}` ({C.contrast(light.text[name], light.surfaces['base']):.2f}:1)",
-            ]
+            [f"`{name}`"]
+            + [f"`{v.text[name]}` ({C.contrast(v.text[name], v.surfaces['base']):.2f}:1)"
+               for v in cols]
         )
-    return _table(rows, ["token", "dark", "light"])
+    return _table(rows, ["token"] + [f"{v.name} {v.flavor}" for v in cols])
 
 
 def _roles_block(p: Palette) -> str:
-    dark, light = p.variant("dark"), p.variant("light")
+    cols = [p.variant(n, f) for n in ("dark", "light") for f in p.flavors]
+    groups = [("", lambda v: v.roles, _ROLE_ORDER),
+              ("diagnostic.", lambda v: v.diagnostic, ("error", "warning", "info", "hint", "ok")),
+              ("diff.", lambda v: v.diff, ("added", "removed", "changed"))]
     rows = []
-    for name in _ROLE_ORDER:
-        role = dark.roles[name]
-        rows.append(
-            [
-                f"`{name}`",
-                f"`{role.token}`",
-                f"`{role.color}`",
-                f"`{light.roles[name].color}`",
-                role.style or "-",
-            ]
-        )
-    for label, group in (("error", "error"), ("warning", "warning"), ("info", "info"),
-                         ("hint", "hint"), ("ok", "ok")):
-        d = dark.diagnostic[group]
-        rows.append(
-            [f"`diagnostic.{label}`", f"`{d.token}`", f"`{d.color}`",
-             f"`{light.diagnostic[group].color}`", d.style or "-"]
-        )
-    for label in ("added", "removed", "changed"):
-        d = dark.diff[label]
-        rows.append(
-            [f"`diff.{label}`", f"`{d.token}`", f"`{d.color}`",
-             f"`{light.diff[label].color}`", d.style or "-"]
-        )
-    return _table(rows, ["role", "token", "dark", "light", "style"])
+    for prefix, table, names in groups:
+        for name in names:
+            role = table(cols[0])[name]
+            rows.append(
+                [f"`{prefix}{name}`", f"`{role.token}`"]
+                + [f"`{table(v)[name].color}`" for v in cols]
+                + [role.style or "-"]
+            )
+    return _table(rows, ["role", "token"] + [f"{v.name} {v.flavor}" for v in cols] + ["style"])
 
 
 def _ansi_block(p: Palette) -> str:
-    dark, light = p.variant("dark"), p.variant("light")
+    cols = [p.variant(n, f) for n in ("dark", "light") for f in p.flavors]
     names = ("black", "red", "green", "yellow", "blue", "magenta", "cyan", "white")
     rows = []
     for i in range(16):
         label = names[i % 8] if i < 8 else f"bright {names[i % 8]}"
-        rows.append(
-            [
-                str(i),
-                label,
-                f"`{dark.ansi()[i]}`",
-                f"`{p.variant('dark', 'vivid').ansi()[i]}`",
-                f"`{light.ansi()[i]}`",
-                f"`{p.variant('light', 'vivid').ansi()[i]}`",
-            ]
-        )
-    return _table(rows, ["slot", "name", "dark dim", "dark vivid", "light dim", "light vivid"])
+        rows.append([str(i), label] + [f"`{v.ansi()[i]}`" for v in cols])
+    return _table(rows, ["slot", "name"] + [f"{v.name} {v.flavor}" for v in cols])
 
 
 def _install_block(p: Palette) -> str:
@@ -182,7 +151,7 @@ def _install_block(p: Palette) -> str:
             [
                 t.display,
                 f"[`targets/{slug}`](targets/{slug})",
-                t.artifacts + (" (+ vivid)" if t.flavors else ""),
+                t.artifacts + ("" if t.flavors else " (brand only)"),
                 t.install,
             ]
         )
@@ -200,8 +169,8 @@ def _blocks(p: Palette) -> dict[str, str]:
     return {
         "brand": _brand_block(p),
         "ladders": _ladder_block(p),
-        "palette-dark": _variant_block(p, p.variant("dark")),
-        "palette-light": _variant_block(p, p.variant("light")),
+        "palette-dark": _variant_block(p, "dark"),
+        "palette-light": _variant_block(p, "light"),
         "surfaces": _surfaces_block(p),
         "roles": _roles_block(p),
         "ansi": _ansi_block(p),

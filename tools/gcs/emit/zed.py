@@ -236,7 +236,7 @@ def emit(p: Palette) -> dict[str, str]:
         "author": p.scheme["author"],
         "themes": [
             {"name": v.label, "appearance": v.appearance, "style": _style(v)}
-            for _n, v in p.each()
+            for _n, v in p.every()
         ],
     }
     extension = f"""id = "{p.slug}"
@@ -244,7 +244,7 @@ name = "{p.name}"
 version = "1.0.0"
 schema_version = 1
 authors = ["{p.scheme['author']}"]
-description = "A dim color scheme derived from the Grafana Labs brand palette."
+description = "A color scheme built on the Grafana Labs brand palette, with a Dim flavor."
 repository = "{p.scheme['homepage']}"
 """
     return {

@@ -2,79 +2,90 @@
 
 Ports do not reference palette colors directly. They reference **roles**, and
 roles resolve to a palette color per variant. Change `keyword` from `orange`
-to `pink` in `palette.toml` and all 11 targets follow in one regenerate.
+to `pink` in `palette.toml` and all 13 targets follow in one regenerate.
 
 ## The map
 
 <!-- BEGIN GENERATED: roles -->
-| role                 | token         | dark      | light     | style         |
-|----------------------|---------------|-----------|-----------|---------------|
-| `keyword`            | `orange`      | `#c18c68` | `#ac795a` | -             |
-| `keyword-ctrl`       | `orange`      | `#c18c68` | `#ac795a` | -             |
-| `keyword-op`         | `orange`      | `#c18c68` | `#ac795a` | -             |
-| `operator`           | `orange`      | `#c18c68` | `#ac795a` | -             |
-| `builtin`            | `amber`       | `#b4a075` | `#a08a61` | -             |
-| `decorator`          | `amber`       | `#b4a075` | `#a08a61` | -             |
-| `string`             | `green`       | `#89a17e` | `#7d9068` | -             |
-| `string-doc`         | `green`       | `#89a17e` | `#7d9068` | italic        |
-| `string-escape`      | `amber`       | `#b4a075` | `#a08a61` | -             |
-| `regex`              | `pink`        | `#b77f94` | `#ac7b8d` | -             |
-| `number`             | `light-blue`  | `#789fa6` | `#719399` | -             |
-| `boolean`            | `light-blue`  | `#789fa6` | `#719399` | -             |
-| `constant`           | `light-blue`  | `#789fa6` | `#719399` | -             |
-| `type`               | `blue`        | `#8198b5` | `#7b8da5` | -             |
-| `class`              | `blue`        | `#8198b5` | `#7b8da5` | -             |
-| `namespace`          | `blue`        | `#8198b5` | `#7b8da5` | -             |
-| `interface`          | `blue`        | `#8198b5` | `#7b8da5` | -             |
-| `function`           | `purple`      | `#ad8eaf` | `#a183a2` | -             |
-| `method`             | `purple`      | `#ad8eaf` | `#a183a2` | -             |
-| `variable`           | `fg`          | `#b9b1a9` | `#6b625b` | -             |
-| `parameter`          | `fg`          | `#b9b1a9` | `#6b625b` | -             |
-| `property`           | `light-green` | `#79a08a` | `#6f9381` | -             |
-| `attribute`          | `amber`       | `#b4a075` | `#a08a61` | -             |
-| `tag`                | `orange`      | `#c18c68` | `#ac795a` | -             |
-| `label`              | `amber`       | `#b4a075` | `#a08a61` | -             |
-| `preprocessor`       | `indigo`      | `#8d86b1` | `#8a80aa` | -             |
-| `punctuation`        | `subtext`     | `#8d8279` | `#928579` | -             |
-| `comment`            | `subtext`     | `#8d8279` | `#928579` | italic        |
-| `comment-doc`        | `subtext`     | `#8d8279` | `#928579` | italic        |
-| `link`               | `light-blue`  | `#789fa6` | `#719399` | underline     |
-| `heading`            | `orange`      | `#c18c68` | `#ac795a` | bold          |
-| `deprecated`         | `faint`       | `#786d63` | `#a89b8e` | strikethrough |
-| `diagnostic.error`   | `pink`        | `#b77f94` | `#ac7b8d` | -             |
-| `diagnostic.warning` | `amber`       | `#b4a075` | `#a08a61` | -             |
-| `diagnostic.info`    | `blue`        | `#8198b5` | `#7b8da5` | -             |
-| `diagnostic.hint`    | `subtext`     | `#8d8279` | `#928579` | -             |
-| `diagnostic.ok`      | `green`       | `#89a17e` | `#7d9068` | -             |
-| `diff.added`         | `green`       | `#89a17e` | `#7d9068` | -             |
-| `diff.removed`       | `pink`        | `#b77f94` | `#ac7b8d` | -             |
-| `diff.changed`       | `yellow`      | `#acaa70` | `#989363` | -             |
+| role                 | token        | dark brand | dark dim  | light brand | light dim | style         |
+|----------------------|--------------|------------|-----------|-------------|-----------|---------------|
+| `keyword`            | `orange`     | `#ff671d`  | `#e48a67` | `#f04205`   | `#c05f46` | -             |
+| `keyword-ctrl`       | `orange`     | `#ff671d`  | `#e48a67` | `#f04205`   | `#c05f46` | -             |
+| `keyword-op`         | `orange`     | `#ff671d`  | `#e48a67` | `#f04205`   | `#c05f46` | -             |
+| `operator`           | `orange`     | `#ff671d`  | `#e48a67` | `#f04205`   | `#c05f46` | -             |
+| `builtin`            | `amber`      | `#ffab29`  | `#dbaa6d` | `#d6760b`   | `#ad7548` | -             |
+| `decorator`          | `amber`      | `#ffab29`  | `#dbaa6d` | `#d6760b`   | `#ad7548` | -             |
+| `string`             | `green`      | `#04bc4c`  | `#6db979` | `#0c9065`   | `#4c856b` | -             |
+| `string-doc`         | `green`      | `#04bc4c`  | `#6db979` | `#0c9065`   | `#4c856b` | italic        |
+| `string-escape`      | `amber`      | `#ffab29`  | `#dbaa6d` | `#d6760b`   | `#ad7548` | -             |
+| `regex`              | `pink`       | `#f35998`  | `#de82a2` | `#e14889`   | `#b65f7e` | -             |
+| `number`             | `purple`     | `#d444f1`  | `#ca7cdb` | `#d444f1`   | `#ac5fbc` | -             |
+| `boolean`            | `purple`     | `#d444f1`  | `#ca7cdb` | `#d444f1`   | `#ac5fbc` | -             |
+| `constant`           | `purple`     | `#d444f1`  | `#ca7cdb` | `#d444f1`   | `#ac5fbc` | -             |
+| `type`               | `yellow`     | `#ffed23`  | `#d3ca6e` | `#aa710e`   | `#947347` | -             |
+| `class`              | `yellow`     | `#ffed23`  | `#d3ca6e` | `#aa710e`   | `#947347` | -             |
+| `namespace`          | `yellow`     | `#ffed23`  | `#d3ca6e` | `#aa710e`   | `#947347` | -             |
+| `interface`          | `yellow`     | `#ffed23`  | `#d3ca6e` | `#aa710e`   | `#947347` | -             |
+| `function`           | `blue`       | `#2970ff`  | `#6794e8` | `#2970ff`   | `#4b76c7` | -             |
+| `method`             | `blue`       | `#2970ff`  | `#6794e8` | `#2970ff`   | `#4b76c7` | -             |
+| `variable`           | `fg`         | `#f4f4f4`  | `#cccccc` | `#171717`   | `#3a3a3a` | -             |
+| `parameter`          | `fg`         | `#f4f4f4`  | `#cccccc` | `#171717`   | `#3a3a3a` | -             |
+| `property`           | `light-blue` | `#3fc6eb`  | `#78bad0` | `#0a92b1`   | `#4c8597` | -             |
+| `attribute`          | `amber`      | `#ffab29`  | `#dbaa6d` | `#d6760b`   | `#ad7548` | -             |
+| `tag`                | `orange`     | `#ff671d`  | `#e48a67` | `#f04205`   | `#c05f46` | -             |
+| `label`              | `amber`      | `#ffab29`  | `#dbaa6d` | `#d6760b`   | `#ad7548` | -             |
+| `preprocessor`       | `indigo`     | `#7d64ff`  | `#928ce7` | `#7d64ff`   | `#756ec6` | -             |
+| `punctuation`        | `subtext`    | `#afafaf`  | `#8f8f8f` | `#696969`   | `#6e6e6e` | -             |
+| `comment`            | `subtext`    | `#afafaf`  | `#8f8f8f` | `#696969`   | `#6e6e6e` | italic        |
+| `comment-doc`        | `subtext`    | `#afafaf`  | `#8f8f8f` | `#696969`   | `#6e6e6e` | italic        |
+| `link`               | `light-blue` | `#3fc6eb`  | `#78bad0` | `#0a92b1`   | `#4c8597` | underline     |
+| `heading`            | `orange`     | `#ff671d`  | `#e48a67` | `#f04205`   | `#c05f46` | bold          |
+| `deprecated`         | `faint`      | `#696969`  | `#666666` | `#afafaf`   | `#a0a0a0` | strikethrough |
+| `diagnostic.error`   | `pink`       | `#f35998`  | `#de82a2` | `#e14889`   | `#b65f7e` | -             |
+| `diagnostic.warning` | `amber`      | `#ffab29`  | `#dbaa6d` | `#d6760b`   | `#ad7548` | -             |
+| `diagnostic.info`    | `blue`       | `#2970ff`  | `#6794e8` | `#2970ff`   | `#4b76c7` | -             |
+| `diagnostic.hint`    | `subtext`    | `#afafaf`  | `#8f8f8f` | `#696969`   | `#6e6e6e` | -             |
+| `diagnostic.ok`      | `green`      | `#04bc4c`  | `#6db979` | `#0c9065`   | `#4c856b` | -             |
+| `diff.added`         | `green`      | `#04bc4c`  | `#6db979` | `#0c9065`   | `#4c856b` | -             |
+| `diff.removed`       | `pink`       | `#f35998`  | `#de82a2` | `#e14889`   | `#b65f7e` | -             |
+| `diff.changed`       | `yellow`     | `#ffed23`  | `#d3ca6e` | `#aa710e`   | `#947347` | -             |
 <!-- END GENERATED: roles -->
 
 ## Why these assignments
 
-### Warm for control, cool for structure
+### Primary and secondary colors carry the frequent roles
 
-The broad split: warm accents mark what the code *does*, cool accents mark
-what it *is*.
+The Grafana brand guide ranks its colors: one primary (orange), four
+chromatic secondaries (yellow, green, blue, purple), then five support
+colors. The roles follow that ranking. The five kinds of token that fill
+most of a source file each get a primary or secondary color, so a screen of
+code looks like the brand rather than like its supporting cast.
 
-- `orange` — keywords, control flow, operators, tags. The brand's primary
-  color on the thing you scan for first.
-- `amber` — builtins, decorators, attributes, string escapes. Warm but
-  quieter than orange, for names the language gave you rather than ones you
-  wrote.
-- `green` — strings and insertions. The most common non-code content in a
-  file, and green is restful at high frequency.
-- `light-blue` — numbers, booleans, constants. Literal values that are not
-  strings.
-- `blue` — types, classes, namespaces, interfaces. Everything structural.
-- `purple` — functions and methods. Distinct from `blue` so a call site is
-  never confused with a type reference.
-- `light-green` — properties and members.
-- `indigo` — preprocessor and imports. Rare enough to earn its own hue.
+- `orange` (primary) — keywords, control flow, operators, tags, headings.
+  The brand's own color on the thing you scan for first.
+- `blue` (secondary) — functions and methods. Call sites are the next most
+  frequent thing after keywords, and blue is the calmest secondary to read
+  at that density.
+- `green` (secondary) — strings and insertions. The most common non-code
+  content in a file, and green is restful at high frequency.
+- `yellow` (secondary) — types, classes, namespaces, interfaces, and
+  `diff.changed`. Types are frequent but not dense, which suits the
+  brightest color in the palette. On light backgrounds yellow becomes the
+  brand's 160% step, a dark gold.
+- `purple` (secondary) — numbers, booleans, constants. Literal values that
+  are not strings.
+
+The support colors take the rarer roles:
+
+- `amber` — builtins, decorators, attributes, labels, string escapes, and
+  warnings. Warm like orange but quieter, for names the language gave you
+  rather than ones you wrote.
+- `light-blue` — properties, members, and links.
+- `indigo` — preprocessor directives and imports.
 - `pink` — errors, deletions, regexes. See below.
-- `yellow` — `diff.changed` only. Deliberately narrow: on light backgrounds
-  yellow is the hardest hue to keep legible, so it carries the least work.
+- `light-green` — no syntax role. It stays in the palette for targets that
+  expose every accent: tmux's `@grafana_light_green` option and Herdr's
+  `teal` slot.
 
 ### Variables are plain foreground
 
@@ -95,8 +106,8 @@ more clearly.
 
 ### Comments are muted and italic
 
-Comments use `subtext` plus italic. Their softer tone keeps them behind the
-main code. The palette is tuned visually, without a minimum contrast target.
+Comments use `subtext` (Neutral 2 on brand dark, Neutral 3 on brand light)
+plus italic. Their softer tone keeps them behind the main code.
 
 ### There is no red
 
@@ -110,7 +121,7 @@ roles that conventionally want red map to `pink`:
 | `regex` | `pink` | regexes are where syntax errors hide, so the association is useful |
 | `diagnostic.warning` | `amber` | already the brand's caution color |
 
-Pink is checked to be ΔE ≥ 8 from `orange` in both variants, so "something
+Pink is checked to be ΔE ≥ 8 from `orange` in every variant and flavor, so "something
 is wrong" never reads as "this is a keyword".
 
 The one place the absence leaks through is Herdr, whose theme token

@@ -44,9 +44,9 @@ class Role:
 @dataclass(frozen=True)
 class Variant:
     name: str  # "dark" | "light"
-    flavor: str  # "dim" | "vivid"
-    id: str  # "grafana-dark"
-    label: str  # "Grafana Dark"
+    flavor: str  # "brand" | "dim"
+    id: str  # "grafana-dark", or "grafana-dark-dim" for a non-default flavor
+    label: str  # "Grafana Dark", or "Grafana Dark Dim"
     appearance: str  # "dark" | "light"
     surfaces: dict[str, str]
     text: dict[str, str]
@@ -107,13 +107,22 @@ class Palette:
     def flavors(self) -> list[str]:
         return list(self.scheme["flavors"])
 
-    def variant(self, name: str, flavor: str = "dim") -> Variant:
-        return self.variants[name, flavor]
+    @property
+    def default_flavor(self) -> str:
+        return self.scheme["default_flavor"]
 
-    def each(self, flavor: str = "dim"):
-        """(variant_name, Variant) in declared order."""
+    def variant(self, name: str, flavor: str | None = None) -> Variant:
+        return self.variants[name, flavor or self.default_flavor]
+
+    def each(self, flavor: str | None = None):
+        """(variant_name, Variant) in declared order, for one flavor."""
         for name in self.scheme["variants"]:
             yield name, self.variant(name, flavor)
+
+    def every(self):
+        """(variant_name, Variant) for every flavor, default flavor first."""
+        for flavor in self.flavors:
+            yield from self.each(flavor)
 
     def brand_hex(self, name: str) -> str:
         return self.brand["colors"][name]["hex"]
@@ -167,16 +176,20 @@ def load(path: Path | str = "palette.toml") -> Palette:
         raw = tomllib.load(fh)
 
     variants: dict[tuple[str, str], Variant] = {}
+    default = raw["scheme"]["default_flavor"]
     for name in raw["scheme"]["variants"]:
         vraw = raw["variants"][name]
         for flavor in raw["scheme"]["flavors"]:
-            # Vivid is a complete snapshot: no reading colors fall back to dim.
-            colors = vraw if flavor == "dim" else vraw[flavor]
+            # The default flavor lives at the top of the variant table; every
+            # other flavor is a complete sub-table, so no reading color falls
+            # back from one flavor to another.
+            is_default = flavor == default
+            colors = vraw if is_default else vraw[flavor]
             stub = Variant(
                 name=name,
                 flavor=flavor,
-                id=vraw["id"],
-                label=vraw["label"],
+                id=vraw["id"] if is_default else f"{vraw['id']}-{flavor}",
+                label=vraw["label"] if is_default else f"{vraw['label']} {flavor.title()}",
                 appearance=vraw["appearance"],
                 surfaces=dict(colors["surfaces"]),
                 text=dict(colors["text"]),

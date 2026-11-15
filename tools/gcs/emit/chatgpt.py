@@ -172,5 +172,5 @@ def emit(p: Palette) -> dict[str, str]:
         "unified-theme.json": source.decode("utf-8"),
         "family.json": _dump(family),
     }
-    out.update({f"{v.id}.codex-theme.txt": _import_string(v) for _name, v in p.each()})
+    out.update({f"{v.id}.codex-theme.txt": _import_string(v) for _name, v in p.every()})
     return out

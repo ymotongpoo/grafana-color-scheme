@@ -54,7 +54,7 @@ def emit(p: Palette) -> dict[str, str]:
         "themes": {},
     }
 
-    for _name, v in p.each():
+    for _name, v in p.every():
         eight = _values(v, False)
         ten = _values(v, True)
         files[f"{v.id}.txt"] = ",".join(eight) + "\n"

@@ -321,4 +321,4 @@ def _theme(p: Palette, v: Variant) -> str:
 
 
 def emit(p: Palette) -> dict[str, str]:
-    return {f"colors/{v.id}.vim": _theme(p, v) for _n, v in p.each()}
+    return {f"colors/{v.id}.vim": _theme(p, v) for _n, v in p.every()}

@@ -62,11 +62,9 @@ def _preset(v: Variant) -> bytes:
 
 def emit(p: Palette) -> dict[str, str]:
     files: dict[str, str] = {}
-    for flavor in p.flavors:
-        for _name, v in p.each(flavor):
-            suffix = "" if flavor == p.scheme["default_flavor"] else f"-{flavor}"
-            raw = _preset(v).decode("utf-8")
-            if not raw.endswith("\n"):
-                raw += "\n"
-            files[f"{v.id}{suffix}.itermcolors"] = raw
+    for _name, v in p.every():
+        raw = _preset(v).decode("utf-8")
+        if not raw.endswith("\n"):
+            raw += "\n"
+        files[f"{v.id}.itermcolors"] = raw
     return files
