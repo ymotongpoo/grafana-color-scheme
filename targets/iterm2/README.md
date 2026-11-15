@@ -1,10 +1,8 @@
 # iTerm2
 
-Four presets: `grafana-dark`, `grafana-light`, and a `-vivid` flavor of each
-that preserves the previous default palette in full: background, text,
-ANSI, cursor, selection, and UI colors. The unsuffixed schemes now use
-warm gray backgrounds and softer Grafana accents. The former Vivid colors
-are replaced; existing theme names and filenames stay the same.
+Four presets: `grafana-dark` and `grafana-light` (brand flavor: the Grafana
+brand colors verbatim on Neutral 5 / white), and `grafana-dark-dim` and
+`grafana-light-dim` (the same design at lower saturation).
 
 Generated from [`../../palette.toml`](../../palette.toml) — do not edit.
 

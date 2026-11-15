@@ -16,6 +16,9 @@ small hand-managed solid-color preview/background asset and is not generated.
 3. In the **Light** row, click **Import** and paste the complete contents of
    `grafana-light.codex-theme.txt`.
 
+For the softer dim flavor, paste `grafana-dark-dim.codex-theme.txt` and
+`grafana-light-dim.codex-theme.txt` instead.
+
 Do not paste the Markdown fences or the filename. The value must start with
 `codex-theme-v1:`. The variant must match the row: dark into Dark, light into
 Light.

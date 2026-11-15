@@ -4,8 +4,10 @@
 `~/.config/herdr/themes/` loader. So these are **config fragments**, not
 theme files.
 
-- `grafana-{dark,light}.config.toml` — one variant each
-- `grafana-auto.config.toml` — both, following the host terminal's appearance
+- `grafana-{dark,light}.config.toml` — one variant each (brand flavor)
+- `grafana-{dark,light}-dim.config.toml` — the same in the dim flavor
+- `grafana-auto.config.toml`, `grafana-auto-dim.config.toml` — both variants,
+  following the host terminal's appearance
 
 Generated from [`../../palette.toml`](../../palette.toml) — do not edit.
 

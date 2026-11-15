@@ -71,10 +71,10 @@ Target(
     slug="alacritty",
     display="Alacritty",
     emit=alacritty.emit,
-    artifacts="2 TOML files",
+    artifacts="4 TOML files",
     install="copy into ~/.config/alacritty/ and import it",
     upstream="https://alacritty.org/config-alacritty.html",
-    flavors=True,   # only if it also ships -vivid files
+    # flavors=False,  # only if it ships the default (brand) flavor alone
 ),
 ```
 
@@ -105,17 +105,21 @@ able to symlink your subtree straight into place.
 (iTerm2 presets and WezTerm schemes both do), and a bare `dark` is useless
 in a list of thirty themes.
 
-**Flavors suffix, dim does not.** `grafana-dark.toml` is the dim flavor;
-`grafana-dark-vivid.toml` is vivid. Read `p.scheme["default_flavor"]` rather
-than hardcoding which one is bare.
+**Flavors suffix, brand does not.** `v.id` already carries the suffix:
+`grafana-dark` is the brand flavor and `grafana-dark-dim` is dim, and
+`v.label` is `Grafana Dark` / `Grafana Dark Dim`. Name files from `v.id` and
+never build the suffix yourself.
 
-**Resolve the full flavor first.** Use `p.variant(name, flavor="vivid")`
-or iterate `p.each(flavor="vivid")`, then consume `v.ansi()`. Omitting the
-flavor selects dim. Each resolved variant includes its own surfaces, text,
-accents, roles, terminal colors, and complete ANSI table; Vivid must not
-inherit reading colors from dim. Browser tokens remain shared per appearance.
+**Iterate every flavor.** `p.every()` yields each variant of each flavor,
+default flavor first; `p.each(flavor)` yields one flavor; `p.variant(name,
+flavor)` picks one. Omitting the flavor selects the default (brand). Each
+resolved variant has its own surfaces, text, accents, roles, terminal colors
+and complete ANSI table; dim never inherits reading colors from brand.
+Browser tokens are shared per appearance. When two variants refer to each
+other (a light/dark counterpart), stay inside the same flavor:
+`p.variant(other, v.flavor)`.
 
-The TOML stores dim in `[variants.<name>]` and the complete Vivid surfaces,
-text, and accents in `[variants.<name>.vivid]`. Each `[ansi.<name>.<flavor>]`
+The TOML stores brand in `[variants.<name>]` and the complete dim surfaces,
+text, and accents in `[variants.<name>.dim]`. Each `[ansi.<name>.<flavor>]`
 table declares all 16 slots and resolves against that flavor. Shared semantic
 and terminal role references are resolved separately for each flavor.

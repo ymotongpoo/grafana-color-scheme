@@ -1,10 +1,8 @@
 # WezTerm
 
-Four schemes: `grafana-dark`, `grafana-light`, and a `-vivid` flavor of each
-that preserves the previous default palette in full: background, text,
-ANSI, cursor, selection, and UI colors. The unsuffixed schemes now use
-warm gray backgrounds and softer Grafana accents. The former Vivid colors
-are replaced; existing theme names and filenames stay the same.
+Four schemes: `grafana-dark` and `grafana-light` (brand flavor: the Grafana
+brand colors verbatim on Neutral 5 / white), and `grafana-dark-dim` and
+`grafana-light-dim` (the same design at lower saturation).
 
 ## Install
 
@@ -24,8 +22,8 @@ and they override built-ins of the same name. To load them from somewhere
 else, set `config.color_scheme_dirs = { '/path/to/colors' }`.
 
 The scheme name shown to WezTerm comes from `[metadata].name`, not the
-filename: `Grafana Dark`, `Grafana Dark Vivid`, `Grafana Light`,
-`Grafana Light Vivid`.
+filename: `Grafana Dark`, `Grafana Light`, `Grafana Dark Dim`,
+`Grafana Light Dim`.
 
 ## The window frame is not part of a color scheme
 
@@ -35,12 +33,14 @@ this the frame keeps its default color and looks detached from the rest:
 
 ```lua
 config.window_frame = {
-  active_titlebar_bg = '#191919',    -- mantle
-  inactive_titlebar_bg = '#141414',  -- crust
+  active_titlebar_bg = '#111111',    -- mantle
+  inactive_titlebar_bg = '#0b0b0b',  -- crust
 }
 ```
 
-For the light variant use `#f0f0f0` and `#e4e4e4`.
+For the other themes use their `mantle` and `crust`: Grafana Light
+`#f4f4f4` / `#e9e9e9`, Grafana Dark Dim `#181818` / `#121212`, Grafana Light
+Dim `#ececec` / `#e2e2e2`.
 
 `[colors.tab_bar]` in the scheme file covers the retro tab bar's strip and
 the per-tab items in both modes.

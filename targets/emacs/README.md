@@ -1,6 +1,7 @@
 # Emacs
 
-Two themes, `grafana-dark` and `grafana-light`.
+Four themes: `grafana-dark` and `grafana-light`, plus the softer
+`grafana-dark-dim` and `grafana-light-dim`.
 
 Generated from [`../../palette.toml`](../../palette.toml) — do not edit.
 

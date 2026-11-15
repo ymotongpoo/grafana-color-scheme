@@ -1,6 +1,7 @@
 # Zed
 
-One theme family file containing both variants, plus an `extension.toml` so
+One theme family file containing all four themes (Grafana Dark / Light and
+their Dim flavors), plus an `extension.toml` so
 the directory also works as a Zed extension.
 
 Generated from [`../../palette.toml`](../../palette.toml) — do not edit.
@@ -27,6 +28,8 @@ Zed picks the file up on next load. Select it with
   }
 }
 ```
+
+For the softer flavor use `"Grafana Light Dim"` and `"Grafana Dark Dim"`.
 
 ## Notes
 

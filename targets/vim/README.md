@@ -1,6 +1,7 @@
 # Vim / Neovim
 
-Two colorschemes covering classic Vim highlight groups, Neovim's
+Four colorschemes (`grafana-dark`, `grafana-light` and their `-dim`
+flavors) covering classic Vim highlight groups, Neovim's
 `Diagnostic*` and `Lsp*` groups, and the treesitter `@` captures — all in
 vimscript, so one file serves both editors.
 

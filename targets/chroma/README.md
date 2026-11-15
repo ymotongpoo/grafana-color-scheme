@@ -2,6 +2,8 @@
 
 Two artifacts per variant, because Chroma has two kinds of consumer.
 
+Every file also exists with a `-dim` suffix for the dim flavor.
+
 - `styles/grafana-{dark,light}.xml` — Chroma's own style format. Go programs
   can load these at runtime; this is also the file shape the upstream
   `styles/` directory expects.

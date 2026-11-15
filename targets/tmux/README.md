@@ -3,8 +3,9 @@
 Colors and status-line content are separate files, because most people
 already have a status line they like and only want the palette.
 
-- `src/grafana-{dark,light}.conf` — colors only
-- `src/grafana-{dark,light}-status.conf` — optional status-line layout
+- `src/grafana-{dark,light}.conf` — colors only (brand flavor)
+- `src/grafana-{dark,light}-dim.conf` — colors only (dim flavor)
+- `src/grafana-{dark,light}[-dim]-status.conf` — optional status-line layout
 - `grafana.tmux` — TPM entry point
 
 Requires tmux 2.9 or newer (the legacy `*-fg` / `*-bg` options this would
@@ -32,6 +33,7 @@ With [TPM](https://github.com/tmux-plugins/tpm):
 ```tmux
 set -g @plugin 'ymotongpoo/grafana-color-scheme'
 set -g @grafana_variant 'dark'   # or 'light'
+set -g @grafana_flavor  'brand'  # or 'dim'
 set -g @grafana_status  'off'    # 'on' to also take the status layout
 ```
 

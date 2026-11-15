@@ -2,8 +2,8 @@
 
 Not a file format — a comma-separated hex string you paste into the app.
 
-- `grafana-dark.txt`, `grafana-light.txt` — the 8-value string
-- `themes.json` — both, plus the 10-value variant and per-slot labels
+- `grafana-{dark,light}.txt`, `grafana-{dark,light}-dim.txt` — the 8-value string
+- `themes.json` — all four, plus the 10-value variant and per-slot labels
 
 ## Install
 

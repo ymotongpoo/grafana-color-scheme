@@ -1,7 +1,7 @@
 # VS Code
 
-This directory is a valid extension root. Both variants are contributed from
-one `package.json`.
+This directory is a valid extension root. All four themes (both variants
+in the brand and dim flavors) are contributed from one `package.json`.
 
 Generated from [`../../palette.toml`](../../palette.toml) — do not edit.
 
@@ -17,7 +17,8 @@ ln -s "$PWD" ~/.vscode/extensions/grafana-color-scheme
 
 For VS Code Insiders use `~/.vscode-insiders/extensions/`, and for
 VSCodium `~/.vscode-oss/extensions/`. Restart the editor, then
-**Ctrl/Cmd+K Ctrl/Cmd+T** and pick *Grafana Dark* or *Grafana Light*.
+**Ctrl/Cmd+K Ctrl/Cmd+T** and pick *Grafana Dark*, *Grafana Light*, or
+their *Dim* versions.
 
 To develop against it instead:
 
@@ -27,7 +28,8 @@ code --extensionDevelopmentPath="$PWD"
 
 ## Notes
 
-- The theme ids are `grafana-dark` and `grafana-light`; those are the values
+- The theme ids are `grafana-dark`, `grafana-light`, `grafana-dark-dim` and
+  `grafana-light-dim`; those are the values
   `workbench.colorTheme` stores in your settings.
 - `semanticHighlighting` is on and `semanticTokenColors` is populated.
   Without the latter, TypeScript and Rust look inconsistent with everything
