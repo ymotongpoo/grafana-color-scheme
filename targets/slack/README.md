@@ -16,21 +16,47 @@ theme" card, which is a convenient way to share it.
 
 ## Slot order
 
-| # | slot | controls |
-|---|---|---|
-| 1 | Column BG | sidebar background |
-| 2 | Menu BG Hover | hovering the workspace-name menu |
-| 3 | Active Item | selected channel or DM row background |
-| 4 | Active Item Text | text on that row |
-| 5 | Hover Item | hovering a channel row |
-| 6 | Text Color | default sidebar text |
-| 7 | Active Presence | the online presence dot |
-| 8 | Mention Badge | unread mention count badge |
+| # | slot | current Slack field | controls |
+|---|---|---|---|
+| 1 | Column BG | System navigation | workspace rail, top bar, base of the sidebar |
+| 2 | Menu BG Hover | *(ignored)* | |
+| 3 | Active Item | Selected items | selected channel or DM row |
+| 4 | Active Item Text | *(ignored)* | |
+| 5 | Hover Item | *(ignored)* | |
+| 6 | Text Color | *(ignored)* | |
+| 7 | Active Presence | Presence indication | the online presence dot |
+| 8 | Mention Badge | Notifications | unread mention count badge |
 
-Positions 1–8 are consistently documented. A **ten**-value string adding
-`Top Nav BG` and `Top Nav Text` also parses in current clients, and is in
-`themes.json` as `value_with_top_nav` — but it is poorly documented, so the
-`.txt` ships the safe eight.
+Current clients have a four-color custom theme and keep only positions 1,
+3, 7 and 8 of an imported string. **Slack chooses every text color itself**,
+so `Text Color` no longer has any effect. The other positions are still
+written so older clients get a complete theme.
+
+A **ten**-value string adding `Top Nav BG` and `Top Nav Text` also parses,
+and is in `themes.json` as `value_with_top_nav`, but the `.txt` ships the
+safe eight.
+
+## The frame color
+
+Every theme puts the brand orange (`#FF671D`) in position 1. Slack keeps
+its hue but chooses the lightness itself for the current color mode, so the
+frame never shows the exact brand orange:
+
+| color mode | frame (measured) | sidebar (measured) |
+|---|---|---|
+| light | `#FF8669`, a soft orange | `#FFF4EE` |
+| dark | `#561B00`, a deep burnt orange | `#2C160D` |
+
+A darker input does not change this. `#FF3B00` was tried in light mode and
+the frame came out at the same lightness. The selected row (position 3) is
+rendered exactly as given.
+
+## Light themes: turn off "Darker sidebars"
+
+After importing `grafana-light.txt` or `grafana-light-dim.txt`, open
+**Preferences → Themes → Custom theme** and **untick "Darker sidebars"**.
+With it ticked, Slack draws white sidebar text over a light sidebar and the
+channel list becomes unreadable.
 
 ## Notes
 

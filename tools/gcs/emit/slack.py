@@ -11,6 +11,17 @@ the target README.
 
 A Slack theme is sidebar-only: the message pane, code blocks and composer
 are not themeable.
+
+Current clients keep only positions 1, 3, 7 and 8 of the string (system
+navigation, selected items, presence, notifications) and choose every text
+color themselves. Position 1 fills the workspace rail, the top bar and the
+base of the sidebar. Slack keeps its hue but picks its lightness for the
+current color mode, lightening it in light mode and darkening it in dark
+mode, so a darker or lighter input does not change how bright the frame
+looks. Every theme therefore puts the brand orange in position 1 and lets
+Slack fit it to the mode. The selected row in position 3 is rendered as
+given. Positions 2, 4, 5 and 6 are still written so older clients keep a
+sensible theme.
 """
 
 from __future__ import annotations
@@ -21,7 +32,7 @@ from ..palette import Palette, Variant
 
 # (slot label, token reference). Order is the wire order and must not change.
 SLOTS = (
-    ("Column BG", "surfaces.mantle"),
+    ("Column BG", "browser.key"),
     ("Menu BG Hover", "surfaces.surface0"),
     ("Active Item", "accents.orange"),
     ("Active Item Text", "surfaces.base"),

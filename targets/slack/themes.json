@@ -14,10 +14,10 @@
   "themes": {
     "grafana-dark": {
       "label": "Grafana Dark",
-      "value": "#111111,#212121,#FF671D,#171717,#2C2C2C,#F4F4F4,#04BC4C,#F35998",
-      "value_with_top_nav": "#111111,#212121,#FF671D,#171717,#2C2C2C,#F4F4F4,#04BC4C,#F35998,#171717,#FFFFFF",
+      "value": "#FF671D,#212121,#FF671D,#171717,#2C2C2C,#F4F4F4,#04BC4C,#F35998",
+      "value_with_top_nav": "#FF671D,#212121,#FF671D,#171717,#2C2C2C,#F4F4F4,#04BC4C,#F35998,#171717,#FFFFFF",
       "colors": {
-        "Column BG": "#111111",
+        "Column BG": "#FF671D",
         "Menu BG Hover": "#212121",
         "Active Item": "#FF671D",
         "Active Item Text": "#171717",
@@ -29,10 +29,10 @@
     },
     "grafana-light": {
       "label": "Grafana Light",
-      "value": "#F4F4F4,#F2F2F2,#F04205,#FFFFFF,#E6E6E6,#171717,#0C9065,#E14889",
-      "value_with_top_nav": "#F4F4F4,#F2F2F2,#F04205,#FFFFFF,#E6E6E6,#171717,#0C9065,#E14889,#FFFFFF,#000000",
+      "value": "#FF671D,#F2F2F2,#F04205,#FFFFFF,#E6E6E6,#171717,#0C9065,#E14889",
+      "value_with_top_nav": "#FF671D,#F2F2F2,#F04205,#FFFFFF,#E6E6E6,#171717,#0C9065,#E14889,#FFFFFF,#000000",
       "colors": {
-        "Column BG": "#F4F4F4",
+        "Column BG": "#FF671D",
         "Menu BG Hover": "#F2F2F2",
         "Active Item": "#F04205",
         "Active Item Text": "#FFFFFF",
@@ -44,10 +44,10 @@
     },
     "grafana-dark-dim": {
       "label": "Grafana Dark Dim",
-      "value": "#181818,#262626,#E48A67,#1E1E1E,#303030,#CCCCCC,#6DB979,#DE82A2",
-      "value_with_top_nav": "#181818,#262626,#E48A67,#1E1E1E,#303030,#CCCCCC,#6DB979,#DE82A2,#1E1E1E,#E8E8E8",
+      "value": "#FF671D,#262626,#E48A67,#1E1E1E,#303030,#CCCCCC,#6DB979,#DE82A2",
+      "value_with_top_nav": "#FF671D,#262626,#E48A67,#1E1E1E,#303030,#CCCCCC,#6DB979,#DE82A2,#1E1E1E,#E8E8E8",
       "colors": {
-        "Column BG": "#181818",
+        "Column BG": "#FF671D",
         "Menu BG Hover": "#262626",
         "Active Item": "#E48A67",
         "Active Item Text": "#1E1E1E",
@@ -59,10 +59,10 @@
     },
     "grafana-light-dim": {
       "label": "Grafana Light Dim",
-      "value": "#ECECEC,#EAEAEA,#C05F46,#F4F4F4,#DEDEDE,#3A3A3A,#4C856B,#B65F7E",
-      "value_with_top_nav": "#ECECEC,#EAEAEA,#C05F46,#F4F4F4,#DEDEDE,#3A3A3A,#4C856B,#B65F7E,#F4F4F4,#171717",
+      "value": "#FF671D,#EAEAEA,#C05F46,#F4F4F4,#DEDEDE,#3A3A3A,#4C856B,#B65F7E",
+      "value_with_top_nav": "#FF671D,#EAEAEA,#C05F46,#F4F4F4,#DEDEDE,#3A3A3A,#4C856B,#B65F7E,#F4F4F4,#171717",
       "colors": {
-        "Column BG": "#ECECEC",
+        "Column BG": "#FF671D",
         "Menu BG Hover": "#EAEAEA",
         "Active Item": "#C05F46",
         "Active Item Text": "#F4F4F4",
