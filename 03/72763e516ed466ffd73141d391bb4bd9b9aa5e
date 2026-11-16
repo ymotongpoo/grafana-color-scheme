@@ -1,0 +1,32 @@
+tools/gcs/emit/slack.py
+  s_04a628ab2ea17a::t_9ef3759ff065a6 14-17
+  s_04a628ab2ea17a::t_520d739daef692 18-24,35
+targets/slack/README.md
+  s_04a628ab2ea17a::t_d9304504b58037 19-45,47-59
+targets/slack/grafana-dark-dim.txt
+  s_04a628ab2ea17a::t_b6795e9d2318bf 1
+targets/slack/grafana-dark.txt
+  s_04a628ab2ea17a::t_cd9d5147b11d8a 1
+targets/slack/grafana-light-dim.txt
+  s_04a628ab2ea17a::t_23e4cbdd54544b 1
+targets/slack/grafana-light.txt
+  s_04a628ab2ea17a::t_3b38646361eb63 1
+targets/slack/themes.json
+  s_04a628ab2ea17a::t_6f9138155a65e8 17-18,20,32-33,35,47-48,50,62-63,65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0372763e516ed466ffd73141d391bb4bd9b9aa5e",
+  "prompts": {},
+  "sessions": {
+    "s_04a628ab2ea17a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "845e5c88-9430-4b9a-b58b-6f12112506dc",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Yoshi Yamaguchi <ymotongpoo@gmail.com>"
+    }
+  }
+}
