@@ -14,6 +14,7 @@ subtree into place rather than copying files one by one.
 | VS Code       | [`vscode/`](vscode/)   | extension root with 4 theme files                              | [format](https://code.visualstudio.com/api/references/theme-color)                            |
 | Zed           | [`zed/`](zed/)         | 1 theme family (4 themes)                                      | [format](https://zed.dev/docs/extensions/themes)                                              |
 | T3 Code       | [`t3code/`](t3code/)   | 2 importable theme files, each with light and dark appearances | [format](https://github.com/pingdotgg/t3code/blob/main/docs/user/appearance.md#custom-themes) |
+| Orca IDE      | [`orca/`](orca/)       | 1 plugin with 4 app/editor and 4 terminal themes               | [format](https://github.com/stablyai/orca/blob/v1.4.273/docs/reference/plugin-themes.md)      |
 | Emacs         | [`emacs/`](emacs/)     | 4 theme files                                                  | [format](https://www.gnu.org/software/emacs/manual/html_node/elisp/Custom-Themes.html)        |
 | Vim / Neovim  | [`vim/`](vim/)         | 4 colorschemes                                                 | [format](https://vimhelp.org/syntax.txt.html)                                                 |
 | WezTerm       | [`wezterm/`](wezterm/) | 4 TOML schemes                                                 | [format](https://wezterm.org/config/appearance.html)                                          |

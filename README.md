@@ -1,6 +1,6 @@
 # Grafana color scheme
 
-One palette, built on the Grafana Labs brand colors, ported to 13 tools.
+One palette, built on the Grafana Labs brand colors, ported to 14 tools.
 The primary orange and the secondary yellow, green, blue and purple carry
 the syntax, on the brand's own neutral canvas. A softer **Dim** flavor is
 derived from it.
@@ -171,7 +171,7 @@ single ordering will give you the wrong answer.
 ### Semantic roles
 
 Every port maps its own token names onto these roles, so changing a role here
-changes all 13 targets at once. The `token` column is the palette color the
+changes all 14 targets at once. The `token` column is the palette color the
 role points at.
 
 <!-- BEGIN GENERATED: roles -->
@@ -225,8 +225,8 @@ assignments.
 ### ANSI 16
 
 The single highest-leverage table in the repo: WezTerm, iTerm2, tmux, Zed's
-`terminal.ansi.*`, VS Code's `terminal.ansi*`, Vim's `g:terminal_ansi_colors`
-and Herdr's `terminal` mode all consume it.
+`terminal.ansi.*`, VS Code's `terminal.ansi*`, Vim's `g:terminal_ansi_colors`,
+Herdr's `terminal` mode and Orca's terminal themes all consume it.
 
 <!-- BEGIN GENERATED: ansi -->
 | slot | name           | dark brand | dark dim  | light brand | light dim |
@@ -299,6 +299,7 @@ some separation after dimming. These rules live in `palette.toml`.
 | VS Code       | [`targets/vscode`](targets/vscode)   | extension root with 4 theme files                              | symlink `targets/vscode` into `~/.vscode/extensions/`, restart, then pick the theme     |
 | Zed           | [`targets/zed`](targets/zed)         | 1 theme family (4 themes)                                      | copy `themes/grafana.json` to `~/.config/zed/themes/`                                   |
 | T3 Code       | [`targets/t3code`](targets/t3code)   | 2 importable theme files, each with light and dark appearances | Settings → Appearance → Import theme, then choose `grafana.json` or `grafana-dim.json`  |
+| Orca IDE      | [`targets/orca`](targets/orca)       | 1 plugin with 4 app/editor and 4 terminal themes               | run `orca plugin install ./targets/orca` on Orca Desktop, then pick the theme           |
 | Emacs         | [`targets/emacs`](targets/emacs)     | 4 theme files                                                  | add the directory to `custom-theme-load-path`, then `(load-theme 'grafana-dark t)`      |
 | Vim / Neovim  | [`targets/vim`](targets/vim)         | 4 colorschemes                                                 | add `targets/vim` to `runtimepath`, then `:colorscheme grafana-dark`                    |
 | WezTerm       | [`targets/wezterm`](targets/wezterm) | 4 TOML schemes                                                 | copy `colors/*.toml` to `~/.config/wezterm/colors/`, then set `color_scheme`            |

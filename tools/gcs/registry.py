@@ -18,6 +18,7 @@ from .emit import (
     emacs,
     herdr,
     iterm2,
+    orca,
     slack,
     t3code,
     tmux,
@@ -74,6 +75,14 @@ TARGETS: dict[str, Target] = {
             artifacts="2 importable theme files, each with light and dark appearances",
             install="Settings → Appearance → Import theme, then choose `grafana.json` or `grafana-dim.json`",
             upstream="https://github.com/pingdotgg/t3code/blob/main/docs/user/appearance.md#custom-themes",
+        ),
+        Target(
+            slug="orca",
+            display="Orca IDE",
+            emit=orca.emit,
+            artifacts="1 plugin with 4 app/editor and 4 terminal themes",
+            install="run `orca plugin install ./targets/orca` on Orca Desktop, then pick the theme",
+            upstream="https://github.com/stablyai/orca/blob/v1.4.273/docs/reference/plugin-themes.md",
         ),
         Target(
             slug="emacs",

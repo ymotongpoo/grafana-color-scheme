@@ -1,0 +1,58 @@
+{
+  "manifestVersion": 2,
+  "id": "grafana-color-scheme",
+  "name": "Grafana Color Scheme",
+  "version": "0.1.1",
+  "description": "Grafana Dark and Light, with Dim variants for the app, editor and terminal.",
+  "engines": {
+    "orca": ">=1.4.246"
+  },
+  "execution": "data",
+  "license": "Apache-2.0",
+  "contributes": {
+    "themes": [
+      {
+        "id": "grafana-dark",
+        "title": "Grafana Dark",
+        "path": "themes/grafana-dark.json"
+      },
+      {
+        "id": "grafana-light",
+        "title": "Grafana Light",
+        "path": "themes/grafana-light.json"
+      },
+      {
+        "id": "grafana-dark-dim",
+        "title": "Grafana Dark Dim",
+        "path": "themes/grafana-dark-dim.json"
+      },
+      {
+        "id": "grafana-light-dim",
+        "title": "Grafana Light Dim",
+        "path": "themes/grafana-light-dim.json"
+      }
+    ],
+    "terminalThemes": [
+      {
+        "id": "grafana-dark",
+        "title": "Grafana Dark",
+        "path": "terminal/grafana-dark.json"
+      },
+      {
+        "id": "grafana-light",
+        "title": "Grafana Light",
+        "path": "terminal/grafana-light.json"
+      },
+      {
+        "id": "grafana-dark-dim",
+        "title": "Grafana Dark Dim",
+        "path": "terminal/grafana-dark-dim.json"
+      },
+      {
+        "id": "grafana-light-dim",
+        "title": "Grafana Light Dim",
+        "path": "terminal/grafana-light-dim.json"
+      }
+    ]
+  }
+}

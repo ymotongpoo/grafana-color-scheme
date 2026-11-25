@@ -326,7 +326,7 @@ def _font_style(*, bold: bool = False, italic: bool = False, underline: bool = F
     return " ".join(bits)
 
 
-def _token_colors(v: Variant) -> list[dict]:
+def token_colors(v: Variant) -> list[dict]:
     r = v.rc
     out: list[dict] = []
 
@@ -444,7 +444,7 @@ def _theme(v: Variant) -> str:
             "type": v.appearance,
             "semanticHighlighting": True,
             "colors": _workbench(v),
-            "tokenColors": _token_colors(v),
+            "tokenColors": token_colors(v),
             "semanticTokenColors": _semantic(v),
         }
     )
